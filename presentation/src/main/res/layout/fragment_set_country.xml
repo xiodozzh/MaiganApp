@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.SetCountryAndProvinceViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/activity_set_country_and_province_my_location"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="match_parent">
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/layout_refresh_error"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{model.netError?View.VISIBLE:View.GONE}">
+
+                <include layout="@layout/layout_network_error" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/layout_refresh"
+                android:layout_width="match_parent"
+                android:background="@color/background_grey"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/normal_padding"
+                android:visibility="@{model.netError?View.GONE:View.VISIBLE}"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <com.mgtech.maiganapp.widget.SideBarView
+                android:id="@+id/side_bar"
+                android:visibility="@{model.loading || model.netError?View.GONE:View.VISIBLE}"
+                android:layout_width="@dimen/normal_padding"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/letter"
+                android:visibility="gone"
+                android:layout_width="@dimen/large_height"
+                android:layout_height="@dimen/large_height"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_side_bar_select_letter"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_material"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

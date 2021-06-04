@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.shuyu:gsyvideoplayer-androidvideocache:7.0.0-beta1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ef395066674c86263d8c24b76d88810e/jetified-gsyvideoplayer-androidvideocache-7.0.0-beta1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ef395066674c86263d8c24b76d88810e/jetified-gsyvideoplayer-androidvideocache-7.0.0-beta1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ef395066674c86263d8c24b76d88810e/jetified-gsyvideoplayer-androidvideocache-7.0.0-beta1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.shuyu/gsyvideoplayer-androidvideocache/7.0.0-beta1/235f564d905093a07a53f43c2ec247d39daed609/gsyvideoplayer-androidvideocache-7.0.0-beta1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.shuyu/gsyvideoplayer-androidvideocache/7.0.0-beta1/1aca40d388989f69ab4a817958cfd5600bd03053/gsyvideoplayer-androidvideocache-7.0.0-beta1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

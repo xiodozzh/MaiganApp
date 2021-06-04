@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+//            abiFilters 'armeabi', 'armeabi-v7a','arm64-v8a','x86', 'x86_64', 'mips', 'mips64'
+            abiFilters  'armeabi-v7a','arm64-v8a','x86', 'x86_64'
+//            abiFilters  'arm64-v8a','x86', 'x86_64'
+//            , 'armeabi-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+//        externalNativeBuild {
+//            cmake {
+//                arguments '-DANDROID_TOOLCHAIN=clang' --> gcc
+////                targets "ecg"
+//                // use a specific ABI filter if needed
+//                // abiFilters "armeabi-v7a"
+//            }
+//        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+}
+
+//repositories {
+//    flatDir {
+//        dirs 'libs' //this way we can find the .aar file in libs folder
+//    }
+//}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha04'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
+    implementation 'io.reactivex:rxandroid:1.1.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
+    implementation 'io.reactivex:rxandroid:1.1.0'
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.tencent:mmkv:1.0.17'
+    implementation 'com.orhanobut:logger:2.2.0'
+//    compile(name: 'ecglib-debug', ext: 'aar')
+}

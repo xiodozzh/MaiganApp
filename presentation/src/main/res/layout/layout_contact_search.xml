@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_search"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/large_height"
+    android:layout_marginEnd="@dimen/normal_padding"
+    android:layout_marginStart="@dimen/normal_padding"
+    android:layout_marginTop="@dimen/xnarrow_padding"
+    android:clipToPadding="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="2dp"
+    app:contentPadding="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/narrow_padding"
+        android:paddingStart="@dimen/narrow_padding">
+
+        <ImageView
+            android:contentDescription="@string/app_name"
+            android:id="@+id/iv_search_in_card"
+            android:layout_width="@dimen/large_padding"
+            android:layout_height="@dimen/large_padding"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_search_black_24dp" />
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/normal_padding"
+            android:textSize="@dimen/body_1_material"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+

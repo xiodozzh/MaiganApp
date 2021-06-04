@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/transparent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/layout_guide_hr"
+        layout="@layout/layout_guide_check_hr"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/layout_guide_bp"
+        layout="@layout/layout_guide_check_bp"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/layout_guide_measure"
+        layout="@layout/layout_guide_measure"
+        android:visibility="gone" />
+
+</FrameLayout>

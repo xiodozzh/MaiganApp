@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-files-path name="Pictures" path="Pictures" />
+    <root-path name="name" path="" />
+    <cache-path name="*avatarTemp*" path="*avatar*" />
+    <external-path
+        name="ecg.png"
+        path="temp/"/>
+</paths>

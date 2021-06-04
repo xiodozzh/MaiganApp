@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/bg_round_rect_radius_4dp"
+        android:layout_marginStart="@dimen/large_padding"
+        android:layout_marginEnd="@dimen/large_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/large_height"
+            android:layout_marginTop="@dimen/narrow_padding"
+            android:layout_marginStart="@dimen/narrow_padding"
+            android:layout_marginEnd="@dimen/narrow_padding"
+            android:gravity="center"
+            android:text="@string/bind_please_click_bracelet_button_for_submit"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/medium_material"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_link"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pair_gif_height"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <ImageView
+            android:id="@+id/iv_submit"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pair_gif_height"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_link" />
+
+        <ImageView
+            android:id="@+id/iv_result"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/app_name"
+            android:visibility="invisible"
+            app:layout_constraintDimensionRatio="245:148"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_caution"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="230dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title">
+
+            <TextView
+                android:id="@+id/tv_caution"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bind_caution"
+                android:textColor="@color/grey_text"
+                android:textSize="@dimen/body_1_material"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_caution_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="32dp"
+                android:gravity="center"
+                android:text="@string/bind_caution_text"
+                android:textColor="@color/light_grey_text"
+                android:textSize="@dimen/body_1_material"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_caution" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:visibility="gone"
+            android:id="@+id/layout_success"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_result"
+            app:layout_constraintVertical_bias="1.0">
+
+            <TextView
+                android:id="@+id/tv_caution2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bind_caution"
+                android:textColor="@color/grey_text"
+                android:textSize="@dimen/body_1_material"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_note"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/normal_padding"
+                android:layout_marginTop="@dimen/narrow_padding"
+                android:layout_marginEnd="@dimen/normal_padding"
+                android:gravity="center_vertical"
+                android:text="已为您开启24小时自动测量血压。并在8：00-20：00间提醒您。测量时请保证手环佩戴正确并静止。"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/body_1_material"
+                app:layout_constraintTop_toBottomOf="@+id/tv_caution2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_set"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/normal_height"
+                android:gravity="center"
+                android:text="@string/bracelet_pair_change_set"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/subhead_material"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_done"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_note" />
+
+            <TextView
+                android:id="@+id/tv_done"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/normal_height"
+                android:gravity="center"
+                android:text="@string/done"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/subhead_material"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_set"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_set"
+                app:layout_constraintTop_toTopOf="@+id/tv_set" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/background_grey"
+                app:layout_constraintBottom_toTopOf="@+id/tv_set"
+                app:layout_constraintTop_toBottomOf="@+id/tv_note" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/background_grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tv_done"
+                app:layout_constraintStart_toStartOf="@+id/tv_set"
+                app:layout_constraintTop_toTopOf="@+id/tv_set" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

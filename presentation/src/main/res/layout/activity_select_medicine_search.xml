@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.SelectMedicineSearchViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/background_grey"
+            android:elevation="2dp"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/narrow_padding"
+                android:layout_marginEnd="@dimen/narrow_padding"
+                android:layout_marginBottom="@dimen/narrow_padding"
+                android:background="@drawable/bg_round_rect_radius_4dp"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/normal_padding"
+                android:paddingEnd="@dimen/xnarrow_padding">
+
+                <ImageView
+                    android:layout_width="@dimen/normal_padding"
+                    android:layout_height="@dimen/normal_padding"
+                    android:layout_gravity="center"
+                    android:contentDescription="search phone"
+                    android:src="@drawable/activity_friend_add_search" />
+
+                <EditText
+                    android:id="@+id/et_search"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/subhead_material"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone"
+                    android:hint="@string/select_medicine_input_name"
+                    android:inputType="text"
+                    android:textSize="@dimen/subhead_material" />
+
+                <ImageView
+                    android:id="@+id/iv_clear"
+                    android:layout_width="@dimen/large_padding"
+                    android:layout_height="@dimen/large_padding"
+                    android:contentDescription="clear"
+                    android:padding="@dimen/narrow_padding"
+                    android:src="@drawable/edit_clear" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/layout_refresh"
+                android:visibility="@{model.error?View.GONE:View.VISIBLE}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/layout_refresh_error"
+                android:visibility="@{model.error?View.VISIBLE:View.GONE}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include layout="@layout/layout_network_error"/>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:elevation="2dp"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="2dp"
+        android:orientation="horizontal"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:paddingEnd="0dp"
+        app:paddingStart="0dp">
+
+        <include
+            android:id="@+id/btn_back"
+            layout="@layout/layout_back_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/medication_select"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/top_bar_title" />
+
+        <TextView
+            android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:gravity="center"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding"
+            android:text="@string/select_medicine_add_new"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/body_1_material" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_below="@id/toolbar"
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/layout_ble_open"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/normal_height"
+            android:background="@color/colorPrimary"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding">
+
+            <ImageView
+                android:id="@+id/iv_bluetooth"
+                android:layout_width="@dimen/medium_padding"
+                android:layout_height="@dimen/medium_padding"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_bluetooth_white_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/narrow_padding"
+                android:layout_toEndOf="@id/iv_bluetooth"
+                android:gravity="center_vertical"
+                android:text="@string/bluetooth_not_open"
+                android:textColor="@color/white"
+                android:textSize="@dimen/subhead_material" />
+
+            <Button
+                android:id="@+id/btn_open_bluetooth"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/large_padding"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/selector_btn_go_to_bond"
+                android:paddingStart="@dimen/narrow_padding"
+                android:paddingEnd="@dimen/narrow_padding"
+                android:text="@string/open_bluetooth"
+                android:textColor="@color/white"
+                android:textSize="@dimen/subhead_material" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/layout_bind"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/normal_height"
+            android:background="@color/colorPrimary"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="@dimen/medium_padding"
+                android:layout_height="@dimen/medium_padding"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/warn" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/narrow_padding"
+                android:layout_toEndOf="@id/img"
+                android:gravity="center_vertical"
+                android:text="@string/bracelet_not_bond"
+                android:textColor="@color/white"
+                android:textSize="@dimen/subhead_material" />
+
+            <Button
+                android:id="@+id/btn_bond"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/large_padding"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/selector_btn_go_to_bond"
+                android:paddingStart="@dimen/narrow_padding"
+                android:paddingEnd="@dimen/narrow_padding"
+                android:text="@string/bond"
+                android:textColor="@color/white"
+                android:textSize="@dimen/subhead_material" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_scan"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/normal_height"
+            android:background="@color/colorPrimary"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="@dimen/large_padding"
+                android:layout_height="@dimen/large_padding"
+                android:layout_centerVertical="true"
+                android:indeterminateDrawable="@drawable/scan_or_disconnect_progressbar"
+                android:indeterminateDuration="800" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/narrow_padding"
+                android:layout_toEndOf="@id/progressBar"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/normal_padding"
+                android:paddingEnd="@dimen/normal_padding"
+                android:text="@string/searching_bracelet"
+                android:textColor="@color/white"
+                android:textSize="@dimen/subhead_material" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_connecting"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/normal_height"
+            android:background="@color/colorPrimary"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding">
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                android:layout_width="@dimen/large_padding"
+                android:layout_height="@dimen/large_padding"
+                android:layout_centerVertical="true"
+                android:indeterminateDrawable="@drawable/scan_or_disconnect_progressbar"
+                android:indeterminateDuration="800"
+                android:indeterminateTint="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_connect_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/narrow_padding"
+                android:layout_toEndOf="@id/progressBar2"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/normal_padding"
+                android:paddingEnd="@dimen/normal_padding"
+                android:text="@string/connecting"
+                android:textColor="@color/white"
+                android:textSize="@dimen/subhead_material" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bar"
+        android:background="@color/mask_color" />
+
+    <LinearLayout
+        android:id="@+id/layout_reason"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bar"
+        android:elevation="1dp"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/normal_padding"
+        android:paddingTop="@dimen/normal_padding"
+        android:paddingEnd="@dimen/normal_padding">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/help_cannot_find_device"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/medium_material" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:text="@string/help_title2"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/subhead_material" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/help_content2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/body_1_material" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:text="@string/help_title1"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/subhead_material" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/help_content1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/body_1_material" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:text="@string/help_title3"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/subhead_material" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/help_content3"
+            android:textColor="@color/white"
+            android:textSize="@dimen/body_1_material" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:text="@string/help_title4"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/subhead_material" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/help_content4"
+            android:textColor="@color/white"
+            android:textSize="@dimen/body_1_material" />
+    </LinearLayout>
+</RelativeLayout>

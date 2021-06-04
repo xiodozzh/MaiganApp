@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_grey"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/narrow_padding"
+    android:paddingTop="1dp"
+    android:paddingEnd="@dimen/narrow_padding"
+    android:paddingBottom="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/large_height"
+        android:background="@drawable/white_card_4dp_top_corner_bg"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/normal_padding"
+        android:paddingEnd="@dimen/narrow_padding">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/indicator_detail_item_title" />
+
+        <TextView
+            android:id="@+id/tv_value"
+            style="@style/indicator_detail_item_value" />
+
+        <TextView
+            android:id="@+id/tv_unit"
+            style="@style/indicator_detail_item_unit" />
+
+        <ImageView
+            android:id="@+id/iv_level"
+            android:layout_width="@dimen/icon_length_middle"
+            android:layout_height="@dimen/icon_length_middle"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/xnarrow_padding"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/iv_open"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/narrow_padding"
+            android:contentDescription="@string/app_name" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_padding"
+            android:lineSpacingMultiplier="1.4"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/body_1_material" />
+
+        <com.mgtech.maiganapp.widget.IndicatorBarView
+            android:id="@+id/barView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/normal_padding"
+            android:layout_marginTop="@dimen/narrow_padding"
+            android:layout_marginEnd="@dimen/normal_padding"
+            android:layout_marginBottom="@dimen/large_padding" />
+
+    </LinearLayout>
+
+</LinearLayout>

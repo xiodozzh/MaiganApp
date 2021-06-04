@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--通用-->
+    <string name="app_name">Mystrace</string>
+    <string name="format_your_account_is_login_on_device">Your account is already logged in on\"%s\"</string>
+    <string name="your_account_is_login_on_other_device">Your account has been logged in on another mobile phone.</string>
+    <string name="logout_msg">Offline notification</string>
+    <string name="exit">Log in</string>
+    <string name="ble_need_location_information">Bluetooth features require your location permissions</string>
+    <string name="do_not_open">Temporarily not open</string>
+    <string name="ble_cannot_work_normally">Bluetooth feature is not working properly for the time being</string>
+    <string name="go_to_open">Go to open</string>
+    <string name="open_bluetooth">Open</string>
+    <string name="bluetooth_not_open">Bluetooth is not open</string>
+
+    <string name="please_wait">Please wait</string>
+    <string name="activity_bracelet_pair_please_bond_again">Please rebind the mystrace</string>
+    <string name="caution">Caution</string>
+    <string name="phone_do_not_support_bluetooth">Phone does not support Bluetooth devices</string>
+    <string name="activity_ble_please_open_ble">Please turn on Bluetooth, or you will not be able to use it</string>
+    <string name="activity_ble_open_ble">Open bluetooth</string>
+    <string name="set_success">Set success</string>
+    <string name="submit">Submit</string>
+    <string name="sure">Sure</string>
+    <string name="cancel">Cancel</string>
+    <string name="man">Male</string>
+    <string name="woman">Female</string>
+    <string name="sunday">SUN</string>
+    <string name="monday">MON</string>
+    <string name="tuesday">TUE</string>
+    <string name="wednesday">WED</string>
+    <string name="thursday">THU</string>
+    <string name="friday">FRI</string>
+    <string name="saturday">SAT</string>
+    <string name="begin_time">Start time</string>
+    <string name="end_time">End time</string>
+    <string name="notification">Notification</string>
+
+    <!--设置头像-->
+    <string name="sheet_camera">Camera</string>
+    <string name="sheet_photo_album">Album</string>
+
+    <!--启动页-->
+    <string name="activity_enter_skip">Skip</string>
+    <string name="activity_enter_experience_immediately">Experience</string>
+
+    <!--登录-->
+    <string name="activity_login_hello">Login</string>
+    <string name="activity_login_welcome">Welcome to Mystrace!</string>
+    <string name="activity_login_register">Create Account</string>
+    <string name="activity_login_zone">Country/Region</string>
+    <string name="activity_login_zone_default_country">China</string>
+    <string name="activity_login_zone_default_number">+86</string>
+    <string name="activity_login_please_input_phone_number">Phone</string>
+    <string name="activity_login_please_input_password">Password</string>
+    <string name="activity_login_login">Login</string>
+    <string name="activity_login_login_quickly">Quick Login</string>
+    <string name="activity_login_forget_password">Forgot password</string>
+    <string name="phone_password_is_empty">Wrong user name or password</string>
+    <string name="activity_base_password_error">Wrong password</string>
+    <string name="activity_base_please_login_again">Please login again</string>
+    <string name="login_again">Login again</string>
+
+    <!--注册-->
+    <string name="activity_register_title">Register</string>
+    <string name="activity_register_zone">Country/Region</string>
+    <string name="activity_register_zone_default_number">+86</string>
+    <string name="activity_register_please_input_phone_number">Phone Number</string>
+    <string name="activity_register_please_input_password">Password</string>
+    <string name="activity_register_please_input_verification_code">Verification Code</string>
+    <string name="activity_register_get_verification_code">Send</string>
+    <string name="activity_register_agree_user_protocol">I have read and agree to </string>
+    <string name="activity_register_user_protocol">the Mystrace User Agreement</string>
+    <string name="activity_register_register">Create Account</string>
+    <string name="activity_register_second_left">%ds</string>
+    <string name="activity_register_please_input_correct_phone_number">Please input correct phone number</string>
+    <string name="activity_register_password_is_too_short">Password cannot be less than 6 characters.</string>
+    <string name="country_select_phone_location">Select country or region</string>
+
+    <!--重置密码-->
+    <string name="reset_password">Reset Password</string>
+    <string name="reset_password_get_verification_code">Send</string>
+    <string name="reset_password_second_left">%ds</string>
+    <string name="reset_password_input_correct_phone_number">The format of phone number is not correct!</string>
+    <string name="reset_password_input_password">Password</string>
+    <string name="reset_password_success">Success</string>
+    <string name="reset_password_submit">Reset</string>
+
+
+    <!--初始化个人信息-->
+    <string name="fragment_personal_info_init_necessary_please_input_correct_info">The calculation of health data depends on the following information, please enter it accurately</string>
+    <string name="fragment_personal_info_init_necessary_please_input_name">Name</string>
+    <string name="fragment_personal_info_init_necessary_please_input_birthday">Select your date of birth</string>
+    <string name="fragment_personal_info_init_necessary_please_input_height">Height</string>
+    <string name="fragment_personal_info_init_necessary_please_input_weight">Weight</string>
+    <string name="fragment_personal_info_init_necessary_please_input_next_step">Next</string>
+    <string name="fragment_personal_info_init_unnecessary_please_input_correct_info">The calculation of health data depends on the following information, please enter it accurately</string>
+    <string name="fragment_personal_info_init_unnecessary_bp_type">Hypertension</string>
+    <string name="fragment_personal_info_init_unnecessary_multiple_choice">(Multiple)</string>
+    <string name="fragment_personal_info_init_unnecessary_clinical">Clinical Diseases</string>
+    <string name="fragment_personal_info_init_unnecessary_organ_damage">Organ Damage</string>
+    <string name="fragment_personal_info_init_unnecessary_other">Other</string>
+
+    <!--主页-->
+    <string name="activity_main_bottom_home">Home</string>
+    <string name="activity_main_bottom_health_manage">Health</string>
+    <string name="activity_main_bottom_friend">Friends</string>
+    <string name="activity_main_bottom_me">Profile</string>
+
+    <!--首页-->
+    <string name="home_time">Time</string>
+    <string name="home_kind"></string>
+    <string name="home_medicine_need_to_take">Need to take medication</string>
+    <string name="home_no_kind_of_medicine">No Data</string>
+    <string name="home_reminder">Medication Reminder</string>
+
+    <!--健康管理-->
+    <string name="health_manage_title">Health Management</string>
+    <string name="health_manage_bp_goal">Blood Pressure Target</string>
+    <string name="health_manage_bp_unit">mmHg</string>
+    <string name="health_manage_not_achieve">Abnormal</string>
+    <string name="health_manage_achieve">Normal</string>
+    <string name="health_manage_day_unit">day(s)</string>
+    <string name="health_manage_medication_plan">Medication Schedule</string>
+    <string name="health_manage_abnormal_record">Blood Pressure Notifications</string>
+    <string name="health_manage_sport">Activity</string>
+    <string name="health_manage_health_knowledge">Health Articles</string>
+    <string name="health_manage_insufficient_data">Insufficient data</string>
+    <string name="health_manage_suggest">The target of blood pressure control is based on your personal information, medical history, and comprehensive evaluation through a data model. \ nIn order to ensure the accuracy of the evaluation, please update your personal information in "Settings" if there is any change occurred. \ nPlease ensure that you measure at least three times a day at different time periods, otherwise you will not be able to know whether you have achieved the target due to insufficient data. \ nIf you exceed the control range of blood pressure frequently, please consult a doctor in time.</string>
+
+    <!--PW历史-->
+    <string name="history_pw_list_title">Records</string>
+    <string name="history_bp_en_short">BP</string>
+    <string name="history_hr_en_short">HR</string>
+
+    <!--亲友-->
+    <string name="friend_i_monitor">Monitor</string>
+    <string name="friend_monitor_me">Monitored</string>
+    <string name="friend_title">Friends</string>
+    <string name="friend_bp">Blood Pressure:</string>
+    <string name="friend_hr">Pulse:</string>
+    <string name="friend_measure_time">Measure Time:</string>
+    <string name="friend_add_phone_number">Phone Nr:%s</string>
+    <string name="friend_add_invite">Invite</string>
+    <string name="friend_add_have_monitored">Notify</string>
+    <string name="friend_add_monitor">Add</string>
+    <string name="friend_phone_contact">Contacts</string>
+
+    <!--我的-->
+    <string name="i_health_report">Health Weekly</string>
+    <string name="i_disease_history">Medical History</string>
+    <string name="i_font_size">Font Size</string>
+    <string name="i_exception">Notifications</string>
+    <string name="i_other">Others</string>
+    <string name="i_bond_bracelet">Bind Mystrace</string>
+    <string name="i_bracelet">Mystrace</string>
+    <string name="i_sync_time">Auto Measure Sync time \n%s</string>
+
+
+    <!--绑定-->
+    <string name="bind_guide">Tap the button on the front of Mystrace to switch to the battery display. Press and hold the button until Mystrace vibrates and displays a 4 digits number. When the same number appears below, tap to select it.</string>
+    <string name="bind_please_click_bracelet_button_for_submit">The device is Vibrating, \n please tap the metal button again.</string>
+    <string name="bind_success">Bind Mystrace success!</string>
+    <string name="bind_fail">Bind failed. Please try again.</string>
+    <string name="bind_do_you_want_sync_bracelet_setting">Whether to synchronize setting information?</string>
+    <string name="bind_you_can_sync_your_setting">There are some information you previously set, you can use them on this device.</string>
+    <string name="bind_not_sync">No</string>
+    <string name="bind_sync">Yes</string>
+    <string name="bind_has_bond_do_you_want_adjust">Your Mystrace is bound successfully. View the wearing guide? </string>
+    <string name="bind_recommend_adjust">Wearing your Mystrace correctly will help the device capture your pulse-wave effectively.</string>
+    <string name="bind_not_watch">SKIP</string>
+    <string name="bind_start_watch">OK</string>
+    <string name="bind_caution">Tips</string>
+    <string name="bind_caution_text">1. Please make sure your Mystrace is not connected to other mobile phones. \ n2. Please make sure your mobile phone has turned on Bluetooth.</string>
+    <string name="bracelet_pair_set_new_reminder_note">Mystrace automatically measures your blood pressure every 1 hour, 24/7. You could set a measurement alarm (The alarm is on by default).</string>
+    <string name="bracelet_pair_set_old_reminder_note">Mystrace automatically measures your blood pressure every 1 hour, 24/7. You could set a measurement alarm.</string>
+
+    <!--手环信息-->
+    <string name="bracelet_info_sample_alert_ring">Measuring Alarms</string>
+    <string name="bracelet_info_whether_show">Set the information displayed on the device</string>
+    <string name="bracelet_info_choose_time_format">Device Display Settings</string>
+    <string name="bracelet_info_firmware_version_debug">Debug version</string>
+    <string name="activity_bracelet_pair_open_ble_fail_cannot_bond">Open bluetooth fail</string>
+    <string name="bracelet_info_has_new_version">New</string>
+    <string name="bracelet_info_title">Mystrace Band</string>
+    <string name="bracelet_info_display_config">Device Display Settings</string>
+    <string name="bracelet_info_mac_address">MAC Address</string>
+    <string name="bracelet_info_device_power">Remaining Power</string>
+    <string name="bracelet_info_remove_device">Unbind</string>
+    <string name="bracelet_info_firmware_version">Version</string>
+    <string name="bracelet_info_select_time_display_style">Select the style of time display</string>
+    <string name="bracelet_info_time_style">Time Display Style</string>
+    <string name="bracelet_info_alert_not_open">Close</string>
+    <string name="bracelet_info_alert_open_n_reminders">%d Reminder(s)</string>
+    <string name="bracelet_info_display_time">Time</string>
+    <string name="bracelet_info_display_bp">Blood Pressure</string>
+    <string name="bracelet_info_display_v0">Blood Viscosity</string>
+    <string name="bracelet_info_display_step">Steps</string>
+    <string name="bracelet_info_display_distance">Distance</string>
+    <string name="bracelet_info_display_heat">Calories</string>
+    <string name="bracelet_info_display_power">Remaining battery</string>
+
+    <!--采样提醒-->
+    <string name="bracelet_reminder_auto_sample_reminder">Auto-measurement Reminder</string>
+    <string name="bracelet_reminder_tips0">Blood pressure is automatically measured every hour, 24 hours a day, you can set an auto-measurement vibration reminder. There is no need to open the app during automatic measurement.</string>
+    <string name="bracelet_reminder_tips1">After receiving the vibration reminder, please keep your body still and make sure your Mystrace is in the correct position. The position deviation will cause obvious deviations in the measurement results.</string>
+    <string name="bracelet_reminder_tips2">After receiving the vibration reminder, you can touch the front metal button of your Mystrace to start the measurement immediately. You could see the measurement progress and whether the measurement is successful on your Mystrace screen.</string>
+    <string name="bracelet_reminder_tips3">If you are unable to keep your body still (when you are exercising or in a vehicle), you can cancel this auto-measurement by touching the metal button for 3 seconds.</string>
+    <string name="bracelet_reminder_tips4">Please check your measurement results regularly through the app. When you open the app, the measurement data in the bracelet will be automatically synchronized to the app via Bluetooth.</string>
+
+    <string name="bracelet_reminder_save">Save</string>
+
+    <string name="bracelet_reminder_next_day">Next</string>
+    <string name="bracelet_reminder_are_you_sure_to_delete">Are you sure to delete？</string>
+    <string name="bracelet_reminder_time">Time</string>
+
+    <string name="bracelet_reminder_cycle">Repeat period</string>
+    <string name="bracelet_reminder_everyday">Everyday</string>
+    <string name="bracelet_reminder_workday">Weekday</string>
+    <string name="bracelet_reminder_weekend">Weekend</string>
+    <string name="bracelet_reminder_every_week">Every week</string>
+    <string name="error_occur_try_again">Failed, try later</string>
+    <string name="bracelet_reminder_please_select_reminder_time">Please set time</string>
+    <string name="bracelet_reminder_please_choose_cycle">Choose at least one day</string>
+
+    <string name="bind_fail_please_check">Failed，please check network!</string>
+    <string name="bracelet_need_bind_again">Mystrace need bind again</string>
+
+    <!--运动-->
+    <string name="sport_title">Activity</string>
+    <string name="sport_this_month">This Month</string>
+    <string name="sport_this_week">This Week</string>
+    <string name="sport_this_day">Today</string>
+    <string name="sport_date_format_month_day">M-d</string>
+    <string name="sport_date_format_month">yyyy-M</string>
+    <string name="sport_format_sport_time">Exercise duration: %s</string>
+    <string name="sport_minute">min</string>
+    <string name="sport_walk">Steps</string>
+    <string name="sport_distance">Distance</string>
+    <string name="sport_heat">Calories</string>
+    <string name="sport_kilo_cal">kcal</string>
+    <string name="sport_m">m</string>
+    <string name="sport_step">Steps</string>
+    <string name="sport_walk_step">Steps:</string>
+    <string name="sport_sport_distance">Distance:</string>
+    <string name="sport_consume_heat">Burn:</string>
+    <string name="sport_date_format_step_scroll_month">MMM</string>
+    <string name="sport_date_format_step_scroll_year">yyyy</string>
+    <string name="sport_n_minute">%d minute</string>
+
+    <!--选择地区-->
+    <string name="activity_set_country_and_province_my_location">Country\\Region</string>
+
+    <!--设置字体-->
+    <string name="set_font_text_font_review">Preview</string>
+    <string name="set_font_standard_primary_text">Main Title</string>
+    <string name="set_font_standard_second_text">Text</string>
+    <string name="set_font_size">Set Font</string>
+
+    <!--设置推送-->
+    <string name="notification_set_title">Notifications</string>
+    <string name="notification_guide">Please go to Settings > Notifications in your Phone to modify.</string>
+    <string name="notification_message">Notification</string>
+    <string name="notification_abnormal_remind">Abnormal Alarm</string>
+    <string name="notification_on">On</string>
+    <string name="notification_off">Off</string>
+    <string name="notification_no_reminder">Off</string>
+    <string name="notification_remind_if_larger_than">higher than %1$d alarm</string>
+    <string name="notification_remind_if_less_than">lower than %1$d alarm</string>
+    <string name="notification_remind_if_larger_than_or_less_than">Remind when less than %2$d or more than %1$d</string>
+    <string name="notification_remind_if_larger_than_or_less_than_multiple_lines">Remind when less than %2$d\nor more than %1$d</string>
+    <string name="notification_standard">(Standard)</string>
+    <string name="notification_reminder_upper_limit">Alarm Upper Limit</string>
+    <string name="notification_reminder_lower_limit">Alarm Lower Limit</string>
+    <string name="notification_ps_abnormal_reminder">Abnormal Systolic Pressure Alarm</string>
+    <string name="notification_pd_abnormal_reminder">Abnormal Diastolic Pressure Alarm</string>
+    <string name="notification_set_lower_limit">Set Upper Limit</string>
+    <string name="notification_set_upper_limit">Set Lower Limit</string>
+
+    <!--其它-->
+    <string name="other_title">Others</string>
+    <string name="setting_feedback">Feedback</string>
+    <string name="setting_user_protocol">the Mystrace User Agreement</string>
+    <string name="setting_bracelet_help">Mystrace Q&#036;A</string>
+    <string name="other_about_us">About Mystrace</string>
+
+    <string name="help_cannot_find_device">Can\'t find the band?</string>
+    <string name="help_title0">Mystrace Q&#036;A</string>
+    <string name="help_title1">Does your phone have power?</string>
+    <string name="help_title2">Check if the band is connected to another phone?</string>
+    <string name="help_title3">Try to restart your Bluetooth.</string>
+    <string name="help_title4">Restart your phone</string>
+    <string name="help_content1">Keep the band in charge</string>
+    <string name="help_content2">Turn off the Bluetooth on another phone, and bind your Mystrace to your phone.</string>
+    <string name="help_content3">If your Mystrace has power, and still cannot find your Mystrace even when your phone is close to your Mystrace, try to restart your phone Bluetooth. </string>
+    <string name="help_content4">If restarting Bluetooth does not work, try to restart your phone.</string>
+
+    <!--数字选择器-->
+    <string name="fragment_number_editor_dialog_out_of_range">Out of range</string>
+    <string name="fragment_number_editor_dialog_please_input_right_format">Please enter the correct format.</string>
+
+    <!--分享-->
+    <string name="wechat">WeChat</string>
+    <string name="wechat_moments">WeChat moments</string>
+    <string name="qq">QQ</string>
+    <string name="qq_zone">QZone</string>
+    <string name="share_app_title">Join Mystrace with me</string>
+    <string name="share_app_content">I recently used a pulse cardiovascular monitoring bracelet, which not only can understand the changes of blood pressure in real time throughout the day. More than that, it can remind the drug, and can issue a warning when your blood pressure is abnormal . For the sake of good health, you can also have a try!</string>
+
+
+    <!--ecg详情-->
+    <string name="ecg_detail_save_to_local">Save to local</string>
+    <string name="ecg_detail_save_success">Save Success</string>
+    <string name="ecg_detail_save_fail">Save Fail</string>
+    <string name="ecg_detail_ecg_graph">ECG</string>
+    <string name="walk_speed_value">25mm/s</string>
+    <string name="ecg_share_overview">Overview</string>
+    <string name="ecg_share_name">Name:</string>
+    <string name="ecg_share_sex">Gender:</string>
+    <string name="ecg_share_age">Age: </string>
+    <string name="ecg_share_height">Height:</string>
+    <string name="ecg_share_weight">Weight:</string>
+    <string name="ecg_share_ecg_info">ECG Details</string>
+    <string name="ecg_share_measure_time">Measure time:</string>
+    <string name="ecg_share_duration">Measure duration:</string>
+    <string name="ecg_share_speed">Speed:</string>
+
+    <!--好友添加-->
+    <string name="activity_friend_add_list_add_friend">Add Friend</string>
+    <string name="activity_friend_add_list_request_contact_text">Please allow access to Phone Contacts</string>
+    <string name="activity_friend_add_list_already_monitored">Already monitor</string>
+    <string name="activity_friend_add_list_not_register">Not registered yet</string>
+    <string name="activity_friend_add_page_add_friend">Add Friend</string>
+    <string name="activity_friend_add_page_you_have_to_waif_for_promitte">You need to wait for him(her) to agree</string>
+    <string name="activity_friend_add_page_send">Send</string>
+    <string name="activity_friend_add_page_i_am">My name is %s</string>
+    <string name="friend_add_search">Search</string>
+    <string name="friend_add_input_phone_number">Phone Number:</string>
+
+    <!--处理好友请求-->
+    <string name="friend_relation_request">New Friends</string>
+    <string name="friend_relation_request_denied">Ignored</string>
+    <string name="friend_relation_request_accept">Add</string>
+    <string name="friend_relation_request_deny">Ignore</string>
+    <string name="friend_relation_request_have_denied">Ignored</string>
+    <string name="friend_relation_request_have_accepted">Added</string>
+
+    <!--好友信息-->
+    <string name="friend_info_set_note_name">Add a nickname</string>
+    <string name="friend_info_note_name">Nickname</string>
+    <string name="friend_info_input_note_name">Nickname</string>
+    <string name="friend_info_phone_number">Phone number</string>
+    <string name="friend_info_read_his_data">Receive his/her measure results</string>
+    <string name="friend_info_receive_his_push">Receive his/her Abnormal Alarm</string>
+    <string name="friend_info_allow_him_read">Share my measure results with him/her</string>
+    <string name="friend_info_allow_push_to_him">Send my Abnormal Alarm to him/her</string>
+    <string name="friend_info_title">Details</string>
+
+
+    <!--个人信息-->
+    <string name="personal_info_name">Name</string>
+    <string name="personal_info_sex">Gender</string>
+    <string name="personal_info_birthday">Date of birth</string>
+    <string name="personal_info_height">Height</string>
+    <string name="personal_info_weight">Weight</string>
+    <string name="personal_info_title">Personal information</string>
+    <string name="personal_info_phone">Phone</string>
+    <string name="personal_info_password">Change password</string>
+    <string name="personal_info_wechat">WeChat</string>
+    <string name="personal_info_qq">QQ</string>
+    <string name="personal_info_location">Country\\Region</string>
+    <string name="personal_info_avatar">Portrait</string>
+
+    <string name="error_occur">Error Occur</string>
+    <string name="activity_friend_remind_measure_remind">Remind to measure</string>
+    <string name="activity_friend_remind_your_friend_not_measure_yet">Not yet measured</string>
+    <string name="activity_friend_remind_remind_measure">Remind to measure</string>
+    <string name="activity_friend_remind_remind_measure_dialog_text">Message</string>
+    <string name="activity_friend_remind_remind_measure_dialog_submit">OK</string>
+
+    <string name="more">More</string>
+    <string name="activity_friend_remind_reminder_have_send">Remind have send</string>
+
+    <string name="activity_health_knowledge">Health Articles</string>
+    <string name="walk_speed_unit">mm/s</string>
+    <string name="activity_history_weekly_report">Health Weekly History</string>
+    <string name="not_install_wechat">You have not install WeChat!</string>
+    <string name="qq_logion_fail">QQ login fail</string>
+    <string name="wechat_login_fail">WeChat login fail</string>
+
+    <!--ecg-->
+    <string name="ecg_result_check_detail">Detailed data</string>
+    <string name="ecg_average_heart_rate">Pulse</string>
+    <string name="ecg_walk_speed">Speed</string>
+    <string name="ecg_normal">Normal ECG</string>
+    <string name="ecg_abnormal">Abnormal ECG</string>
+    <string name="ecg_display_month">yyyy-MM</string>
+    <string name="ecg_measure_go_to_guide_page">View Measure ECG Guide</string>
+
+    <!--测量-->
+    <string name="measure_pw">Blood Pressure</string>
+    <string name="measure_ecg">ECG</string>
+    <string name="measure_pw_title">Pressure Wave</string>
+    <string name="measure_ecg_title">ECG</string>
+    <string name="activity_measure_send_data_fail">Data upload error, upload again?</string>
+    <string name="activity_measure_send_again">Yes</string>
+    <string name="activity_measure_pw_go_to_guide_page">Abnormal signals? View Wear Guide</string>
+    <string name="activity_measure_pw_correct_pw">Good signal</string>
+    <string name="activity_measure_pw_regular">Consistent</string>
+    <string name="activity_measure_pw_have_peek_valley">Clear peaks and valleys</string>
+
+    <string name="please_click_button_and_start_measure">Please wear your Mystrace according to Wearing Guide. \nTap \ "Start \" button to start measuring.</string>
+    <string name="measure_pw_prepare_state_movement">Adjust the wearing of your Mystrace \nPlease lay your arm on a flat surface and keep your body still.</string>
+    <string name="measure_pw_measure_state_movement">Adjust the wearing of your Mystrace \nPlease lay your arm on a flat surface and keep your body still.</string>
+    <string name="measure_pw_prepare_normal">Detecting pulse-wave signal…</string>
+    <string name="measure_pw_stop_for_10_second">No valid pulse wave signal detected \nPlease adjust the wearing position of your Mystrace or the tightness of the wristband according to the Wearing Guide.</string>
+    <string name="measure_pw_measure_normal">Recording pulse-wave signal…</string>
+    <string name="measure_pw_measure_state_signal_high">Adjusting automatically. \nPlease keep still and wait patiently.</string>
+    <string name="measure_pw_measure_state_signal_low">No valid pulse wave signal detected \nPlease adjust the wearing position of your Mystrace or the tightness of the wristband according to the Wearing Guide.</string>
+    <string name="measure_pw_measure_state_tight">Wearing too tight. \nPlease loosen the wristband.</string>
+    <string name="measure_pw_measure_state_loose">Wearing too tight. \nPlease loosen the wristband.</string>
+    <string name="measure_fail_content_low_power">Battery is low. \nPlease try again after charging complete.</string>
+    <string name="measure_fail_title_low_power">Battery is low</string>
+    <string name="measure_fail_content_charging">Wearing too loose. \nPlease tighten the wristband.</string>
+    <string name="measure_fail_title_charging">Battery is charging.</string>
+
+    <string name="measure_fail_content_hr_low">Unable to measure your blood pressure when your pulse is below 35 bpm.</string>
+    <string name="measure_fail_title_hr_low">Unable to measure</string>
+    <string name="measure_fail_content_hr_high">Unable to measure your blood pressure when your pulse is above 110 bpm.</string>
+    <string name="measure_fail_title_hr_high">Unable to measure</string>
+
+    <string name="measure_fail_content_not_wear">Please wear your bracelet</string>
+    <string name="measure_fail_title_not_wear">Bracelet not wear</string>
+
+
+    <string name="measure_ecg_start">Tap \"START\" button to start.</string>
+    <string name="measure_ecg_prepare_normal">Detecting signal\nPlease keep your body still until the measurement is completed.</string>
+    <string name="measure_ecg_measure_normal">Recording your ECG\nPlease keep your body still until the measurement is completed.</string>
+    <string name="lead_off">No ECG signal detected\nPlease view ECG measurement guidance first.</string>
+
+
+    <string name="bracelet_not_bond">Unbound</string>
+    <string name="bond">Binding</string>
+    <string name="searching_bracelet">Scanning…</string>
+    <string name="is_charging_can_not_measure">Please measure after charging is complete.</string>
+    <string name="is_charging_can_not_get_pw">Please measure after charging is complete</string>
+    <string name="is_busy_can_not_measure">The bracelet is busy, please try later</string>
+
+    <string name="calculating">Processing</string>
+    <string name="current_version_is_new">This is the latest version.</string>
+    <string name="activity_bracelet_pair_please_buy_the_correct_device">Please purchase the genuine Mystrace through official channels.</string>
+    <string name="measure_ecg_stop_measure_question">Do you want to stop measuring?</string>
+    <string name="find_new_version_need_upgrade">Do you want upgrade the app？</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="do_not_stop">No</string>
+    <string name="measure_fail">Fail</string>
+    <string name="remove_relationship">Do you want to delete?</string>
+    <string name="un_bond_anyway_reminder">It is recommended to keep Bluetooth connected when you unbind your Mystrace to reduce standby power consumption of the device.</string>
+    <string name="unbind_anyway">Unbind</string>
+    <string name="wait_for_connecting">Scanning</string>
+
+    <string name="ok">OK</string>
+    <string name="bluetooth_can_not_work_warning">Bluetooth is not working properly, please go to system settings to turn on location permissions</string>
+    <string name="uploading">Uploading</string>
+    <string name="ecg_upload_complete">ECG uploading success!</string>
+
+
+    <string name="today">Today</string>
+
+
+    <!--用药-->
+    <string name="activity_medication_plan">Medication Schedule</string>
+    <string name="activity_medication_plan_sure_to_delete">Do you want to delete the medication schedule?</string>
+    <string name="activity_medication_plan_add_plan">Add Medication Schedule</string>
+    <string name="activity_medication_plan_edit_plan">Edit</string>
+    <string name="activity_medication_plan_cycle_days">Every %d day(s)</string>
+    <string name="activity_medication_plan_select_medicine">Select Medicine</string>
+    <string name="activity_medication_plan_set_dosage">Please select the dosage.</string>
+    <string name="activity_medication_plan_dosage_set">Select Dosage</string>
+    <string name="activity_medication_plan_time_span_cannot_over_one_year">The time span cannot exceed 1 years</string>
+    <string name="activity_medication_plan_start_time">Start</string>
+    <string name="activity_medication_plan_end_time">End</string>
+    <string name="activity_medication_plan_history">Medication Record</string>
+    <string name="activity_medication_plan_repeat">Repeat</string>
+    <string name="activity_medication_plan_day">Day %d</string>
+    <string name="activity_medication_plan_start_format">yyyy.MM.dd</string>
+    <string name="activity_medication_plan_take_format">Completed:%d</string>
+    <string name="activity_medication_plan_not_take_format">Not taken:%d</string>
+    <string name="activity_medication_plan_not_record_format">Not recorded:%d</string>
+    <string name="activity_medication_plan_left_format">Remaining medication times:%d</string>
+    <string name="activity_medication_plan_time_format">Duration:%1$s-%2$s</string>
+    <string name="activity_medication_plan_medicine_cycle">Duration</string>
+    <string name="activity_medication_plan_stop">Stop This Medication Schedule</string>
+    <string name="medication_select">Select medicine</string>
+    <string name="medication_time">Time</string>
+    <string name="medication_every">Every</string>
+    <string name="medication_days">Day(s)</string>
+    <string name="medication_ignore">Ignore</string>
+    <string name="medication_complete">Done</string>
+    <string name="medication_remain">Days left:</string>
+    <string name="medication_remain_days"> </string>
+    <string name="medication_choose_again">Wrong Selection</string>
+    <string name="medication_future">Next Medication Scheduled</string>
+    <string name="medication_is_done">Are you sure you have taken this medicine?</string>
+    <string name="medication_is_cancel">Are you sure you want to skip this medicine?</string>
+    <string name="medication_name_cannot_empty">Medicine Name can\'t be empty.</string>
+
+    <!--异常-->
+    <string name="abnormal_reminder">Blood Pressure Notifications</string>
+
+    <string name="open_camera_fail">Open camera fail</string>
+    <string name="upload_image_cancel">Cancel upload</string>
+    <string name="upload_image_fail">Upload fail</string>
+    <string name="not_bond">Unbound</string>
+
+    <string name="activity_personal_info_complete_info">Set personal Information</string>
+
+    <!--周报-->
+    <string name="activity_weekly_report_title">Health Weekly</string>
+    <string name="activity_weekly_report_bp_control_situation">Blood Pressure Management</string>
+    <string name="activity_weekly_report_bp_normal">Normal</string>
+    <string name="activity_weekly_report_bp_abnormal">Abnormal</string>
+    <string name="activity_weekly_report_bp_not_measure">Insufficient data</string>
+    <string name="activity_weekly_report_detail">Detail</string>
+
+    <!--固件升级-->
+    <string name="activity_firmware_upgrade_bracelet_upgrade_log">Mystrace upgrade logs</string>
+    <string name="upgrading_please_wait">Upgrading…</string>
+    <string name="firmware_upgrade_title">Firmware Upgrade</string>
+    <string name="activity_firmware_upgrade_tips">* In order to ensure the normal functions, we are updating for you, please do not exit the app while updating.</string>
+
+
+    <string name="logout">Logout</string>
+    <string name="input_verification_code">Verification code</string>
+    <string name="input_phone_number">Phone</string>
+    <string name="next_step">Next</string>
+    <string name="network_error">Server or network error</string>
+    <string name="network_error_try_later">Failed, try later</string>
+    <string name="firmware_upgrade_fail_error_try_later">Upgrade fail</string>
+    <string name="no_data">No Data</string>
+    <string name="average_value">Average</string>
+    <string name="max_value">Max</string>
+    <string name="min_value">Min</string>
+    <string name="month">Month</string>
+    <string name="localWeek">Week</string>
+    <string name="day">Day</string>
+    <string name="heart_rate">Pulse</string>
+    <string name="blood_pressure">Blood pressure</string>
+
+    <string name="HR">Pulse</string>
+    <string name="PS">Systolic pressure</string>
+    <string name="PD">Diastolic pressure</string>
+    <string name="PM">Mean arterial pressure</string>
+    <string name="SV">Stroke volume</string>
+    <string name="SI">Stroke volume index</string>
+    <string name="CO">Cardiac output</string>
+    <string name="TPR">Total peripheral resistance</string>
+    <string name="AC">Vessel compliance</string>
+    <string name="ALK">Update rate of blood (half)</string>
+    <string name="ALT">Blood update time (half)</string>
+    <string name="TM">Average residence time of blood flow</string>
+    <string name="BV">Blood volume</string>
+    <string name="V0">Blood viscosity</string>
+    <string name="K">Pulse wave characteristics</string>
+
+    <string name="HR_short">HR</string>
+    <string name="PS_short">PS</string>
+    <string name="PD_short">PD</string>
+    <string name="PM_short">PM</string>
+    <string name="SV_short">SV</string>
+    <string name="SI_short">SI</string>
+    <string name="CO_short">CO</string>
+    <string name="TPR_short">TPR</string>
+    <string name="AC_short">AC</string>
+    <string name="ALK_short">ALK</string>
+    <string name="ALT_short">ALT</string>
+    <string name="TM_short">TM</string>
+    <string name="BV_short">BV</string>
+    <string name="V0_short">V0</string>
+    <string name="K_short">K</string>
+
+    <string name="HR_unit">bpm</string>
+    <string name="PS_unit">mmHg</string>
+    <string name="PD_unit">mmHg</string>
+    <string name="PM_unit">mmHg</string>
+    <string name="SV_unit">ml</string>
+    <string name="SI_unit">ml/m&#178;</string>
+    <string name="CO_unit">L/min</string>
+    <string name="TPR_unit">mmHg*min/L</string>
+    <string name="AC_unit">ml/mmHg</string>
+    <string name="ALK_unit">/s</string>
+    <string name="ALT_unit">s</string>
+    <string name="TM_unit">s</string>
+    <string name="BV_unit">L</string>
+    <string name="V0_unit">Pa*s</string>
+    <string name="K_unit"> </string>
+
+
+    <string name="HR_desc">心率是指正常人安静状态下每分钟心跳的次数，也叫安静心率，一般为60～100次/分，
+        可因年龄、性别或其他生理因素产生个体差异。一般来说，年龄越小，心率越快，老年人心跳比年轻人慢，女性的心率比同龄男性快，
+        这些都是正常的生理现象。安静状态下，成人正常心率为60～100次/分钟，理想心率应为55～70次/分钟</string>
+    <string name="PS_desc">收缩压（Systolic pressure）（高压）：是当心脏收缩时，从心室射入的血液对血管壁产生的侧压力，
+        这时血压最大；此时内壁的压力称为收缩压，亦称高压。\n\n
+        根据世界卫生组织规定，成人收缩压 ≥ 140mmHg（21.3kPa）时即可确诊为高血压。收缩压≤130mmHg（18.6kPa）称为正常血压，
+        介于二者之间者，称为临界高血压；所谓低血压，是指动脉血压的收缩压低于12千帕（90毫米汞柱）。不同年龄段、不同性别有不同差异。</string>
+    <string name="PD_desc">舒张压就是当人的心脏舒张时，动脉血管弹性回缩时，产生的压力称为舒张压，又叫低压。
+        心脏舒张时，主动脉压下降，在心舒末期动脉血压处于最低值称为舒张压，成人正常的舒张压为 &lt;90mmHg(12kpa)\n\n
+        根据世界卫生组织规定，成人舒张压 ≥ 95mmHg(12.6kPa)时，即可确诊为高血压。介于90mmHg~95mmHg之间者，称为临界高血压。不少青中年人，
+        由于工作劳累压力大，活动偏少；测血压收缩压正常，舒张压高于90毫米汞柱，有时脉压差很近，如：130/110毫米汞柱,病人主观感觉头晕、胸闷不适。
+        这是由于交感神经活性增高，周围血管阻力增高所致。是高血压病的早期阶段。</string>
+    <string name="PM_desc">一个心动周期中动脉血压的平均值称为平均动脉压。正常成年人平均动脉压正常值为70~105mmHg。计算公式如下：平均动脉压=
+        (收缩压+2×舒张压)/3。也可表示为：平均动脉压=舒张压+1/3脉压差。</string>
+    <string name="SV_desc">指一次心搏，一侧心室射出的血量，简称搏出量\n\n左、右心室的搏出量基本相等。搏出量等于心舒末期容积与心缩末期容积之差值。
+        心舒末期容积（即心室充盈量）约130～145毫升，心缩末期容积（即心室射血期末留存于心室的余血量）约60～80毫升，故搏出量约65～70毫升。</string>
+    <string name="SI_desc">心搏指数是以每平方米体表面积计算的心输出量。</string>
+    <string name="CO_desc">每分钟一侧心室射出的血液总量，又称每分输出量。左、右心室的输出量基本相等。心室每次搏动输出的血量称为每搏输出量，
+        人体静息时约为70毫升（60～80毫升），如果心率每分钟平均为75次，则每分钟输出的血量约为5000毫升（4500～6000毫升），即每分心输出量。
+        通常所称心输出量，一般都是指每分心输出量。心输出量是评价循环系统效率高低的重要指标。心输出量在很大程度上是和全身组织细胞的新陈代谢
+        率相适应。\n\n心输出量是评价循环系统效率高低的重要指标，为了便于在不同个体之间进行比较。一般多采用空腹和静息时每一平方米体表面积的
+        每分心输出量即心指数为指标：\n一般成年人的体表面积约为1.6～1.7平方米。静息时每分心输出量为5～6升，故其心指数约为3.0～3.5升/分/平方米。\n
+    </string>
+    <string name="TPR_desc">外周总阻力是反映脑血管床微循环通畅程度的定量指标。其定义为外周总阻力=Pm除以Qm。Pm和Qm分别表示平均压力和平均流量。
+        循环系统的外周总阻力（peripheral resistance）主要是指小动脉和微动脉对血流的阻力。临床许多脑血管疾病都与阻力血管的状态有关。血液粘度增高、
+        小血管痉挛、阻塞等均可引起RV值增高。</string>
+    <string name="AC_desc">血管顺应性是指在压力或力的作用下使容积增大而不破裂的一种特性。它通常以压力改变一个单位时所对应的血管容积改变量,
+        即用dy/dP来表示,单位可为毫升/毫米汞(水)柱,顺应性是弹性模量的倒数。</string>
+    <string name="BV_desc">血容量是指血细胞容量与血浆容量的总和 有效循环血量是指单位时间内通过心血管系统进行循环的血量，
+        但不包括贮存于肝、脾和淋巴血窦中或停滞于毛血管中的血量。简单的说就是参与心血管血液循环的血容量。</string>
+    <string name="V0_desc">血液粘性是一个综合性指数，它是血浆粘度、血细胞压（比）积、红细胞变形性和聚集能力、血小板和白细胞流变特性的综合表现，
+        是血液随不同流动状况（切变率）及其他条件而表现出的粘度，切变率低时血粘度高，随切变率的逐渐升高粘度逐渐下降，最后趋向一个平稳的数值。</string>
+    <string name="K_desc"> </string>
+
+    <string name="ecg_graph">ECG</string>
+    <string name="dosage">Dosage</string>
+    <string name="heart_rate_unit">bpm</string>
+
+    <string name="delete">Delete</string>
+    <string name="measure_result">Measurement Result</string>
+    <string name="upload_raw_data_fail">Upload fail</string>
+    <string name="bp_unit_ch">mmHg</string>
+    <string name="hr_unit_ch">bpm</string>
+    <string name="bracelet_is_connecting">Connecting</string>
+
+    <string name="upgrade_success">Upgrade success</string>
+    <string name="I">Profile</string>
+    <string name="upgrade_right_now">Update</string>
+    <string name="not_upgrade_right_now">Cancel</string>
+    <string name="activity_bracelet_pair_can_not_bond">Can not bond</string>
+    <string name="ble_has_open">bluetooth has open</string>
+    <string name="ble_is_unavailable">Bluetooth is unavailable</string>
+    <!--<string name="measure">测量</string>-->
+
+    <string name="lower">Low</string>
+    <string name="higher">High</string>
+    <string name="normal">Normal</string>
+
+    <string name="receiving_data">Receiving data</string>
+
+    <string name="do_you_want_logout">Are you sure to logout?</string>
+
+    <string name="edit_name">Edit Name</string>
+    <string name="please_input_name">Please input your name</string>
+    <string name="search">Search</string>
+
+    <string name="send_success">Send success</string>
+    <string name="do_you_want_to_remove_bracelet">Do you want to remove the device?</string>
+    <string name="logining">Login…</string>
+    <string name="unit_height">cm</string>
+    <string name="unit_weight">kg</string>
+    <string name="register_success">Register success</string>
+    <string name="login_fail_login_again">Register success</string>
+    <string name="bracelet_need_bond_again">Mystrace need to bind again</string>
+    <string name="calculate_error">Calculate error</string>
+    <string name="phone_is_empty">Phone number is empty.</string>
+    <string name="password_is_empty">Password is empty</string>
+    <string name="password_is_too_short">Length of password should more than 6.</string>
+
+    <string name="delete_success">Delete success</string>
+    <string name="input_at_least_6_password">The length of password should at least 6</string>
+    <string name="home_cardiovascular_health">Historical Data</string>
+    <string name="home_avg_bp_of_all_day">Avg BP: %1$d/%2$dmmHg</string>
+
+
+    <string name="please_change_whether_information_is_right">1.Please check whether your personal information is correct.\n2.Please check whether your device is wear correct.</string>
+    <string name="set_fail">Set fail</string>
+    <string name="activity_bracelet_reminder_cannot_add_more_reminder">The number of reminders has been exceeded</string>
+    <string name="timeout_please_try_again">Timeout, please try again</string>
+    <string name="battery_low_please_try_after_charging">Can not upgrade now because the power of bracelet is too low.</string>
+    <string name="interval_time">Interval</string>
+    <string name="done">Done</string>
+
+    <string name="device_name_old_version">Old version</string>
+    <string name="device_name_format">%s</string>
+
+    <string name="measure_params_error_try_again">Code error</string>
+
+
+    <string name="activity_measure_pw_calculate_fail">Data Error, try later</string>
+    <string name="activity_friend_remind_abnormal_record">Blood Pressure Notifications</string>
+    <string name="base_login_again_message">You have not operated for a long time, please login again</string>
+    <string name="base_go_to_login">Go to login</string>
+    <string name="empty_data_no_friend">No Data</string>
+    <string name="line_chart_day_unit">Hour</string>
+    <string name="line_chart_month_unit"> </string>
+    <string name="sex_secret">Secret</string>
+    <string name="measure_ecg_timeout">Timeout, please try again</string>
+    <string name="firmware_upgrade">Firmware upgrading…</string>
+    <string name="share_copy_link">Copy link</string>
+    <string name="link_copy_success">Link copied</string>
+    <string name="connecting">Connecting…</string>
+    <string name="weight_with_unit">Weight(kg)</string>
+    <string name="height_with_unit">Height(cm)</string>
+    <string name="indicator_detail_footer_text">\u26a0 Note: The value of a single measurement is only for reference only, please do not be too anxious. Cardiovascular health management requires you to wear Mystrace consistently and monitor your numerical trends continuously. It is better to ask doctors to help you analyze your measure results comprehensively and combine them with clinical checks to make an accurate diagnosis.</string>
+    <string name="setting">Setting</string>
+    <string name="notification_record_measure_time">Measure time:%s</string>
+    <string name="measure_ecg_guide">ECG Measurement</string>
+    <string name="guide_measure_ecg_content0">Tap \"START\" button, then hold the front metal button on Mystrace with your right thumb. Keep your body still until the ECG measurement ends. Please be careful not to touch your hands during measurement.</string>
+    <string name="guide_measure_ecg_content1">It is recommended to measure ECG with both hands: take off your Mystrace first, then hold the front metal button with your right hand finger, and hold the back metal electrode with your left hand finger. Wet fingers will improve measurement accuracy.</string>
+    <string name="guide_measure_ecg_content2">A properly measured ECG should look similar to the picture.</string>
+    <string name="measure_ecg_fail">No valid signal</string>
+    <string name="measure_recognize_timeout_description">No valid pulse wave signal detected \ nPlease adjust the wearing position of your Mystrace or the tightness of the wristband according to the Wearing Guide.</string>
+    <string name="measure_recognize_timeout_title">Incorrect wearing</string>
+    <string name="measure_recognize_timeout_measure_again">Restart</string>
+    <string name="measure_recognize_timeout_wear_guide">View Wearing Guide</string>
+    <string name="measure_recognize_timeout_never_alert_again">Don\'t show this message again.</string>
+    <string name="select_medicine_input_name">Medicine name</string>
+    <string name="select_medicine_add_new">Search to add your medicine</string>
+    <string name="select_medicine_add_to_lib">Add to the Medicine List.</string>
+    <string name="select_medicine_input_medicine">Medicine Name</string>
+    <string name="select_medicine_input_medicine_name">Medicine Name</string>
+    <string name="medicine_add_success">Add to the Medicine List success！</string>
+    <string name="medicine_delete_success">Delete success!</string>
+    <string name="select_medicine_whether_to_delete_medicine">Do you want to delete this medicine?</string>
+    <string name="measure">Measure</string>
+    <string name="home_auto_measure_set">Auto-measurement Reminder</string>
+    <string name="home_history_measure_record">Historical Measurement Records</string>
+    <string name="personal_info_init_start_input">Start</string>
+    <string name="personal_info_init_alert_message">Please fill in your personal information and medical history accurately. \nInaccurate information will cause large errors in blood pressure measurement results.</string>
+
+    <string name="radar_guide_title">Click the icon to view the trend of different parameters.</string>
+    <string name="bracelet_pair_change_set">Change setting</string>
+    <string name="bind_wechat_or_qq_success">Bind success!</string>
+    <string name="bracelet_info_charging">Charging</string>
+    <string name="bracelet_info_find_bracelet">Find my Mystrace</string>
+    <string name="bracelet_find_title">Find my Mystrace</string>
+    <string name="bracelet_find_start">START</string>
+    <string name="bracelet_find_finding">Finding your Mystrace…</string>
+    <string name="bracelet_find_description">Your device will vibrate for 4 seconds after starting the search. \nLow battery will cause the device to shut down during the search process.</string>
+    <string name="medication_has_ignore">SKIPPED</string>
+    <string name="medication_has_taken">TAKEN</string>
+    <string name="medication_no_plan">Add your first medication schedule now.</string>
+    <string name="bracelet_remind_desc_text">Automatic measurement every 1 hour</string>
+    <string name="wear_method_text">Please wear this device on the inside of your left wrist to ensure the accuracy of your measurements.</string>
+    <string name="wear_method_submit">Continue</string>
+    <string name="measure_ecg_guide_not_show">Don’t show this message again.</string>
+    <string name="measure_ecg_tips_title">When do I need to take an ECG?</string>
+    <string name="measure_ecg_tips_content">The ECG can provide doctors with more valuable information when you have heart discomforts such as chest pain, chest tightness, and palpitations, to help doctors diagnose these symptoms in depth. If you have any abnormal symptoms such as stagnation, heartache, dizziness, cold sweats, etc., please contact your doctor in time and measure ECG under their guidance.</string>
+    <string name="medication_set_time">Duration</string>
+
+    <string name="sms_send_success">SMS sent successfully</string>
+    <string name="medication_please_set_dosage">Edit Dosage</string>
+    <string name="history_weekly_report_guide">Guide for syncing Health Weekly to your WeChat.</string>
+    <string name="no_authority">Access Denied</string>
+    <string name="main_app_new_version_upgrade_text">It is recommended to update your app to the latest version for a better experience.</string>
+    <string name="indicator_detail_test_parameter">Trial Parameters</string>
+    <string name="indicator_detail_test_tag">(Beta)</string>
+    <string name="bracelet_reminder_continuous">Advanced Reminder</string>
+    <string name="bracelet_reminder_continuous_detail">Vibration reminder every 1 hours</string>
+    <string name="bracelet_reminder_daily">General Reminder</string>
+    <string name="bracelet_reminder_daily_detail">Vibration reminder every 3 hours</string>
+    <string name="bracelet_reminder_measure_alarm">Auto-measurement Reminder</string>
+    <string name="measure_pw_result_set_mark">Add a comment</string>
+    <string name="measure_pw_result_mark">Comments</string>
+    <string name="measure_pw_result_high_bp">Classification of blood pressure levels</string>
+    <string name="measure_pw_result_pw_unit">Unit: mmHg</string>
+    <string name="measure_pw_result_classify">Category</string>
+    <string name="measure_pw_result_table_title1">Normal</string>
+    <string name="measure_pw_result_table_ps1">＜120</string>
+    <string name="measure_pw_result_table_pd1">＜80</string>
+    <string name="measure_pw_result_table_title2">Elevated</string>
+    <string name="measure_pw_result_table_ps2">120~139</string>
+    <string name="measure_pw_result_table_pd2">80~89</string>
+    <string name="measure_pw_result_table_title3">High blood pressure\n(Hypertension)\nStage 1</string>
+    <string name="measure_pw_result_table_ps3">140~159</string>
+    <string name="measure_pw_result_table_pd3">90~99</string>
+    <string name="measure_pw_result_table_title4">High blood pressure\n(Hypertension)\nStage 2</string>
+    <string name="measure_pw_result_table_ps4">160~179</string>
+    <string name="measure_pw_result_table_pd4">100~109</string>
+    <string name="measure_pw_result_table_title5">High blood pressure\n(Hypertension)\nStage 3</string>
+    <string name="measure_pw_result_table_ps5">≥180</string>
+    <string name="measure_pw_result_table_pd5">≥110</string>
+    <string name="measure_pw_result_table_title6">Hypertension crisis\n(emergency care needed)</string>
+    <string name="measure_pw_result_table_ps6">≥140</string>
+    <string name="measure_pw_result_table_pd6">＜90</string>
+    <string name="measure_pw_result_table_tag">This classification is based on the upper arm blood pressure values collected on seated persons who have been sitting for more than 5 minutes\n</string>
+    <string name="measure_pw_result_high_bp_description">There is a close relationship between blood pressure levels and the risk of cardiovascular and cerebrovascular diseases, such as stroke, coronary heart disease events, heart failure, atrial fibrillation, and end-stage renal disease. \n24-hour dynamic blood pressure, nocturnal blood pressure, and early morning blood pressure are more closely and significantly related to the risk of cardiovascular and cerebrovascular disease.</string>
+    <string name="measure_pw_result_high_bp_description_tag">Source: 2018 Chinese Guidelines for Prevention and Treatment of Hypertension\n</string>
+    <string name="measure_pw_result_low_bp">Low blood pressure</string>
+    <string name="measure_pw_result_low_bp_description">It is generally considered that low blood pressure is not dangerous unless you experience the following negative symptoms, including decreased vision, nausea, dehydration, dizziness, distraction, fatigue, lethargy and so on.</string>
+    <string name="measure_pw_result_hr_classify">Pulse Evaluation</string>
+    <string name="measure_pw_result_hr_description">The adult resting pulse evaluation is not suitable for the situations like, you feel unwell, nervous, or have just exercised.</string>
+    <string name="measure_pw_result_hr_level0">Normal (60-100 bpm)</string>
+    <string name="measure_pw_result_hr_level_content0">Congratulations! Your pulse is normal. Please keep exercise and a healthy diet to keep your heart healthy. This helps to maintain or even reduce your pulse, you know, well-trained athletes\' pulse can be as low as 41 bpm.</string>
+    <string name="measure_pw_result_hr_level1">Slow (40-60 bpm)</string>
+    <string name="measure_pw_result_hr_level_content1">Your pulse is lower than average. This is a sign of good cardiovascular heath.</string>
+    <string name="measure_pw_result_hr_level2">Fast (100+ bpm)</string>
+    <string name="measure_pw_result_hr_level_content2">Your pulse is above average. If you have just exercised, your pulse may be high. A high pulse indicates that your cardiovascular system may be sub-healthy, and proper exercise and a healthy diet can reduce your pulse and improve your health. If the pulse continues to be high, please consult a doctor.</string>
+    <string name="measure_pw_result_hr_level3">Below 30 bpm</string>
+    <string name="measure_pw_result_hr_level_content3">A persistently low pulse may be a sign of cardiovascular dysfunction. Please consult a doctor to rule out potential health hazards.</string>
+    <string name="home_emergency">Emergency call</string>
+    <string name="home_unavailable">Not available</string>
+    <string name="home_this_service_has_not_been_launched">You have not activated emergency services.</string>
+    <string name="home_check_service_detail">View service</string>
+    <string name="i_service">Service</string>
+    <string name="other_option">Options</string>
+    <string name="option_emergency_button_hide">Hide Emergency Call Button</string>
+    <string name="measure_pw_result_click_and_add_remark">Add a comment</string>
+    <string name="measure_result_add_remark">Comments</string>
+    <string name="measure_pw_result_auto_measure">Auto-measurement</string>
+    <string name="measure_pw_result_manual_measure">Manual-measurement</string>
+    <string name="measure_result_pw_image">Pulse-wave</string>
+    <string name="qq_bind_fail">Bind QQ fail</string>
+    <string name="wechat_bind_fail">Bind WeChat fail</string>
+    <string name="setting_privacy">Privacy</string>
+    <string name="privacy_system">Permissions</string>
+    <string name="privacy_friend">Privacy</string>
+    <string name="account_security">Accounts &#038; Security</string>
+    <string name="account_security_phone_number">Phone number</string>
+    <string name="account_security_change_password">Reset Password</string>
+    <string name="privacy_friend_search_permission">Find me by searching my phone number.</string>
+    <string name="setting_general">General</string>
+    <string name="setting_message_notify">Notifications</string>
+    <string name="setting_help_feedback">Help &#038; Feedback</string>
+    <string name="setting_feedback_email">Feedback Email</string>
+    <string name="setting_app_version">Version:V</string>
+    <string name="setting_check_new_version">Check new version</string>
+    <string name="mine_my_bp">My Blood Pressure</string>
+    <string name="mine_abnormal_bp">Abnormal Records</string>
+    <string name="mine_medication_plan">Medication Schedule</string>
+    <string name="mine_ecg">ECG</string>
+    <string name="mine_sport">Activity</string>
+    <string name="mine_weekly_report">Health Weekly</string>
+    <string name="mine_knowledge">Health Articles</string>
+    <string name="mine_weight_update">Weight</string>
+    <string name="mine_disease_update">Medical History</string>
+    <string name="mine_font_size">Font Size</string>
+    <string name="mine_measure_alarm">Auto-measurement Reminder</string>
+    <string name="system_permission_description">In order to provide you with a better user experience, Mystrace may need to apply for the following mobile phone system permissions in specific scenarios.</string>
+    <string name="system_permission_notification_title">Allow Mystrace to receive Notifications</string>
+    <string name="system_permission_notification_content">To receive blood pressure notifications, medication reminders, etc. from you, your family and friends.</string>
+    <string name="system_permission_storage_title">Allow Mystrace to have permission to access to Storage.</string>
+    <string name="system_permission_storage_content">To help read stored ECG and share it to other applications. To help you save and read your photos.</string>
+    <string name="system_permission_location_title">Allow Mystrace to have permission to access to Location.</string>
+    <string name="system_permission_location_content">To search and connect the Mystrace through Bluetooth</string>
+    <string name="system_permission_camera_title">Allow Mystrace to have permission to access to Camera.</string>
+    <string name="system_permission_camera_content">To use the camera function in Mystrace.</string>
+    <string name="system_permission_read_contact_title">Allow Mystrace to have permission to access to Contacts.</string>
+    <string name="system_permission_read_contact_content">To find your family and friends who have registered a Mystrace account</string>
+    <string name="system_permission">Permissions</string>
+    <string name="system_permission_on">Authorized</string>
+    <string name="system_permission_off">Authorize</string>
+    <string name="activity_register_privacy">the Statement About Mystrace and Privacy</string>
+    <string name="login_agree_protocol">I have read and agree to the</string>
+    <string name="enter_protocol_agree">By touching AGREE, you indicate that you have read and agreed to the content above,</string>
+    <string name="enter_agree">AGREE</string>
+    <string name="enter_disagree">DISAGREE</string>
+    <string name="permission_service_user">User Authorization Agreement</string>
+    <string name="permission_service_user_pre_text">You will be redirected to a third-party service. Tapping "AGREE" means you have read and agreed.</string>
+    <string name="permission_service_user_post_text">, and the information you authorize will be passed on to third-party service providers</string>
+    <string name="enter_permission_content">In order to provide you with health services, we also need to collect and use your following information: \ nDevice and network information. \ nPersonal information: including name, avatar, gender, date of birth, height, weight, medical history information, mobile phone number, and country/region, which can help us calculate your health data more accurately. With your authorization (optional), the customer service staff will actively contact you or invite you to become WeChat friends through your mobile phone number to provide you with Mystrace product support services to help you use Mystrace products and service better. \ nHealth data: including pulse wave graph, electrocardiogram graph, blood pressure, pulse, mean arterial pressure, cardiac output, blood viscosity, total peripheral resistance. \ nSports data: including exercise duration, steps, distance, and heat. \ nWe will not share or provide your personal information to third parties without your authorization. \ nIf you do not agree to the necessary permissions or functions above, or you do not agree to the collection and use of the information above, this application may not work properly, you can choose to uninstall this app/quit this app/go to your phone Settings> Privacy to turns off authorization to terminate the service.</string>
+    <string name="enter_permission_location_title">Location (required)</string>
+    <string name="enter_permission_location_content">For using Bluetooth normally. Bluetooth can be used to connect app to your Mystrace devices and use the hardware functions related to the devices.</string>
+    <string name="enter_permission_store_title">Storage (optional)</string>
+    <string name="enter_permission_store_content">For view stored Electrocardiogram graphics and forwarding them to other applications. For accessing your Photos to select and set one of them as your profile picture.</string>
+    <string name="enter_permission_camera_title">Camera (optional)</string>
+    <string name="enter_permission_camera_content">For taking a photo and setting it as your profile picture.</string>
+    <string name="enter_permission_contact_title">Contacts (optional)</string>
+    <string name="enter_permission_contact_content">In order to match and recommend the contacts in your address book with the mobile phone numbers, if your friends and relatives registered in Mystrace, the system will notify you.</string>
+    <string name="enter_permission_call_title">Proactive Customer Care (optional)</string>
+    <string name="enter_permission_call_content">Allow the customer service to contact you through your registered mobile phone number or invite you to become WeChat friends to provide you with support services for the use of Mystrace products. </string>
+    <string name="ecg_data_detail_storage_permission_closed">Your storage permission is turned off</string>
+    <string name="ecg_data_detail_storage_permission_is_open">Turn it on now?</string>
+    <string name="ecg_data_detail_share_cannot_use">Sorry, this function is not available!</string>
+    <string name="personal_info_storage_permission_closed">Your storage permission is turned off</string>
+    <string name="personal_info_storage_permission_is_open">Turn it on now?</string>
+    <string name="personal_info_set_avatar_cannot_use">Sorry, this function is not available!</string>
+    <string name="personal_info_camera_permission_closed">Your camera permission is turned off</string>
+    <string name="personal_info_camera_permission_is_open">Turn it on now?</string>
+    <string name="ble_bluetooth_need_location_permission">Bluetooth requires your location permission</string>
+    <string name="home_this_service_has_not_been_launched_submit">Continue</string>
+    <string name="home_emergency_click_message">Press and hold this button to make an emergency call.</string>
+    <string name="setting_auth_management">Permissions</string>
+    <string name="authorized_service_delete_dialog_submit">SUBMIT</string>
+    <string name="enter_auth_title">Privacy Policy</string>
+    <string name="enter_auth_content">Welcome to Mystrace. You can use this app to record and analyze your health and exercise data. We will strictly abide by relevant laws and privacy policies to protect your personal information. In order to provide you with the services, this app needs to connect to the network and requires you to authorize the following permissions or functions: </string>
+    <string name="enter_auth_content1">In order to help you use Mystrace and the services better, we also need your authorization:</string>
+    <string name="enter_auth_reject_dialog_title">You need to agree to this Privacy Policy to continue using Mystrace</string>
+    <string name="enter_auth_reject_dialog_content">If you do not agree with this Privacy Policy, we regret that we will not be able to provide services to you</string>
+    <string name="enter_auth_reject_dialog_disagree">EXIT</string>
+    <string name="enter_auth_reject_dialog_back">BACK</string>
+    <string name="enter_auth_have_to_open">This permission must be turned on to ensure you can access Mystrace.</string>
+    <string name="medication_dosage_cannot_zero">Dosage can not be empty.</string>
+
+</resources>

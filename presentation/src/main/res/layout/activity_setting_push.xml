@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.SettingPushViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_grey"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include layout="@layout/layout_back_black"
+                android:id="@+id/btn_back"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/notification_set_title"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layout_refresh"
+            android:visibility="@{model.error?View.GONE:View.VISIBLE}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="@string/notification_guide"
+                    android:layout_marginStart="@dimen/normal_padding"
+                    android:layout_marginTop="@dimen/narrow_padding"
+                    android:layout_marginBottom="@dimen/narrow_padding"
+                    android:layout_marginEnd="@dimen/normal_padding"
+                    android:textSize="@dimen/body_1_material"
+                    android:textColor="@color/light_grey_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    style="@style/style_divide_line_view"/>
+
+
+                <LinearLayout
+                    android:id="@+id/layout_notification_auth"
+                    android:background="@color/white"
+                    android:paddingStart="@dimen/normal_padding"
+                    android:paddingEnd="@dimen/normal_padding"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_height="@dimen/normal_height">
+
+                    <TextView
+                        android:text="@string/notification_message"
+                        android:textSize="@dimen/subhead_material"
+                        android:textColor="@color/black_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_state"
+                        android:text="@{model.notificationAuthString}"
+                        android:textColor="@color/light_grey_text"
+                        android:textSize="@dimen/body_1_material"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/style_divide_line_view"/>
+
+                <TextView
+                    android:text="@string/notification_abnormal_remind"
+                    android:textSize="@dimen/body_1_material"
+                    android:textColor="@color/light_grey_text"
+                    android:layout_marginTop="@dimen/narrow_padding"
+                    android:layout_marginBottom="@dimen/narrow_padding"
+                    android:layout_marginStart="@dimen/normal_padding"
+                    android:layout_marginEnd="@dimen/normal_padding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:divider="@android:drawable/divider_horizontal_bright"
+                    android:orientation="vertical"
+                    android:paddingEnd="@dimen/narrow_padding"
+                    android:paddingStart="@dimen/narrow_padding"
+                    android:showDividers="middle">
+
+                    <LinearLayout
+                        android:id="@+id/layout_ps"
+                        style="@style/info_layout_style">
+
+                        <TextView
+                            android:layout_width="@dimen/double_normal_height"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/PS"
+                            android:textColor="@color/primary_text"
+                            android:textSize="@dimen/body_1_material" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|end"
+                            android:text="@{model.psRangeString}"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="@dimen/body_1_material" />
+
+                        <Switch
+                            android:id="@+id/sw_ps"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/xnarrow_padding" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_pd"
+                        style="@style/info_layout_style">
+
+                        <TextView
+                            android:layout_width="@dimen/double_normal_height"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/PD"
+                            android:textColor="@color/primary_text"
+                            android:textSize="@dimen/body_1_material" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|end"
+                            android:text="@{model.pdRangeString}"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="@dimen/body_1_material" />
+
+                        <Switch
+                            android:id="@+id/sw_pd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/xnarrow_padding" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View style="@style/style_divide_line_view" />
+            </LinearLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layout_refresh_error"
+            android:visibility="@{model.error?View.VISIBLE:View.GONE}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/layout_network_error"/>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</layout>

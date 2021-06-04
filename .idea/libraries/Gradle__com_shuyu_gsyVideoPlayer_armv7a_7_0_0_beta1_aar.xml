@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.shuyu:gsyVideoPlayer-armv7a:7.0.0-beta1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d31aa3bd4322474756a6aebedf73cf7e/jetified-gsyVideoPlayer-armv7a-7.0.0-beta1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d31aa3bd4322474756a6aebedf73cf7e/jetified-gsyVideoPlayer-armv7a-7.0.0-beta1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d31aa3bd4322474756a6aebedf73cf7e/jetified-gsyVideoPlayer-armv7a-7.0.0-beta1/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.shuyu/gsyVideoPlayer-armv7a/7.0.0-beta1/f5f3cc80eac3c1daf950753c3b3f689262de075b/gsyVideoPlayer-armv7a-7.0.0-beta1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.shuyu/gsyVideoPlayer-armv7a/7.0.0-beta1/33a416d3fb28bdffb19cdc677df01ba9a789a2f7/gsyVideoPlayer-armv7a-7.0.0-beta1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

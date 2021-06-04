@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.FirmwareUpgradeViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:keepScreenOn="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/sdv_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="background"
+            android:src="@drawable/firmware_upgrade_bg"
+            app:layout_constraintDimensionRatio="335:360"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="phone"
+            android:src="@drawable/firmware_upgrade_phone"
+            app:layout_constraintBottom_toTopOf="@+id/layout_log"
+            app:layout_constraintDimensionRatio="70:129"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.39999998" />
+
+        <ImageView
+            android:id="@+id/iv_progress"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:contentDescription="progress"
+            android:src="@drawable/firmware_upgrade_progress"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_phone" />
+
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primaryBlue"
+            android:textSize="@dimen/caption_material"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_progress"
+            app:layout_constraintEnd_toEndOf="@+id/iv_progress"
+            app:layout_constraintStart_toStartOf="@+id/iv_progress"
+            app:layout_constraintTop_toTopOf="@+id/iv_progress" />
+
+        <ImageView
+            android:id="@+id/iv_bracelet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:contentDescription="bracelet"
+            android:src="@drawable/firmware_upgrade_bracelet"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_phone"
+            app:layout_constraintDimensionRatio="35:78"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_phone" />
+
+        <LinearLayout
+            android:id="@+id/layout_arrow0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_phone"
+            app:layout_constraintEnd_toStartOf="@+id/iv_progress"
+            app:layout_constraintStart_toEndOf="@+id/iv_phone"
+            app:layout_constraintTop_toTopOf="@+id/iv_phone">
+
+
+            <ImageView
+                android:id="@+id/iv_arrow0"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:contentDescription="arrow"
+                android:src="@drawable/firmware_upgrade_arrow_blue" />
+
+            <ImageView
+                android:id="@+id/iv_arrow1"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:contentDescription="arrow"
+                android:src="@drawable/firmware_upgrade_arrow_blue" />
+
+            <ImageView
+                android:id="@+id/iv_arrow2"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:contentDescription="arrow"
+                android:src="@drawable/firmware_upgrade_arrow_blue" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_arrow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_phone"
+            app:layout_constraintEnd_toStartOf="@+id/iv_bracelet"
+            app:layout_constraintStart_toEndOf="@+id/iv_progress"
+            app:layout_constraintTop_toTopOf="@+id/iv_phone">
+
+
+            <ImageView
+                android:id="@+id/iv_arrow3"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:contentDescription="arrow"
+                android:src="@drawable/firmware_upgrade_arrow_blue" />
+
+            <ImageView
+                android:id="@+id/iv_arrow4"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:contentDescription="arrow"
+                android:src="@drawable/firmware_upgrade_arrow_blue" />
+
+            <ImageView
+                android:id="@+id/iv_arrow5"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:contentDescription="arrow"
+                android:src="@drawable/firmware_upgrade_arrow_blue" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/firmware_upgrade_title"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/medium_material"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_phone"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/activity_firmware_upgrade_tips"
+            android:textColor="@color/light_grey_text"
+            android:textSize="@dimen/body_1_material"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_phone" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_grey"
+            android:minHeight="100dp"
+            android:padding="@dimen/normal_padding"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tv_log_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_firmware_upgrade_bracelet_upgrade_log"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/subhead_material"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{model.log}"
+                android:textColor="@color/light_grey_text"
+                android:textSize="@dimen/body_1_material"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_log_title" />
+
+            <!--<com.mgtech.maiganapp.widget.FirmwareUpgradeLogTitleTextView-->
+            <!--android:id="@+id/tv_title"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="@dimen/firmware_upgrade_log_title_height"-->
+            <!--android:layout_marginStart="@dimen/normal_height"-->
+            <!--android:gravity="center"-->
+            <!--android:lineSpacingExtra="1dp"-->
+            <!--android:paddingStart="@dimen/normal_padding"-->
+            <!--android:paddingEnd="@dimen/normal_padding"-->
+            <!--android:text="@string/activity_firmware_upgrade_bracelet_upgrade_log"-->
+            <!--android:textColor="@color/grey700"-->
+            <!--android:textSize="@dimen/body_1_material" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--<com.mgtech.maiganapp.widget.FirmwareUpgradeProgressBar-->
+            <!--android:id="@+id/progressBar_upgrade"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/medium_padding"-->
+            <!--android:layout_marginStart="@dimen/large_padding"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_marginEnd="@dimen/large_padding"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/layout_log" />-->
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

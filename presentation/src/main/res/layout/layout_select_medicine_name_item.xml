@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginEnd="@dimen/normal_padding"
+    android:background="@color/white"
+    android:layout_height="@dimen/normal_height">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_height"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/normal_padding"
+        android:paddingStart="@dimen/normal_padding">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/body_1_material" />
+
+        <!--<TextView-->
+            <!--android:planId="@+planId/tv_zone"-->
+            <!--android:layout_width="@dimen/large_height"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center_vertical|end"-->
+            <!--android:textColor="@color/primary_text"-->
+            <!--android:textSize="@dimen/body_1_material" />-->
+    </LinearLayout>
+
+    <View
+        android:paddingStart="@dimen/normal_padding"
+        android:paddingEnd="@dimen/normal_padding"
+        android:background="@color/grey300"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"/>
+</FrameLayout>

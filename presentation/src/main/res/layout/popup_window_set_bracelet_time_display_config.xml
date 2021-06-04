@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:background="@color/white"
+        android:text="@string/bracelet_info_select_time_display_style"
+        android:textSize="@dimen/body_1_material"
+        android:textColor="@color/grey1000"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_height" />
+
+    <View
+        style="@style/style_divide_line_view"/>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/layout1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/triple_normal_height"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <ImageView
+                android:contentDescription="@string/app_name"
+                android:id="@+id/img_time1"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:src="@drawable/time1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:layout_marginTop="@dimen/narrow_padding"
+                android:id="@+id/cb1"
+                android:layout_below="@id/img_time1"
+                android:layout_centerHorizontal="true"
+                style="@style/style_display_time_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/layout2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/triple_normal_height"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <ImageView
+                android:contentDescription="@string/app_name"
+                android:id="@+id/img_time2"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:src="@drawable/time2_ch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:layout_marginTop="@dimen/narrow_padding"
+                android:id="@+id/cb2"
+                android:layout_below="@id/img_time2"
+                android:layout_centerHorizontal="true"
+                style="@style/style_display_time_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_height"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:background="@drawable/selector_set_bracelet_config_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/cancel"/>
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:background="@drawable/selector_set_bracelet_config_submit"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/submit"/>
+    </LinearLayout>
+</LinearLayout>

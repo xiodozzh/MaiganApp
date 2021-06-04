@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toTopOf="@+id/tv_protocol"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:text="@string/enter_auth_title"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/medium_material" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/enter_auth_content"
+                android:textColor="@color/grey_text"
+                android:textSize="@dimen/body_1_material" />
+
+            <include
+                android:id="@+id/layout_permission_location"
+                layout="@layout/layout_enter_permission_item" />
+
+            <include
+                android:id="@+id/layout_permission_store"
+                layout="@layout/layout_enter_permission_item" />
+
+            <include
+                android:id="@+id/layout_permission_photo"
+                layout="@layout/layout_enter_permission_item" />
+
+            <include
+                android:id="@+id/layout_permission_contact"
+                layout="@layout/layout_enter_permission_item" />
+
+<!--            <include-->
+<!--                android:id="@+id/layout_permission_album"-->
+<!--                layout="@layout/layout_enter_permission_item" />-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/enter_auth_content1"
+                android:textColor="@color/grey_text"
+                android:textSize="@dimen/body_1_material" />
+
+            <include
+                android:id="@+id/layout_permission_call"
+                layout="@layout/layout_enter_permission_item" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/enter_permission_content"
+                android:textColor="@color/grey_text"
+                android:textSize="@dimen/body_1_material" />
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/btn_not_agree"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/narrow_height"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/selector_protocol_disagree"
+        android:gravity="center"
+        android:text="@string/enter_disagree"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/medium_material"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_agree"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/btn_agree"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/narrow_height"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/selector_protocol_agree"
+        android:gravity="center"
+        android:text="@string/enter_agree"
+        android:textColor="@color/white"
+        android:textSize="@dimen/medium_material"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_not_agree" />
+
+    <TextView
+        android:id="@+id/tv_protocol"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="点击同意，即表示您同意上述内容及"
+        android:textColor="@color/light_grey_text"
+        android:textSize="@dimen/caption_material"
+        app:layout_constraintBottom_toTopOf="@+id/btn_not_agree"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

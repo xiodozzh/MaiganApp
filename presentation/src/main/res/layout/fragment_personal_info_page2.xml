@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.PersonalInfoInitViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="@{model.loadDiseasesSuccess &amp;&amp; !model.loadingDiseases ?View.VISIBLE:View.GONE}">
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="健康数据的计算依赖以下信息，请您准确输入"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/large_padding"
+                android:text="高血压类型"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/large_material"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+                app:layout_constraintEnd_toStartOf="@+id/tv_title2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_desc"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tv_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="（多选）"
+                android:textColor="@color/light_text"
+                android:textSize="@dimen/caption_material"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_title" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/large_padding"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+
+            <TextView
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/narrow_height"
+                android:layout_marginStart="@dimen/large_padding"
+                android:layout_marginEnd="@dimen/large_padding"
+                android:layout_marginBottom="@dimen/narrow_height"
+                android:background="@drawable/activity_personal_info_init_next_btn_selector"
+                android:gravity="center"
+                android:text="@string/next_step"
+                android:textColor="@color/white"
+                android:textSize="@dimen/subhead_material"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:visibility="@{!model.loadDiseasesSuccess &amp;&amp;!model.loadingDiseases?View.VISIBLE:View.GONE}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/layout_network_error"/>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <ProgressBar
+            android:visibility="@{model.loadingDiseases?View.VISIBLE:View.GONE}"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+</layout>

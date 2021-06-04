@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.WearGuideRecognizePwViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="4dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="如何正确识别脉图"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.mgtech.maiganapp.widget.DynamicGraphView
+                android:id="@+id/graph"
+                app:line_color="@color/colorPrimary"
+                app:line_width="@dimen/line_width"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/triple_normal_height"
+                android:background="@color/white"
+                android:elevation="3dp" />
+
+            <TextView
+                android:id="@+id/tv_real_time_pw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="实时脉图"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/subhead_material"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tv_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@{model.errorText}"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/subhead_material"
+                android:visibility="@{model.showErrorText?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toTopOf="@+id/btn_retry"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/btn_retry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_wear_guide_go_to_learn_btn"
+                android:paddingStart="@dimen/normal_padding"
+                android:paddingTop="@dimen/narrow_padding"
+                android:paddingEnd="@dimen/normal_padding"
+                android:paddingBottom="@dimen/narrow_padding"
+                android:text="重试"
+                android:textColor="@color/white"
+                android:textSize="@dimen/subhead_material"
+                android:visibility="@{model.showErrorText?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerView_pw"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.65999997" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_pw"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/graph" />
+
+            <include
+                layout="@layout/layout_scan_or_disconnect"
+                bind:model="@{model.stateViewModel}" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>

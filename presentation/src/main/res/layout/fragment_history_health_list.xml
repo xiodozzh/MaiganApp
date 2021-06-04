@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.HistoryHealthListViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_grey"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/history_pw_list_title"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+
+            <RelativeLayout
+                android:id="@+id/btn_graph"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="end"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="switch to graph model"
+                    android:src="@drawable/graph" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@drawable/toolbar_shadow" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/normal_height"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/layout_select_month"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@{model.calendarString}"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/subhead_material" />
+
+            <TextView
+                android:id="@+id/btn_back_today"
+                android:layout_width="wrap_content"
+                android:paddingStart="@dimen/normal_padding"
+                android:paddingEnd="@dimen/normal_padding"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="@string/today"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/body_1_material"
+                android:visibility="@{model.showBackToday?View.VISIBLE:View.GONE}" />
+        </RelativeLayout>
+
+        <com.mgtech.maiganapp.widget.CalendarViewPager
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="64dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@drawable/toolbar_shadow" />
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layout_refresh_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/layout_no_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large_padding"
+                    android:orientation="vertical"
+                    android:visibility="@{!model.listDateLoading &amp;&amp; model.hasNoListData?View.VISIBLE:View.GONE}">
+
+                    <include layout="@layout/layout_empty_data_measure" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="4dp"
+                    android:id="@+id/rv_list"
+                    android:visibility="@{!model.listDateLoading &amp;&amp; !model.hasNoListData ? View.VISIBLE:View.GONE}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout_no_data" />
+
+                <ImageView
+                    android:visibility="@{model.isFriend?View.INVISIBLE:View.VISIBLE}"
+                    android:id="@+id/iv_measure"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="@dimen/normal_padding"
+                    android:layout_marginEnd="@dimen/normal_padding"
+                    android:layout_marginTop="@dimen/xnarrow_padding"
+                    android:layout_marginBottom="@dimen/normal_padding"
+                    android:contentDescription="measure"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/measure_btn" />
+
+            </RelativeLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+
+</layout>

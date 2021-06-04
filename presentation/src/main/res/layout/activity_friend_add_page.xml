@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.FriendAddPageViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_grey"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/activity_friend_add_page_add_friend"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/normal_padding"
+                android:layout_marginTop="@dimen/narrow_padding"
+                android:layout_marginBottom="@dimen/narrow_padding"
+                android:contentDescription="avatar"
+                android:src="@drawable/avatar_default_round_large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@{model.name}"
+                android:textColor="@color/grey_text"
+                android:textSize="@dimen/subhead_material"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+                app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+                app:layout_constraintTop_toTopOf="@+id/iv_avatar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_message_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="@dimen/narrow_padding"
+            android:layout_marginBottom="@dimen/narrow_padding"
+            android:text="@string/activity_friend_add_page_you_have_to_waif_for_promitte"
+            android:textColor="@color/light_text"
+            android:textSize="@dimen/caption_material" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="@color/white">
+
+            <EditText
+                android:id="@+id/et_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:layout_marginStart="@dimen/normal_padding"
+                android:layout_marginTop="12dp"
+                android:background="@null"
+                android:textColor="@color/grey_text"
+                android:singleLine="true"
+                android:textSize="@dimen/subhead_material"
+                app:layout_constraintEnd_toStartOf="@+id/iv_clear"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/iv_clear"
+                android:layout_width="@dimen/narrow_height"
+                android:layout_height="@dimen/narrow_height"
+                android:layout_marginEnd="@dimen/xnarrow_padding"
+                android:contentDescription="clear"
+                android:padding="12dp"
+                android:src="@drawable/activity_friend_add_page_clear_message"
+                app:layout_constraintBottom_toBottomOf="@+id/et_message"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_message" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/btn_send_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/large_padding"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="@dimen/large_padding"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/activity_friend_add_page_send_request_btn"
+            android:enabled="@{model.valid &amp;&amp; !model.sending}"
+            android:gravity="center"
+            android:paddingStart="36dp"
+            android:paddingTop="@dimen/narrow_padding"
+            android:paddingEnd="36dp"
+            android:paddingBottom="@dimen/narrow_padding"
+            android:text="@string/activity_friend_add_page_send"
+            android:textColor="@color/white"
+            android:textSize="@dimen/subhead_material"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_message" />
+
+    </LinearLayout>
+</layout>

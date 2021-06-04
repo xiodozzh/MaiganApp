@@ -1,0 +1,35 @@
+<component name="libraryTable">
+  <library name="Gradle: com.zxy.android:tiny:1.1.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/387735e063d9c8aa8eab0d53dca6b458/jetified-tiny-1.1.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/387735e063d9c8aa8eab0d53dca6b458/jetified-tiny-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/387735e063d9c8aa8eab0d53dca6b458/jetified-tiny-1.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3fb81e841921267e130515c1b4b23008/jetified-tiny-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3fb81e841921267e130515c1b4b23008/jetified-tiny-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3fb81e841921267e130515c1b4b23008/jetified-tiny-1.1.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/55b95a563ec39071c1e5eef85a91b274/jetified-tiny-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/55b95a563ec39071c1e5eef85a91b274/jetified-tiny-1.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/55b95a563ec39071c1e5eef85a91b274/jetified-tiny-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ca9a0ea3704e663220d3792bb90b8c98/jetified-tiny-1.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ca9a0ea3704e663220d3792bb90b8c98/jetified-tiny-1.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ca9a0ea3704e663220d3792bb90b8c98/jetified-tiny-1.1.0/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/809f1e5e92d8cd46b3290a80df4bcfcd/jetified-tiny-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/809f1e5e92d8cd46b3290a80df4bcfcd/jetified-tiny-1.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/809f1e5e92d8cd46b3290a80df4bcfcd/jetified-tiny-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/04b500564bdde95162e18bc336eedd6d/jetified-tiny-1.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/04b500564bdde95162e18bc336eedd6d/jetified-tiny-1.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/04b500564bdde95162e18bc336eedd6d/jetified-tiny-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/470c73d5bd0e51767b46ae307c0d69cf/jetified-tiny-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/481afbf6854f2002ce1be24f0bf9fcb2/jetified-tiny-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/97313513bdd2435c54466d1aa9dbaefe/jetified-tiny-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/97313513bdd2435c54466d1aa9dbaefe/jetified-tiny-1.1.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/97313513bdd2435c54466d1aa9dbaefe/jetified-tiny-1.1.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zxy.android/tiny/1.1.0/d30222bb9cfdbead7a6980c87814efa1c225d9e/tiny-1.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zxy.android/tiny/1.1.0/e6db25b283eebbebaeccf8d1e2e22e12b5352e2d/tiny-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

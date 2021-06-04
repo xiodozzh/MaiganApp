@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="@dimen/normal_height"
+        android:layout_height="@dimen/normal_height"
+        android:layout_marginStart="@dimen/normal_padding"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="avatar"
+        android:src="@drawable/avatar_default_round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="姓名"
+        android:textColor="@color/grey_text"
+        android:textSize="@dimen/subhead_material"
+        app:layout_constraintBottom_toTopOf="@+id/tv_message"
+        app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="message"
+        android:textColor="@color/grey_text"
+        android:textSize="@dimen/caption_material"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_deny"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginEnd="@dimen/normal_padding"
+        android:background="@drawable/activity_friend_request_deal_deny"
+        android:gravity="center"
+        android:paddingStart="@dimen/normal_padding"
+        android:paddingEnd="@dimen/normal_padding"
+        android:text="@string/friend_relation_request_deny"
+        android:textColor="@color/primaryBlue"
+        android:textSize="@dimen/caption_material"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_accept"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/activity_friend_request_deal_accept"
+        android:gravity="center"
+        android:paddingStart="@dimen/normal_padding"
+        android:paddingEnd="@dimen/normal_padding"
+        android:text="@string/friend_relation_request_accept"
+        android:textColor="@color/white"
+        android:textSize="@dimen/caption_material"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_deny"
+        app:layout_constraintEnd_toStartOf="@+id/tv_deny" />
+
+    <!--<android.support.constraint.Group-->
+        <!--android:id="@+id/group_btn"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:constraint_referenced_ids="tv_deny,tv_accept" />-->
+
+    <TextView
+        android:id="@+id/tv_done"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginEnd="@dimen/normal_padding"
+        android:gravity="center"
+        android:paddingStart="@dimen/normal_padding"
+        android:paddingEnd="@dimen/normal_padding"
+        android:text="@string/done"
+        android:textColor="@color/grey_text"
+        android:textSize="@dimen/caption_material"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

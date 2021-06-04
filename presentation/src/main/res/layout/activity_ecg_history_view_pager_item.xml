@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="0dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="1dp"
+        app:contentPaddingBottom="-2dp"
+        app:contentPaddingTop="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:text="--:--"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/body_1_material" />
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_ecg_result"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="20dp"-->
+                <!--android:textColor="@color/primary_text"-->
+                <!--android:textSize="@dimen/body_1_material" />-->
+
+            <RelativeLayout
+                android:id="@+id/layout_graph"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp">
+
+                <com.mgtech.maiganapp.widget.EcgPartDataGraphView
+                    android:id="@+id/graphView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="206dp" />
+
+                <TextView
+                    android:id="@+id/tv_hr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/display_1_material"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_hr_unit"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_hr_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="center"
+                    android:text="@string/heart_rate_unit"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/body_1_material"
+                    android:visibility="gone"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tv_hr"
+                    app:layout_constraintEnd_toStartOf="@+id/guideLine"
+                    app:layout_constraintStart_toEndOf="@+id/tv_hr" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center"
+                    android:text="@string/ecg_average_heart_rate"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/body_1_material"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/guideLine"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_hr" />
+
+
+                <!--<TextView-->
+                <!--android:id="@+id/tv_walk_speed"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="11dp"-->
+                <!--android:gravity="center"-->
+                <!--android:text="25"-->
+                <!--android:textColor="@color/black_text"-->
+                <!--android:textSize="@dimen/display_1_material"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintEnd_toStartOf="@+id/tv_walk_unit"-->
+                <!--app:layout_constraintHorizontal_bias="0.5"-->
+                <!--app:layout_constraintHorizontal_chainStyle="packed"-->
+                <!--app:layout_constraintStart_toEndOf="@+id/tv_hr_unit"-->
+                <!--app:layout_constraintStart_toStartOf="@+id/guideLine"-->
+                <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/tv_walk_unit"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/walk_speed_unit"-->
+                <!--android:textColor="@color/primary_text"-->
+                <!--android:textSize="@dimen/body_1_material"-->
+                <!--app:layout_constraintBaseline_toBaselineOf="@+id/tv_walk_speed"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintHorizontal_bias="0.5"-->
+                <!--app:layout_constraintStart_toEndOf="@+id/tv_walk_speed" />-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="2dp"-->
+                <!--android:layout_marginBottom="12dp"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/ecg_walk_speed"-->
+                <!--android:textColor="@color/primary_text"-->
+                <!--android:textSize="@dimen/body_1_material"-->
+                <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintStart_toStartOf="@+id/guideLine"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/tv_walk_speed" />-->
+
+
+                <TextView
+                    android:id="@+id/tv_walk_speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:text="25"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/display_1_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_walk_unit"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView6"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_walk_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/walk_speed_unit"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tv_walk_speed"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tv_walk_speed" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="center"
+                    android:text="@string/ecg_walk_speed"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tv_walk_speed"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_walk_speed"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:id="@+id/btn_detail"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="-16dp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/layout_graph">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="#28bdfe"
+                    android:gravity="center"
+                    android:textSize="@dimen/subhead_material"
+                    android:text="@string/ecg_result_check_detail"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

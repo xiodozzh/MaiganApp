@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    signingConfigs {
+        release {
+            // 下面各值的意思将在后续进行讲解
+            storeFile file('release.keystore')
+            storePassword "123456"
+            keyAlias "androiddebugkey"
+            keyPassword "123456"
+        }
+        debug {
+            storeFile file('release.keystore')
+            storePassword "123456"
+            keyAlias "androiddebugkey"
+            keyPassword "123456"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.4.0'
+    implementation 'io.reactivex:rxandroid:1.1.0'
+    implementation 'me.tatarka:gradle-retrolambda:3.3.0-beta4'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'org.greenrobot:greendao:2.2.0'
+    implementation 'com.jakewharton:disklrucache:2.0.2'
+    implementation project(':blelib')
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'com.tencent:mmkv:1.0.17'
+
+    implementation 'com.google.dagger:dagger:2.12'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.12'
+    //    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/narrow_height"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/blood_pressure"
+            android:textSize="@dimen/subhead_material"
+            android:textColor="@color/color_tab_text" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/selector_bar_color"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/narrow_height"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/subhead_material"
+            android:text="@string/heart_rate"
+            android:textColor="@color/color_tab_text" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/selector_bar_color"/>
+    </LinearLayout>
+
+</merge>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sex">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+
+    <string-array name="week">
+        <item>日</item>
+        <item>一</item>
+        <item>二</item>
+        <item>三</item>
+        <item>四</item>
+        <item>五</item>
+        <item>六</item>
+    </string-array>
+
+    <string-array name="week_ch_long">
+        <item>周日</item>
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+    </string-array>
+
+    <string-array name="enter_title">
+        <item>24 小时血压监测</item>
+        <item>心电图测量</item>
+        <item>心血管健康</item>
+        <item>健康管理</item>
+        <item>⽤药计划</item>
+        <item>亲友监护</item>
+    </string-array>
+
+    <string-array name="enter_content">
+        <item>24 小时自动血压监测，在家获取医疗级血压参数</item>
+        <item>随时获取心电图，并即时发送给医生</item>
+        <item>实时掌握血流动力学参数的趋势和变化</item>
+        <item>跟踪运动及异常血压，全面了解身体状况</item>
+        <item>制定⽤药计划，定时提醒，养成良好⽤药习惯</item>
+        <item>实时获取亲友血压数据，掌握亲友健康状态</item>
+    </string-array>
+
+    <string-array name="medicine_dosage_unit">
+        <item>片</item>
+        <item>g</item>
+        <item>mg</item>
+        <item>ml</item>
+        <item>IU</item>
+        <item>杯</item>
+    </string-array>
+
+    <string-array name="font_size_scale">
+        <item>小</item>
+        <item>标准</item>
+        <item> </item>
+        <item> </item>
+        <item>大</item>
+    </string-array>
+</resources>

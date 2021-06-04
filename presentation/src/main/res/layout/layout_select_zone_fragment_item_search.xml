@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_grey"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/narrow_padding"
+        android:layout_marginTop="@dimen/narrow_padding"
+        android:layout_marginEnd="@dimen/narrow_padding"
+        android:layout_marginBottom="@dimen/narrow_padding"
+        android:background="@drawable/bg_round_rect_radius_4dp"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/normal_padding"
+        android:paddingTop="@dimen/narrow_padding"
+        android:paddingEnd="@dimen/normal_padding"
+        android:paddingBottom="@dimen/narrow_padding">
+
+        <ImageView
+            android:layout_width="@dimen/normal_padding"
+            android:layout_height="@dimen/normal_padding"
+            android:layout_gravity="center"
+            android:contentDescription="search phone"
+            android:src="@drawable/activity_friend_add_search" />
+
+        <TextView
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/subhead_material"
+            android:background="@null"
+            android:text="@string/select_medicine_input_name"
+            android:textColor="@color/light_grey_text"
+            android:textSize="@dimen/subhead_material" />
+    </LinearLayout>
+</LinearLayout>

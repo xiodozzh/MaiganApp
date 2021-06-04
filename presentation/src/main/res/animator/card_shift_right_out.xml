@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <objectAnimator
+        android:valueFrom="0"
+        android:valueTo="1000"
+        android:propertyName="translationX"
+        android:interpolator="@android:interpolator/linear"
+        android:duration="@integer/card_shift_time_full" />
+
+    <!--旋转中途(时间偏移量取决于startOffset属性)设置透明度为0-->
+    <!--<objectAnimator-->
+        <!--android:valueFrom="1.0"-->
+        <!--android:valueTo="0"-->
+        <!--android:propertyName="alpha"-->
+        <!--android:startOffset="@integer/card_flip_time_half"-->
+        <!--android:duration="1" />-->
+
+
+    <objectAnimator
+        android:valueFrom="1.0"
+        android:valueTo="0.75"
+        android:propertyName="scaleY"
+        android:duration="@integer/card_shift_time_half" />
+
+    <objectAnimator
+        android:valueFrom="1.0"
+        android:valueTo="0.75"
+        android:propertyName="scaleX"
+        android:duration="@integer/card_shift_time_half" />
+</set>

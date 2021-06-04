@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.MedicationPlanViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_grey"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/activity_medication_plan"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+            <RelativeLayout
+                android:id="@+id/btn_history"
+                android:layout_gravity="center_vertical|end"
+                android:layout_width="@dimen/normal_height"
+                android:layout_height="@dimen/normal_height">
+
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:contentDescription="history"
+                    android:src="@drawable/activity_medication_history"
+                    android:layout_width="@dimen/medium_padding"
+                    android:layout_height="@dimen/medium_padding" />
+
+            </RelativeLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layout_refresh"
+            android:visibility="@{model.isEmpty?View.GONE:View.VISIBLE}"
+            android:layout_below="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layout_refresh_empty"
+            android:layout_below="@id/toolbar"
+            android:visibility="@{model.isEmpty?View.VISIBLE:View.GONE}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/layout_empty_data_medication_plan"/>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <View
+            android:id="@+id/btn_add"
+            android:background="@drawable/activity_medication_plan_add"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="28dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"/>
+
+        <!--<TextView-->
+            <!--android:id="@+id/btn_add"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingTop="@dimen/narrow_padding"-->
+            <!--android:paddingBottom="@dimen/narrow_padding"-->
+            <!--android:gravity="center"-->
+            <!--android:background="@drawable/activity_medication_plan_add_selector"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginStart="@dimen/large_padding"-->
+            <!--android:layout_marginEnd="@dimen/large_padding"-->
+            <!--android:layout_marginBottom="28dp"-->
+            <!--android:text="添加用药计划" />-->
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.MedicationPlanEditTimeViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_grey"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/medication_set_time"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+            <!--<TextView-->
+                <!--android:id="@+id/btn_done"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_gravity="end"-->
+                <!--android:gravity="center"-->
+                <!--android:paddingStart="@dimen/normal_padding"-->
+                <!--android:paddingEnd="@dimen/normal_padding"-->
+                <!--android:text="@string/done"-->
+                <!--android:textColor="@color/grey_text"-->
+                <!--android:textSize="@dimen/body_1_material" />-->
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/layout_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:background="@drawable/white_card_ripple"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingTop="10dp"
+            android:paddingEnd="@dimen/normal_padding"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="set start time"
+                android:src="@drawable/time_start" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="@string/activity_medication_plan_start_time"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/subhead_material" />
+
+            <TextView
+                android:id="@+id/tv_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@{model.startTimeString}"
+                android:textColor="@color/primaryBlue"
+                android:textSize="@dimen/body_1_material" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:contentDescription="set start time"
+                android:src="@drawable/right_arrow" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/white_card_ripple"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingTop="10dp"
+            android:paddingEnd="@dimen/normal_padding"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="set start time"
+                android:src="@drawable/time_stop" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="@string/activity_medication_plan_end_time"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/subhead_material" />
+
+            <TextView
+                android:id="@+id/tv_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@{model.endTimeString}"
+                android:textColor="@color/primaryBlue"
+                android:textSize="@dimen/body_1_material" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:contentDescription="set start time"
+                android:src="@drawable/right_arrow" />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

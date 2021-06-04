@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/normal_padding"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout_name"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingTop="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding"
+            android:paddingBottom="@dimen/normal_padding"
+            app:layout_constraintBottom_toTopOf="@+id/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="medicine library"
+                android:src="@drawable/activity_medication_edit_medicine_name" />
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_name_title"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="@string/activity_medication_plan_select_medicine"-->
+                <!--android:textColor="@color/black_text"-->
+                <!--android:textSize="@dimen/subhead_material" />-->
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_marginStart="10dp"
+                android:text="@string/activity_medication_plan_select_medicine"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/subhead_material" />
+            
+            <ImageView
+                android:src="@drawable/right_arrow"
+                android:layout_width="@dimen/normal_padding"
+                android:layout_height="@dimen/normal_padding" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/normal_padding"
+            android:layout_marginEnd="@dimen/normal_padding"
+            android:background="@color/background_grey"
+            app:layout_constraintBottom_toBottomOf="@+id/layout_repeat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/layout_name" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_repeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider">
+
+            <ImageView
+                android:id="@+id/iv_cycle"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="@dimen/normal_padding"
+                android:contentDescription="take medicine time set"
+                android:src="@drawable/activity_medication_edit_medicine_cycle"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_cycle_time"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_cycle_time" />
+
+            <TextView
+                android:id="@+id/tv_cycle_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="@dimen/normal_padding"
+                android:text="@string/activity_medication_plan_medicine_cycle"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/subhead_material"
+                app:layout_constraintStart_toEndOf="@+id/iv_cycle"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/normal_padding"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="take medicine time set"
+                android:src="@drawable/right_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_range_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@dimen/normal_padding"
+                android:textColor="@color/primaryBlue"
+                android:textSize="@dimen/subhead_material"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_cycle_time"
+                app:layout_constraintTop_toBottomOf="@+id/tv_cycle_time" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_dosage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/normal_padding"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/normal_padding"
+        android:paddingTop="10dp"
+        android:paddingEnd="@dimen/normal_padding"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:contentDescription="set dosage"
+            android:src="@drawable/activity_medication_edit_medicine_dosage" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="@string/activity_medication_plan_dosage_set"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/subhead_material" />
+
+        <TextView
+            android:id="@+id/tv_cycle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/primaryBlue"
+            android:textSize="@dimen/body_1_material" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:contentDescription="dosage set"
+            android:src="@drawable/right_arrow" />
+    </LinearLayout>
+</LinearLayout>

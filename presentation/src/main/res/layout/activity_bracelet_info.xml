@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.BraceletInfoViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_grey"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/bracelet_info_title"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_grey">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_reminder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_title_reminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/normal_padding"
+                    android:layout_marginBottom="@dimen/normal_padding"
+                    android:text="@string/bracelet_info_sample_alert_ring"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="center|end"
+                    android:text="@{model.reminderNumber}"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_title_reminder"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_reminder"
+                    app:layout_constraintTop_toTopOf="@+id/tv_title_reminder" />
+
+                <ImageView
+                    android:id="@+id/iv_reminder"
+                    style="@style/style_image_right_arrow"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/bracelet_info_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/layout_reminder">
+
+                <TextView
+                    android:id="@+id/tv_display_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/bracelet_info_display_config"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_display_desc"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/tv_display_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/bracelet_info_whether_show"
+                    android:textColor="@color/light_grey_text"
+                    android:textSize="@dimen/caption_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv_display_title"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_display_title" />
+
+                <ImageView
+                    style="@style/style_image_right_arrow"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/bracelet_info_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_display_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/layout_display">
+
+                <TextView
+                    android:id="@+id/tv_display_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/bracelet_info_time_style"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_display_time_desc"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                <TextView
+                    android:id="@+id/tv_display_time_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/bracelet_info_choose_time_format"
+                    android:textColor="@color/light_grey_text"
+                    android:textSize="@dimen/caption_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv_display_time"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_display_time" />
+
+                <ImageView
+                    style="@style/style_image_right_arrow"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/bracelet_info_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_find_bracelet"
+                android:visibility="@{model.showFind?View.VISIBLE:View.GONE}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/layout_display_time">
+
+                <TextView
+                    android:id="@+id/tv_find"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/normal_padding"
+                    android:layout_marginBottom="@dimen/normal_padding"
+                    android:text="@string/bracelet_info_find_bracelet"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    style="@style/style_image_right_arrow"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/bracelet_info_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_power"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/layout_find_bracelet">
+
+                <TextView
+                    android:id="@+id/tv_power_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/normal_padding"
+                    android:layout_marginBottom="@dimen/normal_padding"
+                    android:text="@string/bracelet_info_device_power"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@{model.power}"
+                    android:textColor="@color/light_grey_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_mac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/layout_power">
+
+                <TextView
+                    android:id="@+id/tv_mac_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/normal_padding"
+                    android:layout_marginBottom="@dimen/normal_padding"
+                    android:text="@string/bracelet_info_mac_address"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@{model.mac}"
+                    android:textColor="@color/light_grey_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/layout_mac">
+
+                <TextView
+                    android:id="@+id/tv_version_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/normal_padding"
+                    android:layout_marginBottom="@dimen/normal_padding"
+                    android:text="@string/bracelet_info_firmware_version"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/xnarrow_padding"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/selector_new_version"
+                    android:padding="@dimen/xnarrow_padding"
+                    android:text="@string/bracelet_info_has_new_version"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/caption_material"
+                    android:visibility="@{model.braceletHasNewVersion?View.VISIBLE:View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_version_title"
+                    app:layout_constraintStart_toEndOf="@+id/tv_version_title"
+                    app:layout_constraintTop_toTopOf="@+id/tv_version_title" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@{model.version}"
+                    android:textColor="@color/light_grey_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_version_debug"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{model.showDebug?View.VISIBLE:View.GONE}"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/layout_version">
+
+                <TextView
+                    android:id="@+id/tv_version_title_debug"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/normal_padding"
+                    android:layout_marginBottom="@dimen/normal_padding"
+                    android:text="@string/bracelet_info_firmware_version_debug"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/xnarrow_padding"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/selector_new_version"
+                    android:padding="@dimen/xnarrow_padding"
+                    android:text="@string/bracelet_info_has_new_version"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/caption_material"
+                    android:visibility="@{model.braceletHasNewVersionDebug?View.VISIBLE:View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_version_title_debug"
+                    app:layout_constraintStart_toEndOf="@+id/tv_version_title_debug"
+                    app:layout_constraintTop_toTopOf="@+id/tv_version_title_debug" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@{model.version}"
+                    android:textColor="@color/light_grey_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <include
+                layout="@layout/layout_scan_or_disconnect"
+                bind:model="@{model.stateViewModel}" />
+
+            <Button
+                android:id="@+id/btn_remove_pair"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/narrow_height"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/normal_padding"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/activity_login_login_selector"
+                android:elevation="30dp"
+                android:text="@string/bracelet_info_remove_device"
+                android:textColor="@color/white"
+                android:textSize="@dimen/subhead_material"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="@dimen/normal_padding"
+    android:layout_marginEnd="@dimen/normal_padding"
+    android:layout_marginTop="@dimen/narrow_padding"
+    android:layout_marginBottom="@dimen/narrow_padding"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="1dp"
+    app:cardBackgroundColor="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingStart="@dimen/normal_padding"
+        android:paddingEnd="@dimen/normal_padding"
+        android:paddingBottom="@dimen/xnarrow_padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_unread"
+            android:layout_width="26dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/history_weekly_report_new_tag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="2018.10.3-2018.11.05"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/body_1_material"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/background_grey"
+            app:layout_constraintTop_toBottomOf="@+id/iv_unread" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/activity_weekly_report_bp_control_situation"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/subhead_material"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+        <com.mgtech.maiganapp.widget.ActivityWeeklyReportGraphView
+            android:id="@+id/graph"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <com.mgtech.maiganapp.widget.DotColorfulView
+            android:id="@+id/dot_reach"
+            android:layout_width="@dimen/narrow_padding"
+            app:color="@color/primaryGreen"
+            android:layout_height="@dimen/narrow_padding"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_reach"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_reach" />
+
+        <TextView
+            android:id="@+id/tv_reach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/activity_weekly_report_bp_normal"
+            android:textColor="@color/grey_text"
+            android:textSize="@dimen/caption_material"
+            app:layout_constraintStart_toEndOf="@+id/dot_reach"
+            app:layout_constraintTop_toBottomOf="@+id/graph" />
+
+
+        <com.mgtech.maiganapp.widget.DotColorfulView
+            android:id="@+id/dot_not_reach"
+            android:layout_width="@dimen/narrow_padding"
+            android:layout_height="@dimen/narrow_padding"
+            app:color="@color/warningColor"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_not_reach"
+            app:layout_constraintEnd_toStartOf="@+id/tv_not_reach"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_not_reach" />
+
+        <TextView
+            android:id="@+id/tv_not_reach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/activity_weekly_report_bp_abnormal"
+            android:textColor="@color/grey_text"
+            android:textSize="@dimen/caption_material"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_reach"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/dot_not_reach"
+            app:layout_constraintTop_toTopOf="@+id/tv_reach" />
+
+
+        <com.mgtech.maiganapp.widget.DotColorfulView
+            android:layout_width="@dimen/narrow_padding"
+            android:layout_height="@dimen/narrow_padding"
+            android:layout_marginEnd="8dp"
+            app:color="@color/background_grey"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_not_measure"
+            app:layout_constraintEnd_toStartOf="@+id/tv_not_measure"
+            app:layout_constraintTop_toTopOf="@+id/tv_not_measure" />
+
+        <TextView
+            android:id="@+id/tv_not_measure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_weekly_report_bp_not_measure"
+            android:textColor="@color/grey_text"
+            android:textSize="@dimen/caption_material"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_reach"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_reach" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/background_grey"
+            app:layout_constraintTop_toBottomOf="@+id/tv_not_reach" />
+
+        <TextView
+            android:id="@+id/tv_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/narrow_padding"
+            android:paddingBottom="@dimen/narrow_padding"
+            android:text="@string/activity_weekly_report_detail"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/body_1_material"
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

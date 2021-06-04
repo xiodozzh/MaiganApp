@@ -1,0 +1,2 @@
+include ':presentation', ':blelib', ':domain', ':data', ':daogenerator', ':LibMarsdaemons'
+project(':LibMarsdaemons').projectDir = new File('LibMarsdaemon')

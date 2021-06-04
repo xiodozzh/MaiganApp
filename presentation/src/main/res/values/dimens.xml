@@ -1,0 +1,51 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="large_padding">32dp</dimen>
+    <dimen name="large_icon">26dp</dimen>
+    <dimen name="medium_padding">24dp</dimen>
+    <dimen name="normal_padding">16dp</dimen>
+    <dimen name="narrow_padding">8dp</dimen>
+    <dimen name="xnarrow_padding">4dp</dimen>
+
+    <dimen name="normal_height">48dp</dimen>
+    <dimen name="narrow_height">40dp</dimen>
+    <dimen name="xnarrow_height">36dp</dimen>
+    <dimen name="icon_length">24dp</dimen>
+    <dimen name="icon_length_middle">22dp</dimen>
+    <dimen name="icon_padding">2dp</dimen>
+    <dimen name="double_normal_height">96dp</dimen>
+    <dimen name="triple_normal_height">144dp</dimen>
+    <dimen name="large_height">56dp</dimen>
+
+    <dimen name="body_1_material">14sp</dimen>
+    <dimen name="caption_material">12sp</dimen>
+    <dimen name="display_0_material">32sp</dimen>
+    <dimen name="display_1_material">34sp</dimen>
+    <dimen name="display_2_material">45sp</dimen>
+    <dimen name="headline_material">24sp</dimen>
+    <dimen name="large_material">22sp</dimen>
+    <dimen name="medium_material">18sp</dimen>
+    <dimen name="subhead_material">16sp</dimen>
+    <dimen name="title_material">20sp</dimen>
+
+    <dimen name="top_bar_title">@dimen/medium_material</dimen>
+
+    <dimen name="popup_width">280dp</dimen>
+    <dimen name="popup_height">250dp</dimen>
+
+    <dimen name="pair_gif_height">200dp</dimen>
+
+    <dimen name="line_width">1.5dp</dimen>
+    <dimen name="setting_about_us_icon_length">72dp</dimen>
+
+    <!--<dimen name="fragment_home_card_padding">10dp</dimen>-->
+    <dimen name="fragment_home_card_title_height_with_dot">36dp</dimen>
+    <dimen name="fragment_home_card_graph_height">50dp</dimen>
+    <dimen name="activity_main_bottom_img_width">25dp</dimen>
+    <dimen name="activity_main_bottom_padding">4dp</dimen>
+    <dimen name="fragment_bottom_padding">50dp</dimen>
+    <dimen name="activity_enter_dot_length">4dp</dimen>
+    <dimen name="ecg_horizontal_width">300dp</dimen>
+
+</resources>

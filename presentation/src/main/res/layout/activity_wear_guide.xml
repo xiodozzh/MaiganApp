@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.DefaultViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="佩戴引导"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:layout_marginTop="@dimen/normal_padding"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/normal_height"
+            android:gravity="center"
+            android:text="1.如何找脉点"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/title_material" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/triple_normal_height">
+
+            <ImageView
+                android:id="@+id/iv_find_pulse"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/wear_guide_find_pulse_point"
+                app:layout_constraintDimensionRatio="1:1" />
+
+            <TextView
+                android:id="@+id/tv_find_pulse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/normal_padding"
+                android:lineSpacingMultiplier="1.2"
+                android:text="此步教您如何找到脉点，\n为后续正确测量打下基础."
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/body_1_material"
+                app:layout_constraintStart_toEndOf="@+id/iv_find_pulse"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/layout_go_to_find"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/normal_padding"
+                android:background="@drawable/selector_wear_guide_go_to_learn_btn"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/narrow_padding"
+                android:paddingTop="@dimen/narrow_padding"
+                android:paddingEnd="@dimen/normal_padding"
+                android:paddingBottom="@dimen/narrow_padding"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_find_pulse">
+
+                <ImageView
+                    android:layout_width="@dimen/icon_length"
+                    android:layout_height="@dimen/icon_length"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/app_name"
+                    android:padding="@dimen/icon_padding"
+                    android:src="@drawable/wear_guide_to_learn_btn" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/xnarrow_padding"
+                    android:text="去学习"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/subhead_material" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_marginTop="@dimen/large_padding"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/normal_height"
+            android:gravity="center"
+            android:text="2.如何辨识脉搏波图"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/title_material" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/triple_normal_height">
+
+            <ImageView
+                android:id="@+id/iv_recognize_pulse"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/wear_guide_recognize_pulse_point"
+                app:layout_constraintDimensionRatio="620:504"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_recognize_pulse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:lineSpacingMultiplier="1.2"
+                android:text="正确脉图是怎样的？\n常见的错误脉图有哪些？\n如何通过调整测出有效脉图？"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/body_1_material"
+                app:layout_constraintStart_toEndOf="@+id/iv_recognize_pulse"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/layout_go_to_recognize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/normal_padding"
+                android:background="@drawable/selector_wear_guide_go_to_learn_btn"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/narrow_padding"
+                android:paddingTop="@dimen/narrow_padding"
+                android:paddingEnd="@dimen/normal_padding"
+                android:paddingBottom="@dimen/narrow_padding"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_recognize_pulse">
+
+                <ImageView
+                    android:layout_width="@dimen/icon_length"
+                    android:layout_height="@dimen/icon_length"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/app_name"
+                    android:padding="@dimen/icon_padding"
+                    android:src="@drawable/wear_guide_to_learn_btn" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/xnarrow_padding"
+                    android:text="去学习"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/subhead_material" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

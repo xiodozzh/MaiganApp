@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:background="@color/white"
+        android:text="@string/bracelet_info_whether_show"
+        android:textSize="@dimen/body_1_material"
+        android:textColor="@color/grey1000"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_height" />
+
+    <View
+        style="@style/style_divide_line_view"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:divider="@android:drawable/divider_horizontal_bright"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/narrow_padding"
+        android:paddingStart="@dimen/narrow_padding"
+        android:showDividers="middle|end">
+
+        <LinearLayout style="@style/info_layout_style">
+
+            <ImageView
+                style="@style/style_img_txt_layout_img"
+                android:contentDescription="@string/bracelet_info_display_config"
+                android:src="@drawable/activity_bracelet_info_display_time" />
+
+            <TextView
+                style="@style/display_bracelet_title"
+                android:text="@string/bracelet_info_display_time" />
+
+            <CheckBox
+                android:id="@+id/sw_date"
+                android:enabled="false"
+                style="@style/style_display_checkbox"/>
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/info_layout_style">
+
+            <ImageView
+                style="@style/style_img_txt_layout_img"
+                android:contentDescription="@string/bracelet_info_display_config"
+                android:src="@drawable/activity_bracelet_info_display_blood_pressure" />
+
+            <TextView
+                style="@style/display_bracelet_title"
+                android:text="@string/bracelet_info_display_bp" />
+
+            <CheckBox
+                android:enabled="true"
+                android:id="@+id/sw_bp"
+                style="@style/style_display_checkbox"/>
+        </LinearLayout>
+
+        <LinearLayout style="@style/info_layout_style">
+
+            <ImageView
+                style="@style/style_img_txt_layout_img"
+                android:contentDescription="@string/bracelet_info_display_config"
+                android:src="@drawable/fragment_history_health_graph_radar_icon_v0_select" />
+
+            <TextView
+                style="@style/display_bracelet_title"
+                android:text="@string/bracelet_info_display_v0" />
+
+            <CheckBox
+                android:enabled="true"
+                android:id="@+id/sw_v0"
+                style="@style/style_display_checkbox"/>
+        </LinearLayout>
+
+
+        <LinearLayout style="@style/info_layout_style">
+
+            <ImageView
+                style="@style/style_img_txt_layout_img"
+                android:contentDescription="@string/bracelet_info_display_config"
+                android:src="@drawable/activity_bracelet_info_display_step" />
+
+            <TextView
+                style="@style/display_bracelet_title"
+                android:text="@string/bracelet_info_display_step" />
+
+            <CheckBox
+                android:id="@+id/sw_step"
+                style="@style/style_display_checkbox"/>
+        </LinearLayout>
+
+        <LinearLayout style="@style/info_layout_style">
+
+            <ImageView
+                style="@style/style_img_txt_layout_img"
+                android:contentDescription="@string/bracelet_info_display_config"
+                android:src="@drawable/activity_bracelet_info_display_distance" />
+
+            <TextView
+                style="@style/display_bracelet_title"
+                android:text="@string/bracelet_info_display_distance" />
+
+            <CheckBox
+                android:id="@+id/sw_distance"
+                style="@style/style_display_checkbox"/>
+        </LinearLayout>
+
+        <LinearLayout style="@style/info_layout_style">
+
+            <ImageView
+                style="@style/style_img_txt_layout_img"
+                android:contentDescription="@string/bracelet_info_display_config"
+                android:src="@drawable/activity_bracelet_info_display_heat" />
+
+            <TextView
+                style="@style/display_bracelet_title"
+                android:text="@string/bracelet_info_display_heat" />
+
+            <CheckBox
+                android:id="@+id/sw_heat"
+                style="@style/style_display_checkbox"/>
+        </LinearLayout>
+
+
+        <LinearLayout style="@style/info_layout_style">
+
+            <ImageView
+                style="@style/style_img_txt_layout_img"
+                android:contentDescription="@string/bracelet_info_display_config"
+                android:src="@drawable/activity_bracelet_info_display_electricity" />
+
+            <TextView
+                style="@style/display_bracelet_title"
+                android:text="@string/bracelet_info_display_power" />
+
+            <CheckBox
+                android:enabled="false"
+                android:id="@+id/sw_power"
+                style="@style/style_display_checkbox"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_height"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:background="@drawable/selector_set_bracelet_config_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/cancel"/>
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:background="@drawable/selector_set_bracelet_config_submit"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/submit"/>
+    </LinearLayout>
+</LinearLayout>

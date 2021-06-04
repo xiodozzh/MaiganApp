@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.BraceletFindViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/bracelet_find_title"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <ImageView
+                android:id="@+id/iv_rotate"
+                android:layout_width="204dp"
+                android:layout_height="204dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="background"
+                android:src="@drawable/bracelet_find_rotate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_bracelet"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="background"
+                android:src="@drawable/bracelet_find_bracelet"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_rotate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_rotate" />
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/large_height"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:text="@string/bracelet_find_description"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/body_1_material"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_rotate" />
+
+            <TextView
+                android:id="@+id/btn_find"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/narrow_height"
+                android:layout_marginStart="8dp"
+                android:enabled="@{model.enableFind}"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/selector_btn_find_bracelet"
+                android:gravity="center"
+                android:paddingStart="@dimen/large_padding"
+                android:paddingEnd="@dimen/large_padding"
+                android:text="@{model.btnText}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/subhead_material"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_desc" />
+
+            <include
+                layout="@layout/layout_scan_or_disconnect"
+                bind:model="@{model.stateViewModel}" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

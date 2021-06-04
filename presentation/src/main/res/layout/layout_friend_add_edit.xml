@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="15dp"
+    android:background="@color/white"
+    android:focusable="false"
+    android:focusableInTouchMode="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/normal_padding"
+    android:paddingTop="@dimen/narrow_padding"
+    android:paddingEnd="@dimen/normal_padding"
+    android:paddingBottom="@dimen/narrow_padding">
+
+    <ImageView
+        android:layout_width="@dimen/normal_padding"
+        android:layout_height="@dimen/normal_padding"
+        android:contentDescription="search phone"
+        android:src="@drawable/activity_friend_add_search" />
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/subhead_material"
+        android:background="@null"
+        android:hint="@string/friend_add_input_phone_number"
+        android:imeOptions="actionDone"
+        android:inputType="phone"
+        android:textSize="@dimen/subhead_material" />
+</LinearLayout>

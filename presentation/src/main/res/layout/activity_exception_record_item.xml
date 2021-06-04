@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <!--<ImageView-->
+        <!--android:id="@+id/icon"-->
+        <!--android:layout_width="20dp"-->
+        <!--android:layout_height="20dp"-->
+        <!--android:layout_marginStart="16dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:contentDescription="icon"-->
+        <!--android:src="@drawable/fragment_history_health_graph_radar_icon_bp_select"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/tv_title"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:textColor="@color/grey_text"-->
+        <!--android:textSize="@dimen/body_1_material"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/icon"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/icon"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/icon" />-->
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_padding"
+        android:text="2018-10-30 16:14:10"
+        android:layout_marginTop="@dimen/narrow_padding"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/body_1_material"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="14dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_time">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/heart_rate"
+            android:textColor="@color/grey_text"
+            android:textSize="@dimen/body_1_material" />
+
+        <TextView
+            android:id="@+id/tv_hr_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="76"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/subhead_material" />
+
+        <TextView
+            android:id="@+id/tv_hr_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="bpm" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="37dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_time">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/blood_pressure"
+            android:textColor="@color/grey_text"
+            android:textSize="@dimen/body_1_material" />
+
+        <TextView
+            android:text="124/81"
+            android:textSize="@dimen/subhead_material"
+            android:textColor="@color/black_text"
+            android:id="@+id/tv_bp_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_bp_unit"
+            android:text="mmHg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/black_text"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2" />
+
+    <com.mgtech.maiganapp.widget.DotColorfulView
+        android:id="@+id/dotView"
+        android:visibility="gone"
+        android:layout_width="@dimen/xnarrow_padding"
+        android:layout_height="@dimen/xnarrow_padding"
+        app:color="@color/warningColor"
+        app:layout_constraintStart_toEndOf="@+id/tv_time"
+        app:layout_constraintTop_toTopOf="@+id/tv_time" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

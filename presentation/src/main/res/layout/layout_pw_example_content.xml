@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/narrow_padding"
+    android:gravity="center"
+    app:cardCornerRadius="4dp"
+    app:contentPadding="@dimen/xnarrow_padding">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="标题"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/subhead_material"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/triple_normal_height"
+            android:contentDescription="@string/app_name" />
+
+        <Button
+            android:id="@+id/btn_movie"
+            android:background="@drawable/wear_guide_recognize_display_btn"
+            android:layout_width="@dimen/large_icon"
+            android:layout_height="@dimen/large_icon"
+            android:layout_margin="@dimen/narrow_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:paddingStart="@dimen/normal_padding"
+    android:paddingEnd="@dimen/normal_padding"
+    android:paddingTop="@dimen/narrow_padding"
+    android:layout_height="wrap_content">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:id="@+id/guide"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/background_grey"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="@dimen/normal_padding"
+        android:paddingBottom="@dimen/normal_padding"
+        android:text="@string/cancel"
+        android:textColor="@color/grey_text"
+        android:textSize="@dimen/subhead_material"
+        app:layout_constraintTop_toBottomOf="@+id/guide"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

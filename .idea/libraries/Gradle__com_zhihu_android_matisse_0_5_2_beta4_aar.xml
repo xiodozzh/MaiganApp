@@ -1,0 +1,42 @@
+<component name="libraryTable">
+  <library name="Gradle: com.zhihu.android:matisse:0.5.2-beta4@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d317a5cfa61f2bd4f2db63d2d4862e6f/jetified-matisse-0.5.2-beta4/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/94d342426399bf12f77c09da4a3bcebc/jetified-matisse-0.5.2-beta4/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4bdc436062df00d0ea71067a00c3d2a8/jetified-matisse-0.5.2-beta4/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/95b5da2fe2283e4ea89f28fd1faffdc8/jetified-matisse-0.5.2-beta4/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/575dc2b24812fed7ab90242218b6c6d7/jetified-matisse-0.5.2-beta4/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f4d6085050dbfce9156a6443a9d567eb/jetified-matisse-0.5.2-beta4/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7751954f9abf400d6bab791fb18a3a26/jetified-matisse-0.5.2-beta4/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d317a5cfa61f2bd4f2db63d2d4862e6f/jetified-matisse-0.5.2-beta4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d317a5cfa61f2bd4f2db63d2d4862e6f/jetified-matisse-0.5.2-beta4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d317a5cfa61f2bd4f2db63d2d4862e6f/jetified-matisse-0.5.2-beta4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/94d342426399bf12f77c09da4a3bcebc/jetified-matisse-0.5.2-beta4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/94d342426399bf12f77c09da4a3bcebc/jetified-matisse-0.5.2-beta4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/94d342426399bf12f77c09da4a3bcebc/jetified-matisse-0.5.2-beta4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4bdc436062df00d0ea71067a00c3d2a8/jetified-matisse-0.5.2-beta4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4bdc436062df00d0ea71067a00c3d2a8/jetified-matisse-0.5.2-beta4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4bdc436062df00d0ea71067a00c3d2a8/jetified-matisse-0.5.2-beta4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/95b5da2fe2283e4ea89f28fd1faffdc8/jetified-matisse-0.5.2-beta4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/95b5da2fe2283e4ea89f28fd1faffdc8/jetified-matisse-0.5.2-beta4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/95b5da2fe2283e4ea89f28fd1faffdc8/jetified-matisse-0.5.2-beta4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/575dc2b24812fed7ab90242218b6c6d7/jetified-matisse-0.5.2-beta4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/575dc2b24812fed7ab90242218b6c6d7/jetified-matisse-0.5.2-beta4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/575dc2b24812fed7ab90242218b6c6d7/jetified-matisse-0.5.2-beta4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f4d6085050dbfce9156a6443a9d567eb/jetified-matisse-0.5.2-beta4/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f4d6085050dbfce9156a6443a9d567eb/jetified-matisse-0.5.2-beta4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f4d6085050dbfce9156a6443a9d567eb/jetified-matisse-0.5.2-beta4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7751954f9abf400d6bab791fb18a3a26/jetified-matisse-0.5.2-beta4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7751954f9abf400d6bab791fb18a3a26/jetified-matisse-0.5.2-beta4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7751954f9abf400d6bab791fb18a3a26/jetified-matisse-0.5.2-beta4/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zhihu.android/matisse/0.5.2-beta4/8720dff48d23924b96c204ea4bc0f196ebb6030e/matisse-0.5.2-beta4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zhihu.android/matisse/0.5.2-beta4/ef68efc0a699845e12f5d0762541504c0f7e9ba2/matisse-0.5.2-beta4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

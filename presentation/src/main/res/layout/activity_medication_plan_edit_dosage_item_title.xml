@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_card_ripple"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/normal_padding"
+    android:layout_marginTop="@dimen/normal_padding"
+    android:paddingTop="10dp"
+    android:paddingEnd="@dimen/normal_padding"
+    android:paddingBottom="10dp">
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:contentDescription="set dosage repeat"
+        android:src="@drawable/activity_medication_edit_dosage_repeat" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_weight="1"
+        android:text="@string/activity_medication_plan_repeat"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/subhead_material" />
+
+    <TextView
+        android:id="@+id/tv_dosage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="每3天循环"
+        android:textColor="@color/primaryBlue"
+        android:textSize="@dimen/body_1_material" />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:contentDescription="set dosage repeat"
+        android:src="@drawable/right_arrow" />
+
+</LinearLayout>

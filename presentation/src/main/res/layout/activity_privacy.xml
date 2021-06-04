@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.DefaultViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/background_grey"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/setting_privacy"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <LinearLayout
+            android:id="@+id/layout_friend"
+            style="@style/info_layout_style"
+            android:layout_marginTop="@dimen/narrow_padding"
+            android:background="@drawable/white_card_ripple"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <TextView
+                style="@style/style_setting_title_text"
+                android:text="@string/privacy_friend" />
+
+            <ImageView
+                style="@style/style_image_right_arrow"
+                android:layout_marginStart="@dimen/narrow_padding"
+                android:contentDescription="@string/app_name" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_system"
+            style="@style/info_layout_style"
+            android:layout_marginTop="@dimen/narrow_padding"
+            android:background="@drawable/white_card_ripple"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <TextView
+                style="@style/style_setting_title_text"
+                android:text="@string/privacy_system" />
+
+            <ImageView
+                style="@style/style_image_right_arrow"
+                android:layout_marginStart="@dimen/narrow_padding"
+                android:contentDescription="@string/app_name" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_auth_management"
+            style="@style/info_layout_style"
+            android:layout_marginTop="@dimen/narrow_padding"
+            android:background="@drawable/white_card_ripple"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <TextView
+                style="@style/style_setting_title_text"
+                android:text="@string/setting_auth_management" />
+
+            <ImageView
+                style="@style/style_image_right_arrow"
+                android:layout_marginStart="@dimen/narrow_padding"
+                android:contentDescription="@string/app_name" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_user"
+            style="@style/info_layout_style"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/white_card_ripple"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <TextView
+                style="@style/style_setting_title_text"
+                android:text="@string/setting_user_protocol" />
+
+            <ImageView
+                style="@style/style_image_right_arrow"
+                android:layout_marginStart="@dimen/narrow_padding"
+                android:contentDescription="@string/app_name" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_politics"
+            style="@style/info_layout_style"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/white_card_ripple"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <TextView
+                style="@style/style_setting_title_text"
+                android:text="@string/activity_register_privacy" />
+
+            <ImageView
+                style="@style/style_image_right_arrow"
+                android:layout_marginStart="@dimen/narrow_padding"
+                android:contentDescription="@string/app_name" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

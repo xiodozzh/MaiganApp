@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_grey"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/large_height"
+        android:layout_marginBottom="@dimen/narrow_padding"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="@dimen/icon_length"
+            android:layout_height="@dimen/icon_length"
+            android:contentDescription="add"
+            android:src="@drawable/fragment_i_bind_bracelet"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:text="@string/select_medicine_add_to_lib"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/subhead_material"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--<ImageView-->
+        <!--android:id="@+id/iv"-->
+        <!--android:layout_width="@dimen/normal_height"-->
+        <!--android:layout_height="@dimen/normal_height"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginStart="@dimen/normal_padding"-->
+        <!--android:layout_marginTop="@dimen/normal_padding"-->
+        <!--android:layout_marginBottom="@dimen/normal_padding"-->
+        <!--android:contentDescription="search "-->
+        <!--android:src="@drawable/select_medicine_add_to_lib"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/tv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:text="@string/select_medicine_add_to_lib"-->
+        <!--android:textColor="@color/black_text"-->
+        <!--android:textSize="@dimen/body_1_material"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/iv"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/tv_name"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:text="布洛芬缓释胶囊"-->
+        <!--android:textColor="@color/colorPrimary"-->
+        <!--android:textSize="@dimen/body_1_material"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/iv_arrow"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/tv"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/iv_arrow"-->
+        <!--android:layout_width="@dimen/normal_padding"-->
+        <!--android:layout_height="@dimen/normal_padding"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:contentDescription="arrow"-->
+        <!--android:src="@drawable/right_arrow"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

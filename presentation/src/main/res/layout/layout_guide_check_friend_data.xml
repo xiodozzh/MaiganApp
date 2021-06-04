@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mask_color"
+    android:elevation="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/iv_guide"
+        android:src="@drawable/guide_check_friend_data"
+        android:contentDescription="guide"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="@dimen/xnarrow_padding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/iv_skip"
+        android:contentDescription="skip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/large_padding"
+        app:layout_constraintTop_toBottomOf="@+id/iv_guide"
+        android:src="@drawable/guide_i_know_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</androidx.constraintlayout.widget.ConstraintLayout>

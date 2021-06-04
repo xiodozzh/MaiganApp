@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--通用-->
+    <string name="app_name">脈跡</string>
+    <string name="format_your_account_is_login_on_device">您的賬號已在\"%s\"上登錄。</string>
+    <string name="your_account_is_login_on_other_device">您的賬號已在其他手機登錄。</string>
+    <string name="logout_msg">下線通知</string>
+    <string name="exit">退出</string>
+    <string name="home_reminder">用藥提醒</string>
+    <string name="ble_need_location_information">藍牙功能正常工作需要您的位置信息</string>
+    <string name="do_not_open">暫不開啟</string>
+    <string name="ble_cannot_work_normally">藍牙功能暫時無法正常工作</string>
+    <string name="go_to_open">前往開啟</string>
+    <string name="open_bluetooth">開啟</string>
+    <string name="bluetooth_not_open">未開啟藍牙</string>
+
+    <string name="please_wait">請稍等</string>
+    <string name="activity_bracelet_pair_please_bond_again">請重新綁定脈跡手環</string>
+    <string name="caution">註意</string>
+    <string name="phone_do_not_support_bluetooth">手機不支持藍牙設備</string>
+    <string name="activity_ble_please_open_ble">請開啟藍牙，否則無法使用。</string>
+    <string name="activity_ble_open_ble">開啟</string>
+    <string name="set_success">設置成功</string>
+    <string name="submit">確定</string>
+    <string name="sure">確認</string>
+    <string name="cancel">取消</string>
+    <string name="network_error">網絡異常,請稍後再試</string>
+    <string name="network_error_try_later">獲取失敗，請稍後再試</string>
+    <string name="firmware_upgrade_fail_error_try_later">升級失敗</string>
+    <string name="man">男</string>
+    <string name="woman">女</string>
+    <string name="sunday">星期日</string>
+    <string name="monday">星期一</string>
+    <string name="tuesday">星期二</string>
+    <string name="wednesday">星期三</string>
+    <string name="thursday">星期四</string>
+    <string name="friday">星期五</string>
+    <string name="saturday">星期六</string>
+    <string name="begin_time">開始時間</string>
+    <string name="end_time">結束時間</string>
+    <string name="notification">通知</string>
+
+    <!--設置頭像-->
+    <string name="sheet_camera">相機</string>
+    <string name="sheet_photo_album">相冊</string>
+
+    <!--啟動頁-->
+    <string name="activity_enter_skip">跳過</string>
+    <string name="activity_enter_experience_immediately">立即體驗</string>
+
+    <!--登錄-->
+    <string name="activity_login_hello">登錄</string>
+    <string name="activity_login_welcome">歡迎來到脈跡，立即</string>
+    <string name="activity_login_register">註冊</string>
+    <string name="activity_login_zone">國家/地區</string>
+    <string name="activity_login_zone_default_country">中國</string>
+    <string name="activity_login_zone_default_number">+86</string>
+    <string name="activity_login_please_input_phone_number">請輸入手機號</string>
+    <string name="activity_login_please_input_password">請輸入密碼</string>
+    <string name="activity_login_login">登錄</string>
+    <string name="activity_login_login_quickly">快速登錄</string>
+    <string name="activity_login_forget_password">忘記密碼</string>
+    <string name="phone_password_is_empty">用戶名和密碼不能為空</string>
+    <string name="activity_base_password_error">密碼有誤</string>
+    <string name="activity_base_please_login_again">請重新登錄</string>
+    <string name="login_again">重新登錄</string>
+
+    <!--註冊-->
+    <string name="activity_register_title">註冊</string>
+    <string name="activity_register_zone">國家/地區</string>
+    <string name="activity_register_zone_default_number">+86</string>
+    <string name="activity_register_please_input_phone_number">請輸入手機號</string>
+    <string name="activity_register_please_input_password">請輸入密碼</string>
+    <string name="activity_register_please_input_verification_code">請輸入驗證碼</string>
+    <string name="activity_register_get_verification_code">獲取驗證碼</string>
+    <string name="activity_register_agree_user_protocol">註冊即代表閱讀並同意</string>
+    <string name="activity_register_user_protocol">脉迹用戶協議</string>
+    <string name="activity_register_register">註冊</string>
+    <string name="activity_register_second_left">還剩%ds</string>
+    <string name="activity_register_please_input_correct_phone_number">請輸入正確的手機號碼</string>
+    <string name="activity_register_password_is_too_short">密碼不能少於6位</string>
+    <string name="country_select_phone_location">選擇國家和地區</string>
+
+    <!--重置密碼-->
+    <string name="reset_password">設置密碼</string>
+    <string name="reset_password_second_left">還剩%ds</string>
+    <string name="reset_password_input_correct_phone_number">請輸入正確的手機號碼</string>
+    <string name="reset_password_input_password">請重新設置密碼</string>
+    <string name="reset_password_get_verification_code">獲取驗證碼</string>
+    <string name="reset_password_success">密碼修改成功</string>
+    <string name="reset_password_submit">重置密碼</string>
+
+    <!--初始化個人信息-->
+    <string name="fragment_personal_info_init_necessary_please_input_correct_info">血壓等數據的計算依賴以下信息，請您準確輸入</string>
+    <string name="fragment_personal_info_init_necessary_please_input_name">請填寫姓名</string>
+    <string name="fragment_personal_info_init_necessary_please_input_birthday">請選擇出生日期</string>
+    <string name="fragment_personal_info_init_necessary_please_input_height">請選擇身高</string>
+    <string name="fragment_personal_info_init_necessary_please_input_weight">請選擇體重</string>
+    <string name="fragment_personal_info_init_necessary_please_input_next_step">下一步</string>
+    <string name="fragment_personal_info_init_unnecessary_please_input_correct_info">血壓等數據的計算依賴以下信息，請您準確輸入</string>
+    <string name="fragment_personal_info_init_unnecessary_bp_type">高血壓類型</string>
+    <string name="fragment_personal_info_init_unnecessary_multiple_choice">（多選）</string>
+    <string name="fragment_personal_info_init_unnecessary_clinical">臨床疾病</string>
+    <string name="fragment_personal_info_init_unnecessary_organ_damage">靶器官損傷</string>
+    <string name="fragment_personal_info_init_unnecessary_other">其它</string>
+
+    <!--主頁-->
+    <string name="activity_main_bottom_home">脈跡</string>
+    <string name="activity_main_bottom_health_manage">健康管理</string>
+    <string name="activity_main_bottom_friend">親友</string>
+    <string name="activity_main_bottom_me">我的</string>
+
+    <!--首頁-->
+    <string name="home_time">時間</string>
+    <string name="home_kind">種</string>
+    <string name="home_medicine_need_to_take">需服用藥物</string>
+    <string name="home_no_kind_of_medicine">暫無提醒</string>
+
+    <!--健康管理-->
+    <string name="health_manage_title">健康管理</string>
+    <string name="health_manage_bp_goal">正常血壓目標</string>
+    <string name="health_manage_bp_unit">mmHg</string>
+    <string name="health_manage_achieve">達標</string>
+    <string name="health_manage_not_achieve">未達標</string>
+    <string name="health_manage_day_unit">天</string>
+    <string name="health_manage_medication_plan">用藥計劃</string>
+    <string name="health_manage_abnormal_record">血壓推送\n記錄</string>
+    <string name="health_manage_sport">運動</string>
+    <string name="health_manage_health_knowledge">健康知識</string>
+    <string name="health_manage_insufficient_data">數據不足</string>
+    <string name="health_manage_suggest">血壓控制目標是根據您的個人身體信息、病史信息，通過模型綜合評估出來的，建議控制藥物，當您長期保持在控制範圍內時，說明您的病情控制良好。如果頻繁超出控制範圍，請及時就醫檢查。</string>
+
+    <!--PW歷史-->
+    <string name="history_pw_list_title">數據列表</string>
+    <string name="history_bp_en_short">血壓</string>
+    <string name="history_hr_en_short">脉搏</string>
+
+    <!--親友-->
+    <string name="friend_i_monitor">我監護的</string>
+    <string name="friend_monitor_me">監護我的</string>
+    <string name="friend_title">親友</string>
+    <string name="friend_bp">血壓：</string>
+    <string name="friend_hr">脉搏：</string>
+    <string name="friend_measure_time">測量時間：</string>
+    <string name="friend_phone_contact">手機通訊錄</string>
+
+    <string name="friend_add_search">搜索：</string>
+    <string name="friend_add_input_phone_number">輸入手機號</string>
+    <string name="friend_add_phone_number">手機號：%s</string>
+    <string name="friend_add_invite">邀請</string>
+    <string name="friend_add_have_monitored">已關註</string>
+    <string name="friend_add_monitor">關註</string>
+
+
+    <!--我的-->
+    <string name="i_health_report">健康周報</string>
+    <string name="i_disease_history">病史更新</string>
+    <string name="i_font_size">字體大小</string>
+    <string name="i_exception">消息通知</string>
+    <string name="i_other">其它</string>
+    <string name="i_bond_bracelet">綁定脈跡手環</string>
+    <string name="i_bracelet">脈跡手環</string>
+    <string name="i_sync_time">自動測量數據同步時間\n%s</string>
+
+    <!--綁定-->
+    <string name="bind_guide">輕觸手環正面金屬觸片，切換至電量顯示頁面，長按觸片直至手環振動並顯示數字，待下面列表中出現與手環數字一致的選項，點擊選擇它</string>
+    <string name="bind_please_click_bracelet_button_for_submit">手環連續振動，\n請再次輕觸金屬觸片</string>
+    <string name="bind_success">綁定成功</string>
+    <string name="bind_fail">綁定失敗，請重試</string>
+    <string name="bind_do_you_want_sync_bracelet_setting">是否同步脈跡手環設置信息？</string>
+    <string name="bind_you_can_sync_your_setting">發現了您之前設置的配置信息，您可以將它同步到脈跡手環</string>
+    <string name="bind_not_sync">不同步</string>
+    <string name="bind_sync">同步</string>
+    <string name="bind_has_bond_do_you_want_adjust">已綁定，觀看佩戴引導？</string>
+    <string name="bind_recommend_adjust">正確佩戴脈跡手環有助於脈跡手環有效地采集您的脈搏圖</string>
+    <string name="bind_not_watch">暫不觀看</string>
+    <string name="bind_start_watch">去學習</string>
+    <string name="bind_caution">註意事項</string>
+    <string name="bind_caution_text">1.請確認手環並未連接其他手機。\n2.請確認當前手機已經打開藍牙。</string>
+    <string name="bracelet_pair_set_new_reminder_note">手環全天 24 小時運行，每間隔 1 小時自動測量一次血壓。可選擇設置自動測量振動提醒 (默認已開啟)</string>
+    <string name="bracelet_pair_set_old_reminder_note">手環全天 24 小時運行，每間隔 1 小時自動測量一次血壓。可選擇設置自動測量振動提醒</string>
+    <!--<string name="fragment_friend_disable_to_check_friend_info">無法查看該親友的信息</string>-->
+
+    <!--手環信息-->
+    <string name="bracelet_info_sample_alert_ring">自動測量提醒</string>
+    <string name="bracelet_info_whether_show">設置信息是否在脈跡手環上顯示</string>
+    <string name="bracelet_info_choose_time_format">選擇時間顯示樣式</string>
+    <string name="bracelet_info_firmware_version_debug">固件版本debug</string>
+    <string name="bracelet_info_has_new_version">有新版本</string>
+    <string name="bracelet_info_title">脈跡手環</string>
+    <string name="bracelet_info_display_config">顯示設置</string>
+    <string name="bracelet_info_mac_address">MAC地址</string>
+    <string name="bracelet_info_device_power">剩余電量</string>
+    <string name="bracelet_info_remove_device">解除綁定</string>
+    <string name="bracelet_info_firmware_version">固件版本</string>
+    <string name="bracelet_info_select_time_display_style">選擇時間顯示樣式</string>
+    <string name="bracelet_info_time_style">時間樣式</string>
+    <string name="bracelet_info_alert_not_open">未開啟</string>
+    <string name="bracelet_info_alert_open_n_reminders">開啟了%d個</string>
+    <string name="bracelet_info_display_time">時間</string>
+    <string name="bracelet_info_display_bp">血壓</string>
+    <string name="bracelet_info_display_v0">血液黏稠度</string>
+    <string name="bracelet_info_display_step">步數</string>
+    <string name="bracelet_info_display_distance">距離</string>
+    <string name="bracelet_info_display_heat">熱量</string>
+    <string name="bracelet_info_display_power">剩余電量</string>
+
+    <!--采樣提醒-->
+    <string name="bracelet_reminder_auto_sample_reminder">自動測量提醒</string>
+    <string name="bracelet_reminder_tips0">手環全天 24 小時運行，每間隔 1 小時自動測量一次血壓，可設置自動測量振動提醒，測量時無需連接手機</string>
+    <string name="bracelet_reminder_tips1">手環振動提醒後，請保持身體靜止，並確認手環處於正確位置，手環位置偏移將會導致測量結果出現明顯偏差</string>
+    <string name="bracelet_reminder_tips2">振動提醒後，可輕觸手環正面金屬觸片，快速進入測量，手環的測量圖標會提示測量進度及測量是否成功</string>
+    <string name="bracelet_reminder_tips3">如無法保持身體靜止 (處於運動狀態或乘坐交通工具時)，長按金屬觸片 3 秒，可取消本次測量</string>
+    <string name="bracelet_reminder_tips4">請通過手機 App 定期查看測量結果。打開脈跡 App，手環中的歷史測量數據會通過藍牙自動同步到手機中顯示</string>
+
+    <string name="bracelet_reminder_save">保存</string>
+    <string name="bracelet_reminder_next_day">次日</string>
+    <string name="bracelet_reminder_are_you_sure_to_delete">確定要刪除嗎？</string>
+    <string name="bracelet_reminder_time">時間</string>
+    <string name="bracelet_reminder_cycle">周期</string>
+    <string name="bracelet_reminder_everyday">每天</string>
+    <string name="bracelet_reminder_workday">工作日</string>
+    <string name="bracelet_reminder_weekend">周末</string>
+    <string name="bracelet_reminder_every_week">每周</string>
+    <string name="error_occur_try_again">發送錯誤，請重試</string>
+    <string name="bracelet_reminder_please_select_reminder_time">請選擇提醒時間</string>
+    <string name="bracelet_reminder_please_choose_cycle">至少選擇一天</string>
+
+    <string name="bind_fail_please_check">綁定失敗，請檢查網絡</string>
+    <string name="bracelet_need_bind_again">脈跡手環需要重新綁定</string>
+
+    <!--運動-->
+    <string name="sport_title">運動</string>
+    <string name="sport_this_month">本月</string>
+    <string name="sport_this_week">本周</string>
+    <string name="sport_this_day">今日</string>
+    <string name="sport_date_format_month_day">M月d日</string>
+    <string name="sport_date_format_month">yyyy年M月</string>
+    <string name="sport_format_sport_time">%s運動時長：</string>
+    <string name="sport_minute">分鐘</string>
+    <string name="sport_walk">行走</string>
+    <string name="sport_distance">距離</string>
+    <string name="sport_heat">熱量</string>
+    <string name="sport_kilo_cal">千卡</string>
+    <string name="sport_m">m</string>
+    <string name="sport_step">步</string>
+    <string name="sport_walk_step">行走步數：</string>
+    <string name="sport_sport_distance">運動距離：</string>
+    <string name="sport_consume_heat">消耗熱量：</string>
+    <string name="sport_date_format_step_scroll_month">M月</string>
+    <string name="sport_date_format_step_scroll_year">yyyy年</string>
+    <string name="sport_n_minute">%d分鐘</string>
+
+    <!--選擇地區-->
+    <string name="activity_set_country_and_province_my_location">我的地區</string>
+
+    <!--字體大小-->
+    <string name="set_font_text_font_review">文字大小預覽</string>
+    <string name="set_font_standard_primary_text">標準文字</string>
+    <string name="set_font_standard_second_text">標準輔助文字</string>
+    <string name="set_font_size">設置字體大小</string>
+
+    <!--設置提醒-->
+    <string name="notification_set_title">消息通知</string>
+    <string name="notification_guide">請在手機的“設置”-“通知”中進行修改</string>
+    <string name="notification_message">消息通知</string>
+    <string name="notification_abnormal_remind">測量提醒通知</string>
+    <string name="notification_on">已啟用</string>
+    <string name="notification_off">未啟用</string>
+
+    <string name="notification_no_reminder">不提醒</string>
+    <string name="notification_remind_if_larger_than">大於%1$d提醒</string>
+    <string name="notification_remind_if_less_than">小於%1$d提醒</string>
+    <string name="notification_remind_if_larger_than_or_less_than">小於%2$d或大於%1$d提醒</string>
+    <string name="notification_remind_if_larger_than_or_less_than_multiple_lines">小於%2$d或\n大於%1$d提醒</string>
+    <string name="notification_standard">（醫學標準）</string>
+    <string name="notification_reminder_upper_limit">提醒上限</string>
+    <string name="notification_reminder_lower_limit">提醒下限</string>
+    <string name="notification_ps_abnormal_reminder">收縮壓提醒</string>
+    <string name="notification_pd_abnormal_reminder">舒張壓提醒</string>
+    <string name="notification_set_lower_limit">設置下限</string>
+    <string name="notification_set_upper_limit">設置上限</string>
+
+    <!--其他-->
+    <string name="other_title">其它</string>
+    <string name="setting_feedback">意見反饋</string>
+    <string name="setting_user_protocol">脈跡用戶協議</string>
+    <string name="setting_bracelet_help">脈跡手環幫助</string>
+    <string name="other_about_us">關於脈跡</string>
+
+    <string name="help_cannot_find_device">查找不到脈跡手環?</string>
+    <string name="help_title0">脈跡手環幫助</string>
+    <string name="help_title1">脈跡手環是否有電?</string>
+    <string name="help_title2">檢查脈跡手環是否被附近其他手機連接?</string>
+    <string name="help_title3">嘗試重新啟動藍牙?</string>
+    <string name="help_title4">嘗試重啟手機?</string>
+
+    <string name="help_content1">可將脈跡手環連接充電器，以確保有電</string>
+    <string name="help_content2">可先將該手機藍牙關閉，然後再使用當前手機綁定脈跡手環</string>
+    <string name="help_content3">如果有電，且手機貼近後仍無法搜索到，嘗試重啟手機藍牙</string>
+    <string name="help_content4">如果重啟藍牙無效，請嘗試重啟手機</string>
+
+    <string name="fragment_number_editor_dialog_out_of_range">超出合理範圍</string>
+    <string name="fragment_number_editor_dialog_please_input_right_format">請輸入正確的格式</string>
+
+    <string name="activity_bracelet_pair_open_ble_fail_cannot_bond">打開藍牙失敗，無法綁定</string>
+
+    <!--分享-->
+    <string name="wechat">微信</string>
+    <string name="wechat_moments">微信朋友圈</string>
+    <string name="qq">QQ</string>
+    <string name="qq_zone">QQ空間</string>
+    <string name="share_app_title">一起加入脈跡</string>
+    <string name="share_app_content">近期一直在用脈跡心血管監測手環，它不僅可以全天24小時實時了解血壓變化情況，還可以在忘記吃藥時提醒用藥，更可以在血壓不正常時及時提示預警。為了自己的身體健康，你也趕快試試吧</string>
+
+    <!--ecg詳情-->
+    <string name="ecg_detail_save_to_local">保存至本地</string>
+    <string name="ecg_detail_save_success">保存成功</string>
+    <string name="ecg_detail_save_fail">保存失敗</string>
+    <string name="ecg_detail_ecg_graph">心電圖</string>
+    <string name="walk_speed_value">25mm/s</string>
+    <string name="ecg_share_overview">基本信息</string>
+    <string name="ecg_share_name">姓名：</string>
+    <string name="ecg_share_sex">性別：</string>
+    <string name="ecg_share_age">年齡：</string>
+    <string name="ecg_share_height">身高：</string>
+    <string name="ecg_share_weight">體重</string>
+    <string name="ecg_share_ecg_info">心電信息</string>
+    <string name="ecg_share_measure_time">測量時間：</string>
+    <string name="ecg_share_duration">測量時長：</string>
+    <string name="ecg_share_speed">走速：</string>
+
+
+    <!--好友添加-->
+    <string name="activity_friend_add_list_add_friend">關註親友</string>
+    <string name="activity_friend_add_list_request_contact_text">請允許系統查看通訊錄，這樣您就可以從通訊錄中添加親友了！</string>
+    <string name="activity_friend_add_list_already_monitored">已經監護他（她）了</string>
+    <string name="activity_friend_add_list_not_register">他（她）還未註冊</string>
+    <string name="activity_friend_add_page_add_friend">添加親友</string>
+    <string name="activity_friend_add_page_you_have_to_waif_for_promitte">你需要發送驗證申請，等對方通過</string>
+    <string name="activity_friend_add_page_send">發送</string>
+    <string name="activity_friend_add_page_i_am">我是%s</string>
+
+
+    <!--處理好友請求-->
+    <string name="friend_relation_request">親友申請</string>
+    <string name="friend_relation_request_denied">已拒絕請求</string>
+    <string name="friend_relation_request_accept">同意</string>
+    <string name="friend_relation_request_deny">拒絕</string>
+    <string name="friend_relation_request_have_denied">已拒絕</string>
+    <string name="friend_relation_request_have_accepted">已同意</string>
+
+    <!--好友信息-->
+    <string name="friend_info_set_note_name">設置備註名</string>
+    <string name="friend_info_note_name">備註名</string>
+    <string name="friend_info_input_note_name">請輸入備註名</string>
+    <string name="friend_info_phone_number">電話號碼</string>
+    <string name="friend_info_read_his_data">看他（她）的信息</string>
+    <string name="friend_info_receive_his_push">接收他(她)的異常消息</string>
+    <string name="friend_info_allow_him_read">允許他（她）看我的信息</string>
+    <string name="friend_info_allow_push_to_him">向他（她）發送異常提醒信息</string>
+    <string name="friend_info_title">詳細資料</string>
+
+
+    <!--個人信息-->
+    <string name="personal_info_name">姓名</string>
+    <string name="personal_info_sex">性別</string>
+    <string name="personal_info_birthday">生日</string>
+    <string name="personal_info_height">身高</string>
+    <string name="personal_info_weight">體重</string>
+    <string name="personal_info_title">個人信息</string>
+    <string name="personal_info_phone">手機</string>
+    <string name="personal_info_password">修改密碼</string>
+    <string name="personal_info_wechat">微信</string>
+    <string name="personal_info_qq">QQ</string>
+    <string name="personal_info_location">國家/地區</string>
+    <string name="personal_info_avatar">頭像</string>
+
+
+    <string name="error_occur">出錯啦</string>
+    <string name="activity_friend_remind_measure_remind">測量提醒</string>
+    <string name="activity_friend_remind_your_friend_not_measure_yet">您的親友尚未測量</string>
+    <string name="activity_friend_remind_remind_measure">提醒他（她）測量</string>
+    <string name="activity_friend_remind_remind_measure_dialog_text">提醒親友測量</string>
+    <string name="activity_friend_remind_remind_measure_dialog_submit">提醒</string>
+    <string name="more">更多</string>
+    <string name="activity_friend_remind_reminder_have_send">提醒已發送</string>
+    <string name="activity_health_knowledge">健康知識</string>
+    <string name="walk_speed_unit">mm/s</string>
+    <string name="activity_history_weekly_report">歷史周報</string>
+    <string name="not_install_wechat">您還未安裝微信客戶端</string>
+    <string name="qq_logion_fail">QQ登錄失敗</string>
+    <string name="wechat_login_fail">微信登錄失敗</string>
+
+    <!--ecg-->
+    <string name="ecg_result_check_detail">查看詳細數據</string>
+    <string name="ecg_average_heart_rate">平均心率</string>
+    <string name="ecg_walk_speed">走速</string>
+    <string name="ecg_normal">心電圖正常</string>
+    <string name="ecg_abnormal">心電圖異常</string>
+    <string name="ecg_display_month">yyyy年MM月</string>
+    <string name="ecg_measure_go_to_guide_page">查看心電圖測量引導</string>
+
+    <!--測量-->
+    <string name="measure_pw">測血壓</string>
+    <string name="measure_ecg">測心電</string>
+    <string name="measure_pw_title">測血壓</string>
+    <string name="measure_ecg_title">心電圖</string>
+    <string name="activity_measure_send_data_fail">上傳數據失敗，是否重新上傳？</string>
+    <string name="activity_measure_send_again">重新上傳</string>
+    <string name="activity_measure_pw_go_to_guide_page">脈圖異常？請查看脈圖引導。</string>
+    <string name="activity_measure_pw_correct_pw">正確脈圖</string>
+    <string name="activity_measure_pw_regular">有規律</string>
+    <string name="activity_measure_pw_have_peek_valley">有頂峰和低谷</string>
+
+    <string name="please_click_button_and_start_measure">請根據引導視頻正確佩戴手環\n點擊“開始”按鈕進行測量</string>
+    <string name="measure_pw_prepare_state_movement">調整手環佩戴後\n請平放手臂並保持靜止</string>
+    <string name="measure_pw_measure_state_movement">調整手環佩戴後\n請平放手臂並保持靜止</string>
+    <string name="measure_pw_prepare_normal">正在檢測脈搏波信號</string>
+    <string name="measure_pw_stop_for_10_second">沒有檢測到有效的脈搏波信號\n請調整手環佩戴位置及松緊</string>
+    <string name="measure_pw_measure_normal">正在采集脈搏波信號</string>
+    <string name="measure_pw_measure_state_signal_high">手環正在自動調整\n請保持身體靜止並耐心等待</string>
+    <string name="measure_pw_measure_state_signal_low">沒有檢測到有效的脈搏波信號\n請調整手環位置或腕帶松緊</string>
+    <string name="measure_pw_measure_state_tight">手環佩戴過緊，請調松腕帶</string>
+    <string name="measure_pw_measure_state_loose">手環佩戴過松，請調緊腕帶</string>
+    <string name="measure_fail_content_low_power">請完成充電後再進行測量</string>
+    <string name="measure_fail_title_low_power">手環電量過低</string>
+    <string name="measure_fail_content_charging">請完成充電後再進行測量</string>
+    <string name="measure_fail_title_charging">手環正在充電</string>
+
+    <string name="measure_fail_content_hr_low">心率低於 35 bpm 時，無法測量</string>
+    <string name="measure_fail_title_hr_low">心率太低</string>
+    <string name="measure_fail_content_hr_high">心率高於 110 bpm 時，無法測量</string>
+    <string name="measure_fail_title_hr_high">心率太高</string>
+
+    <string name="measure_fail_content_not_wear">請佩戴手環</string>
+    <string name="measure_fail_title_not_wear">未佩戴</string>
+
+    <string name="measure_ecg_start">點擊“開始”按鈕\n進行心電圖測量</string>
+    <string name="measure_ecg_prepare_normal">正在檢測心電信號\n請保持身體靜止，直至測量完成</string>
+    <string name="measure_ecg_measure_normal">正在采集心電信號\n請保持身體靜止，直至獲得完整心電圖</string>
+    <string name="lead_off">未檢測到心電信號\n請查看心電圖測量引導</string>
+
+    <string name="bracelet_not_bond">脈跡手環未綁定</string>
+    <string name="bond">去綁定</string>
+    <string name="searching_bracelet">正在查找…</string>
+    <string name="is_charging_can_not_measure">請完成充電後再進行測量</string>
+    <string name="is_charging_can_not_get_pw">正在充電，無法采集脈圖</string>
+    <string name="is_busy_can_not_measure">手環正忙，請重試</string>
+    <string name="calculating">處理中</string>
+    <string name="current_version_is_new">當前已是最新版本</string>
+    <string name="activity_bracelet_pair_please_buy_the_correct_device">請在官方渠道購買正版脈跡手環</string>
+    <string name="measure_ecg_stop_measure_question">正在采集您的心電圖，需要停止嗎？</string>
+    <string name="find_new_version_need_upgrade">發現新版本，是否升級？</string>
+
+    <string name="start">開始</string>
+    <string name="do_not_stop">不停止</string>
+    <string name="stop">停止</string>
+    <!--<string name="is_adjusting_bracelet_do_you_need_stop">正在脈跡手環校準，需要停止嗎？</string>-->
+    <string name="measure_fail">測量失敗</string>
+    <string name="un_bond_anyway_reminder">建議在藍牙連接狀態進行解綁，以降低設備待機功耗</string>
+    <string name="unbind_anyway">強制解綁</string>
+    <string name="wait_for_connecting">正在連接脈跡手環，請等待</string>
+    <string name="today">今</string>
+    <string name="ok">好的</string>
+    <string name="bluetooth_can_not_work_warning">關閉了位置信息，藍牙無法正常使用，請前往系統設置中開啟位置權限</string>
+    <string name="uploading">正在上傳</string>
+    <string name="ecg_upload_complete">心電上傳成功</string>
+
+
+    <!--用藥-->
+    <string name="activity_medication_plan">用藥計劃</string>
+    <string name="activity_medication_plan_sure_to_delete">確定刪除用藥計劃嗎？</string>
+    <string name="activity_medication_plan_add_plan">添加用藥計劃</string>
+    <string name="activity_medication_plan_edit_plan">編輯用藥計劃</string>
+    <string name="activity_medication_plan_cycle_days">每%d天</string>
+    <string name="activity_medication_plan_select_medicine">選擇藥物</string>
+    <string name="activity_medication_plan_set_dosage">請設置服用劑量</string>
+    <string name="activity_medication_plan_dosage_set">劑量設置</string>
+    <string name="activity_medication_plan_time_span_cannot_over_one_year">時間跨度不能超過1年</string>
+    <string name="activity_medication_plan_start_time">開始時間</string>
+    <string name="activity_medication_plan_end_time">結束時間</string>
+    <string name="activity_medication_plan_history">用藥記錄</string>
+    <string name="activity_medication_plan_repeat">重復周期</string>
+    <string name="activity_medication_plan_day">第%d天</string>
+    <string name="activity_medication_plan_start_format">yyyy.MM.dd</string>
+    <string name="activity_medication_plan_take_format">已服用：%d次</string>
+    <string name="activity_medication_plan_not_take_format">未服用：%d次</string>
+    <string name="activity_medication_plan_not_record_format">未記錄：%d次</string>
+    <string name="activity_medication_plan_left_format">剩余次數：%d次</string>
+    <string name="activity_medication_plan_time_format">用藥周期:%1$s-%2$s</string>
+    <string name="activity_medication_plan_medicine_cycle">用藥周期</string>
+    <string name="activity_medication_plan_stop">終止用藥計劃</string>
+    <string name="medication_select">請選擇藥物</string>
+    <string name="medication_time">時間</string>
+    <string name="medication_every">每</string>
+    <string name="medication_days">天</string>
+    <string name="medication_ignore">忽略</string>
+    <string name="medication_complete">完成</string>
+    <string name="medication_remain">還有</string>
+    <string name="medication_remain_days">天</string>
+    <string name="medication_choose_again">重新選擇</string>
+    <string name="medication_future">下次用藥</string>
+    <string name="medication_is_done">已完成本次用藥？</string>
+    <string name="medication_is_cancel">忽略本次用藥？</string>
+
+    <!--異常-->
+    <string name="abnormal_reminder">血壓推送記錄</string>
+
+    <!--健康周報-->
+    <string name="activity_weekly_report_title">健康周報</string>
+    <string name="activity_weekly_report_bp_control_situation">血壓控制情況</string>
+    <string name="activity_weekly_report_bp_normal">達標</string>
+    <string name="activity_weekly_report_bp_abnormal">未達標</string>
+    <string name="activity_weekly_report_bp_not_measure">數據不足</string>
+    <string name="activity_weekly_report_detail">查看詳情</string>
+
+    <!--固件升級-->
+    <string name="activity_firmware_upgrade_bracelet_upgrade_log">脈跡手環升級日誌</string>
+    <string name="upgrading_please_wait">正在升級,請耐心等待</string>
+    <string name="firmware_upgrade_title">手環升級</string>
+    <string name="activity_firmware_upgrade_tips">*為了確保脈跡手環的正常使用，我們正在為您進行升級，升級時請勿退出.</string>
+
+    <string name="open_camera_fail">相機打開失敗</string>
+    <string name="upload_image_cancel">上傳圖片取消</string>
+    <string name="upload_image_fail">上傳失敗</string>
+    <string name="not_bond">未綁定</string>
+    <string name="activity_personal_info_complete_info">完善個人信息</string>
+
+    <string name="logout">退出</string>
+    <string name="input_verification_code">請輸入驗證碼</string>
+    <string name="input_phone_number">請輸入手機號</string>
+    <string name="next_step">下一步</string>
+
+    <string name="no_data">暫無數據</string>
+    <string name="average_value">平均值</string>
+    <string name="max_value">最大值</string>
+    <string name="min_value">最小值</string>
+    <string name="month">月</string>
+    <string name="localWeek">周</string>
+    <string name="day">日</string>
+    <!--<string name="data">我的數據</string>-->
+    <string name="heart_rate">脉搏</string>
+    <string name="blood_pressure">血壓</string>
+
+    <string name="HR">脉搏</string>
+    <string name="PS">收縮壓</string>
+    <string name="PD">舒張壓</string>
+    <string name="PM">平均動脈壓</string>
+    <string name="SV">心搏出量</string>
+    <string name="SI">心搏指數</string>
+    <string name="CO">心輸出量</string>
+    <string name="TPR">外周總阻力</string>
+    <string name="AC">血管順應性</string>
+    <string name="ALK">血流半更新率</string>
+    <string name="ALT">血流半更新時間</string>
+    <string name="TM">血流平均滯留時間</string>
+    <string name="BV">總血容量</string>
+    <string name="V0">血液黏稠度</string>
+    <string name="K">脈搏波段特征量</string>
+
+    <string name="HR_short">HR</string>
+    <string name="PS_short">PS</string>
+    <string name="PD_short">PD</string>
+    <string name="PM_short">PM</string>
+    <string name="SV_short">SV</string>
+    <string name="SI_short">SI</string>
+    <string name="CO_short">CO</string>
+    <string name="TPR_short">TPR</string>
+    <string name="AC_short">AC</string>
+    <string name="ALK_short">ALK</string>
+    <string name="ALT_short">ALT</string>
+    <string name="TM_short">TM</string>
+    <string name="BV_short">BV</string>
+    <string name="V0_short">V0</string>
+    <string name="K_short">K</string>
+
+    <string name="HR_unit">bpm</string>
+    <string name="PS_unit">mmHg</string>
+    <string name="PD_unit">mmHg</string>
+    <string name="PM_unit">mmHg</string>
+    <string name="SV_unit">ml</string>
+    <string name="SI_unit">ml/m&#178;</string>
+    <string name="CO_unit">L/min</string>
+    <string name="TPR_unit">mmHg*min/L</string>
+    <string name="AC_unit">ml/mmHg</string>
+    <string name="ALK_unit">/s</string>
+    <string name="ALT_unit">s</string>
+    <string name="TM_unit">s</string>
+    <string name="BV_unit">L</string>
+    <string name="V0_unit">Pa*s</string>
+    <string name="K_unit"> </string>
+
+
+    <string name="HR_desc">心率是指正常人安靜狀態下每分鐘心跳的次數，也叫安靜心率，一般為60～100次/分，
+        可因年齡、性別或其他生理因素產生個體差異。一般來說，年齡越小，心率越快，老年人心跳比年輕人慢，女性的心率比同齡男性快，
+        這些都是正常的生理現象。安靜狀態下，成人正常心率為60～100次/分鐘，理想心率應為55～70次/分鐘</string>
+    <string name="PS_desc">收縮壓（Systolic pressure）（高壓）：是當心臟收縮時，從心室射入的血液對血管壁產生的側壓力，
+        這時血壓最大；此時內壁的壓力稱為收縮壓，亦稱高壓。\n\n
+        根據世界衛生組織規定，成人收縮壓 ≥ 140mmHg（21.3kPa）時即可確診為高血壓。收縮壓≤130mmHg（18.6kPa）稱為正常血壓，
+        介於二者之間者，稱為臨界高血壓；所謂低血壓，是指動脈血壓的收縮壓低於12千帕（90毫米汞柱）。不同年齡段、不同性別有不同差異。</string>
+    <string name="PD_desc">舒張壓就是當人的心臟舒張時，動脈血管彈性回縮時，產生的壓力稱為舒張壓，又叫低壓。
+        心臟舒張時，主動脈壓下降，在心舒末期動脈血壓處於最低值稱為舒張壓，成人正常的舒張壓為 &lt;90mmHg(12kpa)\n\n
+        根據世界衛生組織規定，成人舒張壓 ≥ 95mmHg(12.6kPa)時，即可確診為高血壓。介於90mmHg~95mmHg之間者，稱為臨界高血壓。不少青中年人，
+        由於工作勞累壓力大，活動偏少；測血壓收縮壓正常，舒張壓高於90毫米汞柱，有時脈壓差很近，如：130/110毫米汞柱,病人主觀感覺頭暈、胸悶不適。
+        這是由於交感神經活性增高，周圍血管阻力增高所致。是高血壓病的早期階段。</string>
+    <string name="PM_desc">一個心動周期中動脈血壓的平均值稱為平均動脈壓。正常成年人平均動脈壓正常值為70~105mmHg。計算公式如下：平均動脈壓=
+        (收縮壓+2×舒張壓)/3。也可表示為：平均動脈壓=舒張壓+1/3脈壓差。</string>
+    <string name="SV_desc">指一次心搏，一側心室射出的血量，簡稱搏出量\n\n左、右心室的搏出量基本相等。搏出量等於心舒末期容積與心縮末期容積之差值。
+        心舒末期容積（即心室充盈量）約130～145毫升，心縮末期容積（即心室射血期末留存於心室的余血量）約60～80毫升，故搏出量約65～70毫升。</string>
+    <string name="SI_desc">心搏指數是以每平方米體表面積計算的心輸出量。</string>
+    <string name="CO_desc">每分鐘一側心室射出的血液總量，又稱每分輸出量。左、右心室的輸出量基本相等。心室每次搏動輸出的血量稱為每搏輸出量，
+        人體靜息時約為70毫升（60～80毫升），如果心率每分鐘平均為75次，則每分鐘輸出的血量約為5000毫升（4500～6000毫升），即每分心輸出量。
+        通常所稱心輸出量，一般都是指每分心輸出量。心輸出量是評價循環系統效率高低的重要指標。心輸出量在很大程度上是和全身組織細胞的新陳代謝
+        率相適應。\n\n心輸出量是評價循環系統效率高低的重要指標，為了便於在不同個體之間進行比較。一般多采用空腹和靜息時每一平方米體表面積的
+        每分心輸出量即心指數為指標：\n一般成年人的體表面積約為1.6～1.7平方米。靜息時每分心輸出量為5～6升，故其心指數約為3.0～3.5升/分/平方米。\n
+    </string>
+    <string name="TPR_desc">外周總阻力是反映腦血管床微循環通暢程度的定量指標。其定義為外周總阻力=Pm除以Qm。Pm和Qm分別表示平均壓力和平均流量。
+        循環系統的外周阻力（peripheral resistance）主要是指小動脈和微動脈對血流的阻力。臨床許多腦血管疾病都與阻力血管的狀態有關。血黏度增高、
+        小血管痙攣、阻塞等均可引起RV值增高。</string>
+    <string name="AC_desc">血管順應性是指在壓力或力的作用下使容積增大而不破裂的一種特性。它通常以壓力改變一個單位時所對應的血管容積改變量,
+        即用dy/dP來表示,單位可為毫升/毫米汞(水)柱,順應性是彈性模量的倒數。</string>
+    <string name="BV_desc">血容量是指血細胞容量與血漿容量的總和 有效循環血量是指單位時間內通過心血管系統進行循環的血量，
+        但不包括貯存於肝、脾和淋巴血竇中或停滯於毛血管中的血量。簡單的說就是參與心血管血液循環的血容量。</string>
+    <string name="V0_desc">血液粘性是一個綜合性指數，它是血漿粘度、血細胞壓（比）積、紅細胞變形性和聚集能力、血小板和白細胞流變特性的綜合表現，
+        是血液隨不同流動狀況（切變率）及其他條件而表現出的粘度，切變率低時血粘度高，隨切變率的逐漸升高粘度逐漸下降，最後趨向一個平穩的數值。</string>
+    <string name="K_desc"> </string>
+
+
+    <string name="ecg_graph">心電圖</string>
+    <string name="dosage">劑量</string>
+    <string name="heart_rate_unit">次/分</string>
+
+    <string name="delete">刪除</string>
+    <string name="measure_result">測量結果</string>
+
+    <string name="upload_raw_data_fail">上傳失敗</string>
+    <string name="bp_unit_ch">毫米汞柱</string>
+    <string name="hr_unit_ch">次/分鐘</string>
+    <string name="bracelet_is_connecting">脈跡手環正在連接</string>
+
+    <string name="upgrade_success">升級成功</string>
+    <string name="I">我</string>
+    <string name="upgrade_right_now">更新</string>
+    <string name="not_upgrade_right_now">取消</string>
+    <string name="activity_bracelet_pair_can_not_bond">無法綁定</string>
+    <string name="ble_has_open">藍牙已經開啟</string>
+    <string name="ble_is_unavailable">藍牙無法使用</string>
+    <string name="lower">偏低</string>
+    <string name="higher">偏高</string>
+    <string name="normal">正常</string>
+    <string name="receiving_data">正在接收測量數據</string>
+
+    <string name="do_you_want_logout">確定要退出登錄嗎？</string>
+
+    <string name="edit_name">編輯姓名</string>
+    <string name="please_input_name">請輸入您的姓名</string>
+    <string name="search">搜索</string>
+
+    <string name="send_success">發送成功</string>
+    <string name="do_you_want_to_remove_bracelet">確定要移除脈跡手環嗎？</string>
+    <string name="logining">正在登錄</string>
+    <string name="unit_height">cm</string>
+    <string name="unit_weight">kg</string>
+    <string name="register_success">註冊成功</string>
+    <string name="login_fail_login_again">註冊成功，請登陸</string>
+    <string name="bracelet_need_bond_again">脈跡手環需要重新綁定</string>
+    <string name="calculate_error">計算錯誤</string>
+    <string name="phone_is_empty">號碼不能為空</string>
+    <string name="password_is_empty">密碼不能為空</string>
+    <string name="password_is_too_short">密碼不能小於6位</string>
+    <string name="remove_relationship">確定解除監護關系嗎？</string>
+
+    <string name="delete_success">刪除成功</string>
+    <string name="input_at_least_6_password">請輸入至少6位密碼</string>
+    <string name="home_cardiovascular_health">歷史數據圖示</string>
+    <string name="home_avg_bp_of_all_day">平均血壓:%1$d/%2$dmmHg</string>
+
+
+    <string name="please_change_whether_information_is_right">1.請至個人信息頁面查看個人信息是否準確。\n2.請檢查是否佩戴正確。</string>
+
+    <string name="set_fail">設置失敗</string>
+    <string name="activity_bracelet_reminder_cannot_add_more_reminder">無法添加更多提醒</string>
+    <string name="timeout_please_try_again">超時，請重新綁定</string>
+    <string name="battery_low_please_try_after_charging">電量過低，禁止固件升級</string>
+    <!--<string name="edit_medicine">編輯用藥</string>-->
+    <!--<string name="medicine_info">藥物信息</string>-->
+    <!--<string name="format_remind_every_n_minute">每隔%1$d分鐘提醒</string>-->
+    <!--<string name="format_remind_every_n_hour_m_minute">每隔%1$d小時%2$d分鐘提醒</string>-->
+    <string name="interval_time">間隔時間</string>
+    <string name="done">完成</string>
+
+
+    <string name="device_name_old_version">隨機碼——舊版本</string>
+    <string name="device_name_format">隨機碼——%s</string>
+
+    <string name="measure_params_error_try_again">指令或流程錯誤，請重試</string>
+
+
+    <string name="activity_measure_pw_calculate_fail">數據有誤，請重新測量</string>
+    <string name="activity_friend_remind_abnormal_record">血壓推送記錄</string>
+    <!--<string name="activity_wear_guide_title">如何佩戴</string>-->
+    <string name="base_login_again_message">您的賬號長時間未操作，請重新登錄</string>
+    <string name="base_go_to_login">去登錄</string>
+    <string name="empty_data_no_friend">還沒有監護親友\n趕快去添加吧~</string>
+    <string name="line_chart_day_unit">時</string>
+    <string name="line_chart_month_unit">日</string>
+    <string name="sex_secret">保密</string>
+    <string name="measure_ecg_timeout">測量超時，請重試</string>
+    <string name="firmware_upgrade">獲取固件中</string>
+    <string name="share_copy_link">復制鏈接</string>
+    <string name="link_copy_success">鏈接已復制</string>
+    <string name="connecting">連接中……</string>
+    <string name="weight_with_unit">體重(kg)</string>
+    <string name="height_with_unit">身高(cm)</string>
+    <string name="indicator_detail_footer_text">\u26a0 註意：單次測量的數值僅供參考，無需過度焦慮。心血管健康管理需要您堅持佩戴脈跡手環，持續監測數值趨勢。由醫生綜合分析各項指標，並結合臨床檢查，做出準確的診斷。</string>
+    <string name="setting">設置</string>
+    <string name="notification_record_measure_time">測量時間：%s</string>
+    <string name="measure_ecg_guide">心電圖測量</string>
+    <string name="guide_measure_ecg_content0">點擊手機屏幕的“開始”按鈕，右手拇指長按手環正面金屬觸片，保持身體靜止，直至獲得完整心電圖。測量時雙手請勿接觸</string>
+    <string name="guide_measure_ecg_content1">推薦使用雙手測量：摘下手環，左手長按背面金屬電極，右手長按正面金屬觸片。濕潤手指可提高測量的準確性</string>
+    <string name="guide_measure_ecg_content2">正確測量時的心電圖應與圖中波形相似</string>
+    <string name="measure_ecg_fail">沒有采集到有效信號，請重新測量</string>
+    <string name="measure_recognize_timeout_description">沒有采集到有效信號，建議您根據佩戴引導視頻，調整手環佩戴位置及松緊</string>
+    <string name="measure_recognize_timeout_title">佩戴有誤</string>
+    <string name="measure_recognize_timeout_measure_again">重新測量</string>
+    <string name="measure_recognize_timeout_wear_guide">查看佩戴引導</string>
+    <string name="measure_recognize_timeout_never_alert_again">不再提醒</string>
+    <string name="select_medicine_input_name">輸入藥物名稱</string>
+    <string name="select_medicine_add_new">添加</string>
+    <string name="select_medicine_add_to_lib">添加至藥庫</string>
+    <string name="select_medicine_input_medicine">添加藥物</string>
+    <string name="select_medicine_input_medicine_name">請輸入藥名</string>
+    <string name="medicine_add_success">藥物添加成功</string>
+    <string name="medicine_delete_success">藥物刪除成功</string>
+    <string name="select_medicine_whether_to_delete_medicine">是否刪除此藥物</string>
+    <string name="measure">測量</string>
+    <string name="home_auto_measure_set">自動測量提醒</string>
+    <string name="home_history_measure_record">歷史測量記錄</string>
+    <string name="personal_info_init_start_input">開始填寫</string>
+    <string name="personal_info_init_alert_message">請準確填寫您的個人信息及病史。\n\n如果信息不準確，會造成測量結果誤差大，血壓評估不準確。</string>
+
+    <string name="radar_guide_title">點擊圖標，切換顯示不同參數的趨勢圖</string>
+    <string name="bracelet_pair_change_set">修改設置</string>
+    <string name="bind_wechat_or_qq_success">綁定成功</string>
+    <string name="bracelet_info_charging">充電中</string>
+    <string name="bracelet_info_find_bracelet">手環查找</string>
+    <string name="bracelet_find_title">手環查找</string>
+    <string name="bracelet_find_start">開始查找</string>
+    <string name="bracelet_find_finding">查找中…</string>
+    <string name="bracelet_find_description">開始查找後手環將振動四秒，\n如果電量不足會導致查找過程中手環關機</string>
+    <string name="medication_has_ignore">已忽略</string>
+    <string name="medication_has_taken">已服用</string>
+    <string name="medication_no_plan"><![CDATA[暫無用藥計劃，趕快去添加吧>>]]></string>
+    <string name="bracelet_remind_desc_text">每間隔 1 小時自動測量一次</string>
+    <string name="wear_method_text">為了保證測量的準確性，請將手環佩戴在左手手腕內側</string>
+    <string name="wear_method_submit">我知道了</string>
+    <string name="measure_ecg_guide_not_show">不再顯示</string>
+    <string name="measure_ecg_tips_title">何時需要測量心電圖？</string>
+    <string name="measure_ecg_tips_content">心電圖可在您出現胸痛、胸悶、心悸等心臟不適時，向醫生提供更多信息，並幫助醫生對上述癥狀進行深入診斷。請在出現氣悶、心痛、頭昏無力、冐冷汗等異常狀況時，及時聯系醫生，並在其指導下測量心電圖。</string>
+    <string name="medication_set_time">用藥周期設置</string>
+
+    <string name="sms_send_success">短信發送成功</string>
+    <string name="medication_please_set_dosage">請設置用藥劑量</string>
+    <string name="history_weekly_report_guide">如何同步周報至微信</string>
+    <string name="no_authority">沒有瀏覽權限</string>
+    <string name="main_app_new_version_upgrade_text">將APP升級到最新版本，將會有更好的使用體驗</string>
+    <string name="indicator_detail_test_parameter">體驗指標</string>
+    <string name="indicator_detail_test_tag">(測試)</string>
+    <string name="bracelet_reminder_continuous">連續提醒</string>
+    <string name="bracelet_reminder_continuous_detail">每隔 1 小時提醒一次</string>
+    <string name="bracelet_reminder_daily">日常提醒</string>
+    <string name="bracelet_reminder_daily_detail">每隔 3 小時提醒一次</string>
+    <string name="bracelet_reminder_measure_alarm">測量鬧鐘</string>
+    <string name="measure_pw_result_set_mark">添加備註</string>
+    <string name="measure_pw_result_mark">備註</string>
+    <string name="measure_pw_result_high_bp">高血壓</string>
+    <string name="measure_pw_result_pw_unit">單位：mmHg</string>
+    <string name="measure_pw_result_classify">分類</string>
+    <string name="measure_pw_result_table_title1">正常血壓</string>
+    <string name="measure_pw_result_table_ps1">＜120</string>
+    <string name="measure_pw_result_table_pd1">＜80</string>
+    <string name="measure_pw_result_table_title2">正常高值</string>
+    <string name="measure_pw_result_table_ps2">120~139</string>
+    <string name="measure_pw_result_table_pd2">80~89</string>
+    <string name="measure_pw_result_table_title3">1 級高血壓</string>
+    <string name="measure_pw_result_table_ps3">140~159</string>
+    <string name="measure_pw_result_table_pd3">90~99</string>
+    <string name="measure_pw_result_table_title4">2 級高血壓</string>
+    <string name="measure_pw_result_table_ps4">160~179</string>
+    <string name="measure_pw_result_table_pd4">100~109</string>
+    <string name="measure_pw_result_table_title5">3 級高血壓</string>
+    <string name="measure_pw_result_table_ps5">≥180</string>
+    <string name="measure_pw_result_table_pd5">≥110</string>
+    <string name="measure_pw_result_table_title6">單純收縮期高血壓</string>
+    <string name="measure_pw_result_table_ps6">≥140</string>
+    <string name="measure_pw_result_table_pd6">＜90</string>
+    <string name="measure_pw_result_table_tag">此分類基於診斷室血壓（靜息5分鐘後的坐位上臂血壓）</string>
+    <string name="measure_pw_result_high_bp_description">血壓水平與心腦血管病 (腦卒中、冠心病事件、心力衰竭、心房顫動及終末期腎病) 的發病和死亡風險之間存在密切的因果關系。  24 小時動態血壓、夜間血壓和清晨血壓水平，與心腦血管病風險的關聯甚至更密切、更顯著。</string>
+    <string name="measure_pw_result_high_bp_description_tag">來源：《中國高血壓防治指南2018年修訂版》</string>
+    <string name="measure_pw_result_low_bp">低血壓</string>
+    <string name="measure_pw_result_low_bp_description">如果不良癥狀，包括但不限於視力下降、惡心、脫水、頭暈、註意力分散、勞累和昏睡等，一般認為低血壓並沒有危險。</string>
+    <string name="measure_pw_result_hr_classify">心率水平分類</string>
+    <string name="measure_pw_result_hr_description">以下成人靜息心率評估不適用於感到不適、緊張或剛剛運動過的情況</string>
+    <string name="measure_pw_result_hr_level0">60-100 bpm：正常</string>
+    <string name="measure_pw_result_hr_level_content0">您的心率正常。保持運動和健康飲食可增強心臟健康，有助於維持甚至降低平均心率，訓練有素的運動員的健康心率最低可至 41 bpm。</string>
+    <string name="measure_pw_result_hr_level1">40-60 bpm：慢</string>
+    <string name="measure_pw_result_hr_level_content1">您的心血管健康狀況良好。請繼續保持！</string>
+    <string name="measure_pw_result_hr_level2">100+ bpm：快</string>
+    <string name="measure_pw_result_hr_level_content2">您的心率似乎高於平均水平。如果剛進行過劇烈運動，就有可能造成心率偏高。心率高表明心血管有可能處於亞健康狀態，運動和健康飲食可以降低心率並改善健康。如果心率持續偏高建議就醫咨詢。</string>
+    <string name="measure_pw_result_hr_level3">不到 30 bpm</string>
+    <string name="measure_pw_result_hr_level_content3">心率持續偏低則有可能是心血管功能障礙的征兆。建議向醫生咨詢以排除任何健康隱患。</string>
+    <string name="home_emergency">急救</string>
+    <string name="home_unavailable">未开通</string>
+    <string name="home_this_service_has_not_been_launched">您还未开通此项服务</string>
+    <string name="home_check_service_detail">查看服务详情</string>
+    <string name="i_service">我的服务</string>
+    <string name="other_option">选项</string>
+    <string name="option_emergency_button_hide">隐藏急救按钮</string>
+    <string name="measure_pw_result_click_and_add_remark">点击添加备注</string>
+    <string name="measure_result_add_remark">添加标签备注</string>
+    <string name="measure_pw_result_auto_measure">自动测量</string>
+    <string name="measure_pw_result_manual_measure">手动测量</string>
+    <string name="measure_result_pw_image">本次测量脉图</string>
+    <string name="qq_bind_fail">QQ绑定失败</string>
+    <string name="wechat_bind_fail">微信绑定失败</string>
+    <string name="setting_privacy">隐私</string>
+    <string name="privacy_system">系统权限</string>
+    <string name="privacy_friend">亲友隐私</string>
+    <string name="account_security">账号与安全</string>
+    <string name="account_security_phone_number">手机号</string>
+    <string name="account_security_change_password">修改密码</string>
+    <string name="privacy_friend_search_permission">通过手机号找到我</string>
+    <string name="setting_general">通用</string>
+    <string name="setting_message_notify">消息通知</string>
+    <string name="setting_help_feedback">帮助与反馈</string>
+    <string name="setting_feedback_email">反馈邮箱</string>
+    <string name="setting_app_version">版本号:V</string>
+    <string name="setting_check_new_version">检查新版本</string>
+    <string name="mine_my_bp">我的血压</string>
+    <string name="mine_abnormal_bp">异常血压</string>
+    <string name="mine_medication_plan">用药计划</string>
+    <string name="mine_ecg">心电图</string>
+    <string name="mine_sport">运动数据</string>
+    <string name="mine_weekly_report">健康周报</string>
+    <string name="mine_knowledge">健康知识</string>
+    <string name="mine_weight_update">体重更新</string>
+    <string name="mine_disease_update">病史更新</string>
+    <string name="mine_font_size">字体大小</string>
+    <string name="mine_measure_alarm">测量闹钟</string>
+    <string name="system_permission_description">为向您提供更好的服务，脉迹应用在特定场景可能需要向您申请以下手机系统权限。</string>
+    <string name="system_permission_notification_title">允许脉迹访问通知权限</string>
+    <string name="system_permission_notification_content">方便接收自己和亲友的血压通知、用药提醒等</string>
+    <string name="system_permission_storage_title">允许脉迹访问手机存储权限</string>
+    <string name="system_permission_storage_content">用于读取已经储存的心电图，并转发至其他应用；用于读取相册中的照片并设置成为头像</string>
+    <string name="system_permission_location_title">允许脉迹获取定位权限</string>
+    <string name="system_permission_location_content">开启定位才能正常使用蓝牙，从而通过蓝牙搜索和连接脉迹手环，并使用脉迹手环相关的硬件功能</string>
+    <string name="system_permission_camera_title">允许脉迹访问相机权限</string>
+    <string name="system_permission_camera_content">用于拍摄照片并设置成为头像</string>
+    <string name="system_permission_read_contact_title">允许脉迹访问通讯录权限</string>
+    <string name="system_permission_read_contact_content">用于使用手机号匹配并推荐通讯录中的联系人给您；如果您的通讯录中有亲友注册了脉迹应用，系统会通知您</string>
+    <string name="system_permission">系统权限</string>
+    <string name="system_permission_on">已开启</string>
+    <string name="system_permission_off">开启权限</string>
+    <string name="activity_register_privacy">关于脉迹与隐私的声明</string>
+    <string name="login_agree_protocol">登录即表示您已经同意</string>
+    <string name="enter_protocol_agree">点击同意，即表示您同意上述内容及</string>
+    <string name="enter_agree">同意</string>
+    <string name="enter_disagree">不同意</string>
+    <string name="permission_service_user">用户授权协议</string>
+    <string name="permission_service_user_pre_text">您将跳转至由第三方服务提供方提供的金野健康服务，点击“同意”即表示您已仔细阅读并同意</string>
+    <string name="permission_service_user_post_text">， 授权脉迹将您所授权的信息传递给第三方服务提供方</string>
+    <string name="enter_permission_content"><![CDATA[为了向您提供健康服务，本应用还需要收集、使用您的下列信息：\n设备和网络信息。 \n个人信息：包括姓名、头像、性别、出生日期、身高、体重、病史信息、手机号码和国家/地区。性别、出生日期、体重和病史信息能帮助更加准确地计算健康和运动数据。在您同意并授权的情况下（可选），脉迹的授权客服人员会通过您提供的手机号码主动联系您或邀请您成为微信好友，为您提供脉迹产品使用支持服务，帮助您更好的使用脉迹产品及服务。 \n健康数据：包括脉搏波图形、心电图图形、血压、脉搏、平均动脉压、心输出量、血液黏稠度、外周总阻力，这些数据被用来为您储存和展示。 \n运动数据：包括运动时长、步数、距离、热量，这些数据被用来为您储存和展示。  您的健康数据和运动数据包含敏感个人信息，未经您授权，我们不会与第三方共享或对外提供您的信息。  \n如果您不同意调用以上必要权限或功能，或不同意我们收集并使用以上信息，将导致本应用无法正常运行，您可以选择卸载本应用/退出本应用/前往您的手机的“设置”>“权限管理”关闭授权以终止服务。]]></string>
+    <string name="enter_permission_location_title">定位（必选）</string>
+    <string name="enter_permission_location_content">开启定位才能正常使用蓝牙，从而通过蓝牙搜索和连接脉迹手环，并使用脉迹手环相关的硬件功能</string>
+    <string name="enter_permission_store_title">存储（可选）</string>
+    <string name="enter_permission_store_content">用于读取已经储存的心电图，并转发至其他应用；用于读取相册中的照片并设置成为头像</string>
+    <string name="enter_permission_camera_title">相机（可选）</string>
+    <string name="enter_permission_camera_content">用于拍摄照片并设置成为头像</string>
+    <string name="enter_permission_contact_title">读取联系人（可选）</string>
+    <string name="enter_permission_contact_content">用于使用手机号匹配并推荐通讯录中的联系人给您，如果您的通讯录中有亲友注册了脉迹应用，系统会通知您</string>
+    <string name="enter_permission_call_title">客服主动关怀（可选）</string>
+    <string name="enter_permission_call_content">允许脉迹授权客服人员通过您的注册手机号码主动联系您或邀请您成为微信好友，为您提供脉迹产品使用支持服务</string>
+    <string name="ecg_data_detail_storage_permission_closed">您的存储权限已关闭</string>
+    <string name="ecg_data_detail_storage_permission_is_open">是否打开？</string>
+    <string name="ecg_data_detail_share_cannot_use">抱歉，该功能无法使用！</string>
+    <string name="personal_info_storage_permission_closed">您的存储权限已关闭</string>
+    <string name="personal_info_storage_permission_is_open">是否打开？</string>
+    <string name="personal_info_set_avatar_cannot_use">抱歉，该功能无法使用！</string>
+    <string name="personal_info_camera_permission_closed">您的相机权限已关闭</string>
+    <string name="personal_info_camera_permission_is_open">是否打开？</string>
+    <string name="ble_bluetooth_need_location_permission">蓝牙功能需要您同意开启位置权限</string>
+    <string name="home_this_service_has_not_been_launched_submit">我知道了</string>
+    <string name="home_emergency_click_message">长按此按钮即可呼叫急救电话</string>
+    <string name="setting_auth_management">授权管理</string>
+    <string name="authorized_service_delete_dialog_submit">确认</string>
+    <string name="enter_auth_title">隐私权限声明</string>
+    <string name="enter_auth_content">欢迎您使用脉迹应用。您可使用本应用记录和分析您的健康和运动数据。我们严格遵守相关法律法规和隐私政策以保护您的个人信息。为了向您提供基本服务，本应用使用过程中需要连接网络并调用您的如下权限或功能：</string>
+    <string name="enter_auth_content1">为帮助您更好的使用脉迹产品及服务，我们同时还需要您授权</string>
+    <string name="enter_auth_reject_dialog_title">您需要同意本隐私权政策\n才能继续使用脉迹</string>
+    <string name="enter_auth_reject_dialog_content">若您不同意本隐私权政策，很遗憾我们将无法为您提供服务</string>
+    <string name="enter_auth_reject_dialog_disagree">仍不同意</string>
+    <string name="enter_auth_reject_dialog_back">查看协议</string>
+    <string name="enter_auth_have_to_open">此权限必须开启</string>
+    <string name="medication_name_cannot_empty">药物名不能为空</string>
+    <string name="medication_dosage_cannot_zero">剂量不能为0</string>
+</resources>

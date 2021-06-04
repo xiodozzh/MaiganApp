@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_height"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding"
+            android:text="@string/cancel"
+            android:textColor="@color/black_text"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/btn_time"
+            android:layout_width="55dp"
+            android:layout_height="26dp"
+            android:background="@drawable/popup_window_set_dosage_and_time_time_selector"
+            android:gravity="center"
+            android:text="@string/bracelet_reminder_time"
+            android:textColor="@color/popup_window_set_dosage_and_time_text_color"
+            android:textSize="@dimen/body_1_material"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_dosage"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/btn_dosage"
+            android:layout_width="55dp"
+            android:layout_height="26dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/popup_window_set_dosage_and_time_dosage"
+            android:gravity="center"
+            android:text="@string/dosage"
+            android:textColor="@color/popup_window_set_dosage_and_time_text_color"
+            android:textSize="@dimen/body_1_material"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_time"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding"
+            android:text="@string/submit"
+            android:textColor="@color/black_text"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <View style="@style/style_divide_line_view" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/narrow_padding"
+        android:paddingEnd="@dimen/narrow_padding">
+
+        <!--<androidx.constraintlayout.widget.Group-->
+            <!--android:id="@+id/group_dosage"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:visibility="visible"-->
+            <!--app:constraint_referenced_ids="np_digit,np_fraction,np_unit" />-->
+
+        <biz.kasual.materialnumberpicker.MaterialNumberPicker
+            android:id="@+id/np_digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/np_fraction"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:npTextSize="@dimen/title_material" />
+
+        <biz.kasual.materialnumberpicker.MaterialNumberPicker
+            android:id="@+id/np_fraction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/np_unit"
+            app:layout_constraintStart_toEndOf="@+id/np_digit"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:npTextSize="@dimen/title_material" />
+
+        <biz.kasual.materialnumberpicker.MaterialNumberPicker
+            android:id="@+id/np_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/np_fraction"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:npTextSize="@dimen/title_material" />
+
+
+        <!--<androidx.constraintlayout.widget.Group-->
+            <!--android:id="@+id/group_time"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:visibility="visible"-->
+            <!--app:constraint_referenced_ids="np_hour,np_minute,tv_divider" />-->
+
+        <biz.kasual.materialnumberpicker.MaterialNumberPicker
+            android:id="@+id/np_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/np_minute"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:npTextSize="@dimen/title_material" />
+
+        <TextView
+            android:id="@+id/tv_time_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/title_material"
+            android:text=":"
+            android:textColor="@color/black_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <biz.kasual.materialnumberpicker.MaterialNumberPicker
+            android:id="@+id/np_minute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/np_hour"
+            app:npTextSize="@dimen/title_material" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

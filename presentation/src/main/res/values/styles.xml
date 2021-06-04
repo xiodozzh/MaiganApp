@@ -1,0 +1,237 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor">@color/grey1000</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppThemeTotalDark" parent="AppTheme">
+        <item name="android:statusBarColor">@color/grey1000</item>
+        <item name="android:launchMode">singleTop</item>
+        <!--<item name="colorPrimary">@color/white</item>-->
+        <!--<item name="colorPrimaryDark">@color/white</item>-->
+        <!--<item name="colorAccent">@color/primaryBlue</item>-->
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/logo_splash</item>
+    </style>
+
+    <style name="AppThemeBlackAction" parent="Theme.AppCompat.Light">
+        <item name="android:statusBarColor">@color/grey1000</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+
+    <style name="register_edit_text_style">
+        <item name="android:textSize">@dimen/body_1_material</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColorHint">@color/grey500</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/primary_text</item>
+    </style>
+
+    <style name="history_value_style">
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/large_material</item>
+        <item name="android:textColor">@color/primary_text</item>
+    </style>
+
+    <style name="history_title_style">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/subhead_material</item>
+        <item name="android:textColor">@color/secondary_text</item>
+    </style>
+
+    <style name="history_unit_style">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/body_1_material</item>
+        <item name="android:textColor">@color/secondary_text</item>
+    </style>
+
+    <!--my info activity layout-->
+    <style name="info_layout_style">
+        <item name="android:paddingStart">@dimen/narrow_padding</item>
+        <item name="android:paddingEnd">@dimen/narrow_padding</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/normal_height</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!--setting fragment layout-->
+
+    <!--setting fragment activity layout-->
+
+    <!--<style name="indicator_detail_item">-->
+    <!--<item name="android:background">?attr/selectableItemBackground</item>-->
+    <!--<item name="android:layout_width"></item>-->
+    <!--<item name="android:layout_height">@dimen/large_heigtitleItem</item>-->
+    <!--<item name="android:orientation">horizonttitleItemitem>&ndash;&gt;-->
+    <!--<item name="android:paddingStart">@dimen/normal_paddititleItem</item>-->
+    <!--<item name="android:paddingEnd">@dimen/normal_padding</item>-->
+    <!--</style>-->
+
+    <style name="indicator_detail_item_title">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/body_1_material</item>
+        <item name="android:textColor">@color/black_text</item>
+        <item name="android:gravity">center_vertical|start</item>
+    </style>
+
+    <style name="indicator_detail_item_value">
+        <item name="android:layout_width">@dimen/large_height</item>
+        <item name="android:gravity">center_vertical|end</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/subhead_material</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:paddingEnd">@dimen/xnarrow_padding</item>
+    </style>
+
+    <style name="indicator_detail_item_unit">
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:layout_width">@dimen/double_normal_height</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/body_1_material</item>
+        <item name="android:textColor">@color/secondary_text</item>
+        <item name="android:layout_marginStart">@dimen/xnarrow_padding</item>
+        <item name="android:layout_marginEnd">@dimen/xnarrow_padding</item>
+    </style>
+
+    <style name="week_day_title_style">
+        <item name="android:textSize">@dimen/body_1_material</item>
+        <item name="android:textColor">@color/secondary_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">@dimen/normal_padding</item>
+    </style>
+
+    <style name="week_day_style">
+        <item name="android:textSize">@dimen/title_material</item>
+        <item name="android:textColor">@color/calendar_text_color</item>
+        <item name="android:layout_height">@dimen/narrow_height</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="reminder_week_day_style">
+        <item name="android:textSize">@dimen/subhead_material</item>
+        <item name="android:textColor">@color/bracelet_reminder_selected_text_color</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/selector_reminder_day</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingStart">@dimen/narrow_padding</item>
+        <item name="android:paddingEnd">@dimen/narrow_padding</item>
+        <item name="android:paddingTop">@dimen/xnarrow_padding</item>
+        <item name="android:paddingBottom">@dimen/xnarrow_padding</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">@dimen/large_height</item>
+    </style>
+
+    <style name="popup_window">
+        <item name="android:windowEnterAnimation">@anim/window_out</item>
+        <item name="android:windowExitAnimation">@anim/window_back</item>
+    </style>
+
+
+    <!--setting display bracelet layout-->
+    <style name="display_bracelet_title">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">@dimen/body_1_material</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginStart">@dimen/narrow_padding</item>
+    </style>
+
+    <style name="style_img_txt_layout">
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/normal_height</item>
+        <item name="android:paddingStart">@dimen/narrow_padding</item>
+        <item name="android:paddingEnd">@dimen/narrow_padding</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="style_img_txt_layout_img">
+        <item name="android:contentDescription">@string/app_name</item>
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="style_divide_line_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/grey300</item>
+    </style>
+
+    <style name="style_image_right_arrow">
+        <item name="android:layout_width">@dimen/normal_padding</item>
+        <item name="android:layout_height">@dimen/normal_padding</item>
+        <item name="android:src">@drawable/right_arrow</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:contentDescription">@string/app_name</item>
+    </style>
+
+    <!--setting activity layout-->
+    <style name="style_setting_title_text">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">@dimen/subhead_material</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <!--setting help text-->
+    <style name="style_help_title_text">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/body_1_material</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="style_help_content_text">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">@dimen/body_1_material</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/narrow_padding</item>
+        <item name="android:layout_marginBottom">@dimen/large_padding</item>
+    </style>
+
+    <style name="style_display_checkbox">
+        <item name="android:button">@drawable/selector_display_checkbox</item>
+        <item name="android:layout_width">@dimen/medium_padding</item>
+        <item name="android:layout_height">@dimen/normal_height</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:scaleX">1</item>
+        <item name="android:scaleY">1</item>
+    </style>
+
+    <style name="style_display_time_checkbox">
+        <item name="android:button">@drawable/selector_display_checkbox</item>
+        <item name="android:layout_width">@dimen/medium_padding</item>
+        <item name="android:layout_height">@dimen/normal_height</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:scaleX">1</item>
+        <item name="android:scaleY">1</item>
+    </style>
+
+    <style name="style_measure_pw_result_table_text">
+        <item name="android:textColor">@color/black_text</item>
+        <item name="android:textSize">@dimen/body_1_material</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:layout_marginBottom">6dp</item>
+    </style>
+
+</resources>

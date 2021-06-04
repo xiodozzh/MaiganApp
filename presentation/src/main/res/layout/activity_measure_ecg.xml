@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.MeasureEcgViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/measure_ecg_title"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+
+            <LinearLayout
+                android:id="@+id/layout_to_wear_guide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background_grey"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/narrow_height"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/normal_padding"
+                android:paddingTop="@dimen/narrow_padding"
+                android:paddingEnd="@dimen/normal_padding"
+                android:paddingBottom="@dimen/narrow_padding"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/bracelet_ecg_measure_guide_icon" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/narrow_padding"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/ecg_measure_go_to_guide_page"
+                    android:textColor="@color/light_grey_text"
+                    android:textSize="@dimen/body_1_material" />
+
+                <ImageView
+                    android:layout_width="@dimen/normal_padding"
+                    android:layout_height="@dimen/normal_padding"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/narrow_padding"
+                    android:contentDescription="go to wear guide"
+                    android:src="@drawable/right_arrow" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_btn"
+                android:layout_width="114dp"
+                android:layout_height="114dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_to_wear_guide">
+
+                <ImageView
+                    android:id="@+id/iv_circle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="circle"
+                    android:src="@drawable/activity_measure_ecg_circle"
+                    android:visibility="@{model.isWorking || model.isEcgPrepare?View.VISIBLE:View.GONE}" />
+
+                <com.hookedonplay.decoviewlib.DecoView
+                    android:id="@+id/dv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="@{!model.isEcgPrepare?View.VISIBLE:View.GONE}" />
+
+                <Button
+                    android:id="@+id/btn_measure"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:background="@drawable/blue_circle"
+                    android:visibility="@{model.isEcgPrepare?View.VISIBLE:View.GONE}"
+                    android:text='@{model.isWorking?(String)@string/stop:(String)@string/start}'
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium_material" />
+
+                <TextView
+                    android:id="@+id/tv_count_down"
+                    android:contentDescription="count down time"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:background="@drawable/blue_circle"
+                    android:visibility="@{!model.isEcgPrepare?View.VISIBLE:View.GONE}"
+                    android:text='@{model.progressText}'
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/large_material" />
+
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_desc"
+                android:layout_width="match_parent"
+                android:minHeight="@dimen/large_height"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/narrow_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_btn" >
+
+                <TextView
+                    android:id="@+id/tv_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@{model.descriptionString}"
+                    android:textColor="@color/grey_text"
+                    android:textSize="@dimen/subhead_material"
+                    android:visibility="@{!model.warning?View.VISIBLE:View.GONE}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/lead_off"
+                    android:textColor="@color/warningRed"
+                    android:textSize="@dimen/subhead_material"
+                    android:visibility="@{model.warning ?View.VISIBLE:View.GONE}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--<com.mgtech.maiganapp.widget.EcgRefreshGraphView-->
+            <!--android:id="@+id/graphView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="200dp"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/tv_warning"-->
+            <!--app:lineColor="@color/colorPrimary" />-->
+
+            <com.mgtech.maiganapp.widget.EcgDrawingGraphView
+                android:id="@+id/graphView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/layout_tips"
+                app:layout_constraintTop_toBottomOf="@+id/layout_desc" />
+
+            <LinearLayout
+                android:id="@+id/layout_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background_grey"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/normal_padding"
+                android:paddingStart="@dimen/normal_padding"
+                android:paddingEnd="@dimen/normal_padding"
+                android:paddingBottom="@dimen/normal_padding"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/normal_padding"
+                    android:gravity="center"
+                    android:text="@string/measure_ecg_tips_title"
+                    android:textColor="@color/grey_text"
+                    android:textSize="@dimen/subhead_material" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/measure_ecg_tips_content"
+                    android:textColor="@color/grey_text"
+                    android:textSize="@dimen/body_1_material" />
+            </LinearLayout>
+
+            <include
+                layout="@layout/layout_scan_or_disconnect"
+                bind:model="@{model.stateViewModel}" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.FriendViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_grey"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/fragment_bottom_padding">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/friend_title"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/normal_height"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical|end"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/btn_add"
+                    android:layout_width="@dimen/normal_height"
+                    android:layout_height="@dimen/normal_height"
+                    android:background="?attr/selectableItemBackground">
+
+                    <com.mgtech.maiganapp.widget.UnreadImageView
+                        android:id="@+id/iv_add"
+                        android:padding="2dp"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_centerInParent="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/fragment_friend_add_friend" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btn_message"
+                    android:layout_width="@dimen/normal_height"
+                    android:layout_height="@dimen/normal_height"
+                    android:background="?attr/selectableItemBackground">
+
+                    <com.mgtech.maiganapp.widget.UnreadImageView
+                        android:id="@+id/iv_message"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:padding="2dp"
+                        android:layout_centerInParent="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/fragment_friend_new_message_off" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layout_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{!model.netError &amp;&amp; !model.empty ? View.VISIBLE:View.GONE}" />
+
+                <include
+                    android:id="@+id/layout_empty"
+                    layout="@layout/layout_empty_data_relation"
+                    android:visibility="@{!model.netError &amp;&amp; model.empty ? View.VISIBLE:View.GONE}" />
+
+                <include
+                    android:id="@+id/layout_error"
+                    layout="@layout/layout_network_error"
+                    android:visibility="@{model.netError?View.VISIBLE:View.GONE}" />
+
+            </FrameLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+</layout>

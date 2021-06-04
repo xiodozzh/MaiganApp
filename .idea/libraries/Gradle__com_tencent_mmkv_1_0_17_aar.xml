@@ -1,0 +1,33 @@
+<component name="libraryTable">
+  <library name="Gradle: com.tencent:mmkv:1.0.17@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7ff848bd3fe46767a689e8f115a1ad69/jetified-mmkv-1.0.17/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7ff848bd3fe46767a689e8f115a1ad69/jetified-mmkv-1.0.17/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7ff848bd3fe46767a689e8f115a1ad69/jetified-mmkv-1.0.17/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9b6cea11dcfe240e32cfa15159a9bf5b/jetified-mmkv-1.0.17/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9b6cea11dcfe240e32cfa15159a9bf5b/jetified-mmkv-1.0.17/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9b6cea11dcfe240e32cfa15159a9bf5b/jetified-mmkv-1.0.17/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/615aadf92f3930ac1a8dc232b1b0b5dd/jetified-mmkv-1.0.17/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/615aadf92f3930ac1a8dc232b1b0b5dd/jetified-mmkv-1.0.17/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/615aadf92f3930ac1a8dc232b1b0b5dd/jetified-mmkv-1.0.17/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/50561eadbabbe2f4cb847a9137d7a096/jetified-mmkv-1.0.17/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/50561eadbabbe2f4cb847a9137d7a096/jetified-mmkv-1.0.17/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/50561eadbabbe2f4cb847a9137d7a096/jetified-mmkv-1.0.17/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/740f3fdf65514b42ec2d9e1db1a12b2a/jetified-mmkv-1.0.17/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/740f3fdf65514b42ec2d9e1db1a12b2a/jetified-mmkv-1.0.17/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/740f3fdf65514b42ec2d9e1db1a12b2a/jetified-mmkv-1.0.17/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a97b7db8f9acbef7223eebc69041263e/jetified-mmkv-1.0.17/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a97b7db8f9acbef7223eebc69041263e/jetified-mmkv-1.0.17/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a97b7db8f9acbef7223eebc69041263e/jetified-mmkv-1.0.17/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/146c376c93eca4aca46695396ca75705/jetified-mmkv-1.0.17/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8d9b07daac61e8ebe3f47387d8f56d15/jetified-mmkv-1.0.17/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5ad01d85063f4ad59e117cbb6df88f94/jetified-mmkv-1.0.17/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5ad01d85063f4ad59e117cbb6df88f94/jetified-mmkv-1.0.17/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5ad01d85063f4ad59e117cbb6df88f94/jetified-mmkv-1.0.17/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tencent/mmkv/1.0.17/1c8f160dc3f76280db9b0bfeb9267ed4ff7bbb7/mmkv-1.0.17-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

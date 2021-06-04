@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.SetFontSizeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_grey"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include layout="@layout/layout_back_black"
+                android:id="@+id/btn_back"/>
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/set_font_size"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_marginStart="@dimen/normal_padding"
+            android:layout_marginEnd="@dimen/normal_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@android:drawable/divider_horizontal_bright"
+            android:orientation="vertical"
+            android:showDividers="middle|end"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <TextView
+                android:id="@+id/tv_item_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/normal_height"
+                android:gravity="center_vertical"
+                android:text="@string/set_font_text_font_review"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/body_1_material" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/narrow_padding"
+                android:paddingTop="@dimen/narrow_padding">
+
+                <TextView
+                    android:id="@+id/tv_item_title1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/set_font_standard_primary_text"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/subhead_material" />
+
+                <TextView
+                    android:id="@+id/tv_item_content1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/set_font_standard_second_text"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/body_1_material" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/narrow_padding"
+                android:paddingTop="@dimen/narrow_padding">
+
+                <TextView
+                    android:id="@+id/tv_item_title2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/set_font_standard_primary_text"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/subhead_material" />
+
+                <TextView
+                    android:id="@+id/tv_item_content2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/set_font_standard_second_text"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/body_1_material" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.mgtech.maiganapp.widget.FontSizePickView
+                android:id="@+id/fontSizePickView"
+                android:layout_marginTop="@dimen/narrow_height"
+                android:layout_marginBottom="@dimen/normal_height"
+                android:layout_centerHorizontal="true"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/large_height" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

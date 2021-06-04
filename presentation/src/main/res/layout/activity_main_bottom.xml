@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/layout_items"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:elevation="8dp"
+        android:background="@drawable/main_navigator_side_bg"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <include
+            android:id="@+id/layout_home"
+            layout="@layout/layout_bottom_navigator_item" />
+
+        <include
+            android:id="@+id/layout_health"
+            layout="@layout/layout_bottom_navigator_item" />
+
+        <!--<View-->
+            <!--android:layout_width="84dp"-->
+            <!--android:layout_height="1dp" />-->
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:elevation="2dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/activity_main_bottom_padding"
+            android:paddingBottom="@dimen/activity_main_bottom_padding">
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="@dimen/activity_main_bottom_img_width"
+                android:layout_height="@dimen/activity_main_bottom_img_width"
+                android:layout_marginBottom="1dp"
+                android:contentDescription="@string/app_name" />
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/measure"
+                android:textColor="#aaaaaa"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/layout_friend"
+            layout="@layout/layout_bottom_navigator_item" />
+
+        <include
+            android:id="@+id/layout_mine"
+            layout="@layout/layout_bottom_navigator_item" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_measure"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:contentDescription="measure button"
+        android:elevation="16dp"
+        android:src="@drawable/main_navigator_measure_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_items"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.mgtech.maiganapp.widget.BottomNavigatorSelectView
+        android:id="@+id/view_select"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="6dp" />
+
+    <!--<include-->
+        <!--android:id="@+id/left_btn"-->
+        <!--layout="@layout/activity_main_bottom_left_layout"-->
+        <!--android:layout_width="44dp"-->
+        <!--android:layout_height="44dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/view_select" />-->
+
+    <!--<include-->
+        <!--android:id="@+id/right_btn"-->
+        <!--android:layout_width="44dp"-->
+        <!--android:layout_height="44dp"-->
+        <!--layout="@layout/activity_main_bottom_right_layout"/>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

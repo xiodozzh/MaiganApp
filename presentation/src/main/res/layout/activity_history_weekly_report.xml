@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.HistoryWeeklyReportViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_grey"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/activity_history_weekly_report"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_guide"
+            android:background="@color/white"
+            android:layout_marginTop="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="@dimen/normal_padding"
+                android:layout_marginTop="@dimen/normal_padding"
+                android:layout_marginBottom="@dimen/normal_padding"
+                android:contentDescription="guide"
+                android:src="@drawable/history_weekly_report_guide"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_guide"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/subhead_material"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/history_weekly_report_guide"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+            <ImageView
+                android:contentDescription="guide"
+                android:layout_width="@dimen/normal_padding"
+                android:layout_height="@dimen/normal_padding"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/right_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:visibility="@{!model.networkError &amp;&amp; !model.isEmpty?View.VISIBLE:View.GONE}"
+            android:id="@+id/layout_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:visibility="@{!model.networkError &amp;&amp; model.isEmpty?View.VISIBLE:View.GONE}"
+            android:id="@+id/layout_refresh_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/layout_empty_data"/>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:visibility="@{model.networkError?View.VISIBLE:View.GONE}"
+            android:id="@+id/layout_refresh_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/layout_network_error"/>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</layout>

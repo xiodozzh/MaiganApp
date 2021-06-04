@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.DefaultViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include layout="@layout/layout_back_black"
+                android:id="@+id/btn_back"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/setting_feedback"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="@dimen/setting_about_us_icon_length"
+                android:layout_height="@dimen/setting_about_us_icon_length"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/setting_feedback"
+                android:src="@drawable/setting_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="@string/setting_feedback_email"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/subhead_material"
+                app:layout_constraintEnd_toEndOf="@+id/iv_logo"
+                app:layout_constraintStart_toStartOf="@+id/iv_logo"
+                app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/body_1_material"
+                android:text="feedback@maigantech.com"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>

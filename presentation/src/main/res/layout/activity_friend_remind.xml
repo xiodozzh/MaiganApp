@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.mgtech.maiganapp.utils.BindingUtil" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.FriendRemindViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_grey"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@{model.name}"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layout_refresh_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{model.networkError?View.VISIBLE:View.GONE}">
+
+            <include layout="@layout/layout_network_error" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layout_refresh_no_author"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{model.noAuthor &amp;&amp; !model.networkError?View.VISIBLE:View.GONE}">
+
+            <include layout="@layout/layout_no_authority" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layout_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{!model.noAuthor &amp;&amp; !model.networkError?View.VISIBLE:View.GONE}">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background_grey">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_remind"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/normal_padding"
+                        android:layout_marginTop="@dimen/narrow_padding"
+                        android:layout_marginEnd="@dimen/normal_padding"
+                        android:layout_marginBottom="@dimen/xnarrow_padding"
+                        android:visibility="@{model.showRemindCard?View.VISIBLE:View.GONE}"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="0dp"
+                        app:contentPaddingLeft="@dimen/normal_padding"
+                        app:contentPaddingRight="@dimen/normal_padding">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.mgtech.maiganapp.widget.UnreadImageView
+                                android:id="@+id/iv_icon_remind"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginTop="14dp"
+                                android:contentDescription="remind measure"
+                                android:padding="2dp"
+                                android:src="@drawable/activity_friend_measure_remind_icon"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_title_remind"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/narrow_padding"
+                                android:text="@string/activity_friend_remind_measure_remind"
+                                android:textColor="@color/black_text"
+                                android:textSize="@dimen/subhead_material"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_icon_remind"
+                                app:layout_constraintStart_toEndOf="@+id/iv_icon_remind"
+                                app:layout_constraintTop_toTopOf="@+id/iv_icon_remind" />
+
+                            <View
+                                android:id="@+id/remind_divider1"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/narrow_padding"
+                                android:background="@color/background_grey"
+                                app:layout_constraintTop_toBottomOf="@+id/iv_icon_remind" />
+
+                            <TextView
+                                android:id="@+id/tv_not_measure_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/narrow_padding"
+                                android:text="@{model.daysFromLastMeasureToToday}"
+                                android:textColor="@color/black_text"
+                                android:textSize="@dimen/body_1_material"
+                                app:layout_constraintTop_toBottomOf="@+id/remind_divider1" />
+
+
+                            <TextView
+                                android:id="@+id/tv_remind_measure_time"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/narrow_padding"
+                                android:layout_marginBottom="8dp"
+                                android:text="@{model.lastMeasurePwTime}"
+                                android:textColor="@color/light_grey_text"
+                                android:textSize="@dimen/caption_material"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_not_measure_days" />
+
+
+                            <TextView
+                                android:id="@+id/tv_never_measure"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/narrow_padding"
+                                android:layout_marginBottom="8dp"
+                                android:text="@string/activity_friend_remind_your_friend_not_measure_yet"
+                                android:textColor="@color/black_text"
+                                android:textSize="@dimen/body_1_material"
+                                android:visibility="@{model.friendNeverMeasure?View.VISIBLE:View.GONE}"
+                                app:layout_constraintBottom_toTopOf="@+id/remind_divider2"
+                                app:layout_constraintTop_toBottomOf="@+id/remind_divider1" />
+
+                            <View
+                                android:id="@+id/remind_divider2"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/narrow_padding"
+                                android:background="@color/background_grey"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_remind_measure_time" />
+
+                            <TextView
+                                android:id="@+id/tv_remind_measure"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/narrow_padding"
+                                android:paddingBottom="@dimen/normal_padding"
+                                android:text="@string/activity_friend_remind_remind_measure"
+                                android:textColor="@color/black_text"
+                                android:textSize="@dimen/subhead_material"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/remind_divider2" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_exception"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/normal_padding"
+                        android:layout_marginTop="@dimen/xnarrow_padding"
+                        android:layout_marginEnd="@dimen/normal_padding"
+                        android:layout_marginBottom="@dimen/xnarrow_padding"
+                        android:visibility="@{model.showExceptionCard?View.VISIBLE:View.GONE}"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="0dp"
+                        app:contentPaddingLeft="@dimen/normal_padding"
+                        app:contentPaddingRight="@dimen/normal_padding">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.mgtech.maiganapp.widget.UnreadImageView
+                                android:id="@+id/iv_icon_exception"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginTop="14dp"
+                                android:contentDescription="remind measure"
+                                android:padding="2dp"
+                                android:src="@drawable/activity_friend_exception_icon"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_title_exception"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/narrow_padding"
+                                android:text="@string/activity_friend_remind_abnormal_record"
+                                android:textColor="@color/black_text"
+                                android:textSize="@dimen/subhead_material"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_icon_exception"
+                                app:layout_constraintStart_toEndOf="@+id/iv_icon_exception"
+                                app:layout_constraintTop_toTopOf="@+id/iv_icon_exception" />
+
+
+                            <View
+                                android:id="@+id/exception_divider1"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/narrow_padding"
+                                android:background="@color/background_grey"
+                                app:layout_constraintTop_toBottomOf="@+id/iv_icon_exception" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layout_exception_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="@{model.abnormalHaveData?View.VISIBLE:View.INVISIBLE}"
+                                app:layout_constraintTop_toTopOf="@+id/exception_divider1">
+
+                                <View
+                                    android:id="@+id/divider_exception_vertical"
+                                    android:layout_width="1dp"
+                                    android:layout_height="@dimen/narrow_height"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:background="@color/background_grey"
+                                    app:layout_constraintBottom_toBottomOf="@+id/layout_exception_bp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/layout_exception_bp" />
+
+                                <LinearLayout
+                                    android:id="@+id/layout_exception_hr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="40dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    app:layout_constraintBottom_toBottomOf="@+id/divider_exception_vertical"
+                                    app:layout_constraintEnd_toStartOf="@+id/divider_exception_vertical"
+                                    app:layout_constraintTop_toTopOf="@+id/divider_exception_vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_exception_hr_title"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/heart_rate"
+                                        android:textColor="@color/grey_text"
+                                        android:textSize="@dimen/caption_material" />
+
+                                    <TextView
+                                        android:id="@+id/tv_exception_hr_value"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@{model.exceptionHrValue}"
+                                        android:textColor="@color/black_text"
+                                        android:textSize="@dimen/subhead_material" />
+
+                                    <TextView
+                                        android:id="@+id/tv_exception_hr_unit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/HR_unit"
+                                        android:textColor="@color/grey_text"
+                                        android:textSize="@dimen/caption_material" />
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:id="@+id/layout_exception_bp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="40dp"
+                                    android:layout_marginTop="@dimen/narrow_padding"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    app:layout_constraintStart_toEndOf="@+id/divider_exception_vertical"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <TextView
+                                        android:id="@+id/tv_exception_bp_title"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/blood_pressure"
+                                        android:textColor="@color/grey_text"
+                                        android:textSize="@dimen/caption_material" />
+
+                                    <TextView
+                                        android:id="@+id/tv_exception_bp_value"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@{model.exceptionBpValue}"
+                                        android:textColor="@color/black_text"
+                                        android:textSize="@dimen/subhead_material" />
+
+                                    <TextView
+                                        android:id="@+id/tv_exception_bp_unit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/PS_unit"
+                                        android:textColor="@color/grey_text"
+                                        android:textSize="@dimen/caption_material" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tv_exception_measure_time"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/narrow_padding"
+                                    android:layout_marginBottom="8dp"
+                                    android:text="@{model.lastExceptionDate}"
+                                    android:textColor="@color/light_grey_text"
+                                    android:textSize="@dimen/caption_material"
+                                    app:layout_constraintTop_toBottomOf="@+id/layout_exception_bp" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layout_exception_empty"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="@{model.abnormalHaveData?View.INVISIBLE:View.VISIBLE}"
+                                app:layout_constraintBottom_toBottomOf="@+id/layout_exception_content"
+                                app:layout_constraintTop_toTopOf="@+id/layout_exception_content">
+
+                                <ImageView
+                                    android:id="@+id/iv_exception_no_data"
+                                    android:layout_width="26dp"
+                                    android:layout_height="26dp"
+                                    android:contentDescription="no data"
+                                    android:src="@drawable/fragment_home_no_data"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/tv_exception_no_data"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintHorizontal_chainStyle="packed"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_exception_no_data"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/narrow_padding"
+                                    android:text="@string/no_data"
+                                    android:textColor="@color/empty_data_text_color"
+                                    android:textSize="@dimen/body_1_material"
+                                    app:layout_constraintBottom_toBottomOf="@+id/iv_exception_no_data"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/iv_exception_no_data" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:id="@+id/exception_divider2"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/narrow_padding"
+                                android:background="@color/background_grey"
+                                app:layout_constraintTop_toBottomOf="@+id/layout_exception_content" />
+
+                            <TextView
+                                android:id="@+id/tv_exception"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/narrow_padding"
+                                android:paddingBottom="@dimen/normal_padding"
+                                android:text="@string/more"
+                                android:textColor="@color/black_text"
+                                android:textSize="@dimen/subhead_material"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/exception_divider2" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_history"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/normal_padding"
+                        android:layout_marginTop="@dimen/xnarrow_padding"
+                        android:layout_marginEnd="@dimen/normal_padding"
+                        android:layout_marginBottom="@dimen/xnarrow_padding"
+                        android:visibility="@{model.showPwCard?View.VISIBLE:View.GONE}"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="0dp"
+                        app:contentPaddingLeft="@dimen/normal_padding"
+                        app:contentPaddingRight="@dimen/normal_padding"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.mgtech.maiganapp.widget.UnreadImageView
+                                android:id="@+id/iv_history"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginTop="14dp"
+                                android:layout_marginBottom="14dp"
+                                android:contentDescription="history"
+                                android:padding="2dp"
+                                android:src="@drawable/activity_friend_history_data_icon"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_history"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/narrow_padding"
+                                android:text="@string/home_history_measure_record"
+                                android:textColor="@color/black_text"
+                                android:textSize="@dimen/subhead_material"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_history"
+                                app:layout_constraintStart_toEndOf="@id/iv_history"
+                                app:layout_constraintTop_toTopOf="@+id/iv_history" />
+
+                            <TextView
+                                android:id="@+id/tv_history_measure_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="@{model.lastMeasurePwDate}"
+                                android:textColor="@color/light_grey_text"
+                                android:textSize="@dimen/caption_material"
+                                app:layout_constrainedWidth="true"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_history"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toEndOf="@+id/iv_history"
+                                app:layout_constraintTop_toTopOf="@+id/iv_history" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_pw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/normal_padding"
+                        android:layout_marginTop="@dimen/xnarrow_padding"
+                        android:layout_marginEnd="@dimen/normal_padding"
+                        android:layout_marginBottom="@dimen/xnarrow_padding"
+                        android:visibility="@{model.showPwCard?View.VISIBLE:View.GONE}"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="0dp"
+                        app:contentPaddingLeft="@dimen/normal_padding"
+                        app:contentPaddingRight="@dimen/normal_padding">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.mgtech.maiganapp.widget.UnreadImageView
+                                android:id="@+id/iv_icon_pw"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginTop="14dp"
+                                android:contentDescription="remind measure"
+                                android:padding="2dp"
+                                android:src="@drawable/activity_friend_pw_icon"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_title_pw"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/narrow_padding"
+                                android:text="@string/home_cardiovascular_health"
+                                android:textColor="@color/black_text"
+                                android:textSize="@dimen/subhead_material"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_icon_pw"
+                                app:layout_constraintStart_toEndOf="@+id/iv_icon_pw"
+                                app:layout_constraintTop_toTopOf="@+id/iv_icon_pw" />
+
+                            <View
+                                android:id="@+id/pw_divider1"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/narrow_padding"
+                                android:background="@color/background_grey"
+                                app:layout_constraintTop_toBottomOf="@+id/iv_icon_pw" />
+
+                            <lecho.lib.hellocharts.view.LineChartView
+                                android:id="@+id/chart_view_pw"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="@dimen/narrow_padding"
+                                android:visibility="@{model.pwHaveData?View.VISIBLE:View.INVISIBLE}"
+                                app:layout_constraintTop_toBottomOf="@+id/pw_divider1" />
+
+                            <ImageView
+                                android:id="@+id/iv_pw_no_data"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:contentDescription="no data"
+                                android:src="@drawable/fragment_home_no_data"
+                                android:visibility="@{!model.pwHaveData?View.VISIBLE:View.INVISIBLE}"
+                                app:layout_constraintBottom_toTopOf="@+id/pw_divider2"
+                                app:layout_constraintEnd_toStartOf="@+id/tv_pw_no_data"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="packed"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/chart_view_pw" />
+
+                            <TextView
+                                android:id="@+id/tv_pw_no_data"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/narrow_padding"
+                                android:text="@string/no_data"
+                                android:textColor="@color/empty_data_text_color"
+                                android:textSize="@dimen/body_1_material"
+                                android:visibility="@{!model.pwHaveData?View.VISIBLE:View.INVISIBLE}"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_pw_no_data"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/iv_pw_no_data" />
+
+
+                            <TextView
+                                android:id="@+id/tv_pw_measure_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="@{model.lastMeasurePwDate}"
+
+                                android:textColor="@color/light_grey_text"
+                                android:textSize="@dimen/caption_material"
+                                app:layout_constrainedWidth="true"
+                                app:layout_constraintBottom_toBottomOf="@+id/tv_title_pw"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toEndOf="@+id/tv_title_pw"
+                                app:layout_constraintTop_toTopOf="@+id/tv_title_pw" />
+
+                            <View
+                                android:id="@+id/pw_divider2"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/narrow_padding"
+                                android:background="@color/background_grey"
+                                app:layout_constraintTop_toBottomOf="@+id/chart_view_pw" />
+
+                            <TextView
+                                android:id="@+id/tv_pw_measure"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/narrow_padding"
+                                android:paddingBottom="@dimen/normal_padding"
+                                android:text="@string/more"
+                                android:textColor="@color/black_text"
+                                android:textSize="@dimen/subhead_material"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/pw_divider2" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_ecg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/normal_padding"
+                        android:layout_marginTop="@dimen/xnarrow_padding"
+                        android:layout_marginEnd="@dimen/normal_padding"
+                        android:layout_marginBottom="@dimen/normal_padding"
+                        android:visibility="@{model.showEcgCard?View.VISIBLE:View.GONE}"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="0dp"
+                        app:contentPaddingLeft="@dimen/normal_padding"
+                        app:contentPaddingRight="@dimen/normal_padding">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.mgtech.maiganapp.widget.UnreadImageView
+                                android:id="@+id/iv_icon_ecg"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginTop="14dp"
+                                android:contentDescription="remind measure"
+                                android:padding="2dp"
+                                android:src="@drawable/activity_friend_ecg_icon"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_title_ecg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/narrow_padding"
+                                android:text="@string/ecg_graph"
+                                android:textColor="@color/black_text"
+                                android:textSize="@dimen/subhead_material"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_icon_ecg"
+                                app:layout_constraintStart_toEndOf="@+id/iv_icon_ecg"
+                                app:layout_constraintTop_toTopOf="@+id/iv_icon_ecg" />
+
+                            <View
+                                android:id="@+id/ecg_divider1"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/narrow_padding"
+                                android:background="@color/background_grey"
+                                app:layout_constraintTop_toBottomOf="@+id/iv_icon_ecg" />
+
+                            <com.mgtech.maiganapp.widget.EcgDisplayGraphView
+                                android:id="@+id/chart_view_ecg"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="@dimen/narrow_padding"
+                                android:visibility="@{model.ecgHaveData?View.VISIBLE:View.INVISIBLE}"
+                                app:layout_constraintTop_toBottomOf="@+id/ecg_divider1" />
+
+
+                            <ImageView
+                                android:id="@+id/iv_ecg_no_data"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:contentDescription="no data"
+                                android:src="@drawable/fragment_home_no_data"
+                                android:visibility="@{!model.ecgHaveData?View.VISIBLE:View.INVISIBLE}"
+                                app:layout_constraintBottom_toTopOf="@+id/ecg_divider2"
+                                app:layout_constraintEnd_toStartOf="@+id/tv_ecg_no_data"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="packed"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/chart_view_ecg" />
+
+                            <TextView
+                                android:id="@+id/tv_ecg_no_data"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/narrow_padding"
+                                android:text="@string/no_data"
+                                android:textColor="@color/empty_data_text_color"
+                                android:textSize="@dimen/body_1_material"
+                                android:visibility="@{!model.ecgHaveData?View.VISIBLE:View.INVISIBLE}"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_ecg_no_data"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/iv_ecg_no_data" />
+
+                            <TextView
+                                android:id="@+id/tv_ecg_measure_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="@dimen/narrow_padding"
+                                android:layout_marginBottom="8dp"
+                                android:text="@{model.lastMeasureEcgDate}"
+                                android:textColor="@color/light_grey_text"
+                                android:textSize="@dimen/caption_material"
+                                app:layout_constrainedWidth="true"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_icon_ecg"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toEndOf="@+id/tv_title_ecg"
+                                app:layout_constraintTop_toTopOf="@+id/iv_icon_ecg" />
+
+                            <View
+                                android:id="@+id/ecg_divider2"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/narrow_padding"
+                                android:background="@color/background_grey"
+                                app:layout_constraintTop_toBottomOf="@+id/chart_view_ecg" />
+
+                            <TextView
+                                android:id="@+id/tv_ecg_measure"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/narrow_padding"
+                                android:paddingBottom="@dimen/normal_padding"
+                                android:text="@string/more"
+                                android:textColor="@color/black_text"
+                                android:textSize="@dimen/subhead_material"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/ecg_divider2" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+</layout>

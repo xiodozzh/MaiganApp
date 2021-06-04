@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><!--<merge xmlns:android="http://schemas.android.com/apk/res/android"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent">-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="0dp"
+    android:layout_height="50dp"
+    android:layout_weight="1"
+    android:elevation="2dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/activity_main_bottom_padding"
+    android:paddingBottom="@dimen/activity_main_bottom_padding">
+    <!--android:background="?android:attr/selectableItemBackground"-->
+
+    <com.mgtech.maiganapp.widget.UnreadImageView
+        android:id="@+id/iv"
+        android:layout_width="28dp"
+        android:layout_height="29dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="1dp"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#aaaaaa"
+        android:textSize="10sp" />
+</LinearLayout>

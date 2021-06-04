@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layout_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/fragment_bottom_padding">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_grey">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="336dp"
+                        android:background="@color/background_grey">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="310dp"
+                            android:background="@drawable/fragment_home_header_bg"
+                            android:contentDescription="background"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.mgtech.maiganapp.widget.HomeHeaderCircleView
+                            android:id="@+id/bp_circle"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginEnd="8dp"
+                            android:contentDescription="circle"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:res="@drawable/fragment_home_header_circle" />
+
+
+                        <TextView
+                            android:id="@+id/tv_bp_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:text="@{model.currentValueString}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/display_0_material"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/bp_circle"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/bp_circle" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@id/tv_bp_value"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="@dimen/xnarrow_padding"
+                            android:text="@{model.currentTitleString}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/body_1_material"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/tv_bp_value"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_bp_value"
+                            app:layout_constraintStart_toStartOf="@+id/tv_bp_value" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_bp_value"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/xnarrow_padding"
+                            android:text="@{model.currentUnitString}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/caption_material"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_bp_value"
+                            app:layout_constraintStart_toStartOf="@+id/tv_bp_value"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_bp_value" />
+
+
+                        <LinearLayout
+                            android:id="@+id/layout_auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/bg_round_rect_radius_16dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="24dp"
+                            android:paddingEnd="24dp"
+                            app:layout_constraintBottom_toTopOf="@+id/card_history"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/bp_circle">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_gravity="center_vertical"
+                                android:contentDescription="icon"
+                                android:src="@drawable/fragment_home_icon_alarm" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/normal_padding"
+                                android:gravity="center"
+                                android:text="@string/home_auto_measure_set"
+                                android:textColor="@color/black_text"
+                                android:textSize="@dimen/subhead_material" />
+                        </LinearLayout>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_history"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/normal_padding"
+                            android:layout_marginEnd="@dimen/normal_padding"
+                            android:layout_marginBottom="2dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="4dp"
+                            app:cardElevation="1dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="@dimen/normal_padding"
+                                android:paddingTop="10dp"
+                                android:paddingEnd="@dimen/normal_padding"
+                                android:paddingBottom="10dp">
+
+                                <com.mgtech.maiganapp.widget.UnreadImageView
+                                    android:id="@+id/iv_history"
+                                    android:layout_width="@dimen/fragment_home_card_title_height_with_dot"
+                                    android:layout_height="@dimen/fragment_home_card_title_height_with_dot"
+                                    android:contentDescription="history"
+                                    android:padding="2dp"
+                                    android:src="@drawable/fragment_home_icon_history_data"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_history"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:text="@string/home_history_measure_record"
+                                    android:textColor="@color/black_text"
+                                    android:textSize="@dimen/subhead_material"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@id/iv_history"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/normal_padding"
+                                    android:layout_height="@dimen/normal_padding"
+                                    android:src="@drawable/right_arrow"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cd_health"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/normal_padding"
+                        android:layout_marginTop="@dimen/narrow_padding"
+                        android:layout_marginRight="@dimen/normal_padding"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="1dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/normal_padding"
+                            android:paddingEnd="@dimen/normal_padding"
+                            android:paddingBottom="@dimen/normal_padding">
+
+                            <com.mgtech.maiganapp.widget.UnreadImageView
+                                android:id="@+id/healthIcon"
+                                android:layout_width="@dimen/fragment_home_card_title_height_with_dot"
+                                android:layout_height="@dimen/fragment_home_card_title_height_with_dot"
+                                android:layout_marginTop="6dp"
+                                android:contentDescription="@string/app_name"
+                                android:elevation="2dp"
+                                android:padding="2dp"
+                                android:src="@drawable/fragment_home_icon_bp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <LinearLayout
+                                android:id="@+id/layout_health_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_toEndOf="@id/healthIcon"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="@+id/healthIcon"
+                                app:layout_constraintStart_toEndOf="@+id/healthIcon"
+                                app:layout_constraintTop_toTopOf="@+id/healthIcon">
+
+                                <TextView
+                                    android:id="@+id/tvHealthTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/home_cardiovascular_health"
+                                    android:textColor="@color/black_text"
+                                    android:textSize="@dimen/subhead_material" />
+
+                                <TextView
+                                    android:id="@+id/tv_bp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{model.avgPwData}"
+                                    android:textColor="@color/light_grey_text"
+                                    android:textSize="@dimen/caption_material"
+                                    android:visibility="@{model.havePwData?View.VISIBLE:View.GONE}" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvPwDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:text="@{model.pwTime}"
+                                android:textColor="@color/light_grey_text"
+                                android:textSize="@dimen/caption_material"
+                                app:layout_constraintBottom_toBottomOf="@+id/healthIcon"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/healthIcon" />
+
+
+                            <lecho.lib.hellocharts.view.LineChartView
+                                android:id="@+id/cv_bp"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/fragment_home_card_graph_height"
+                                android:layout_below="@id/tvPwDate"
+                                android:layout_marginTop="8dp"
+                                android:layout_toEndOf="@id/healthIcon"
+                                android:visibility="@{model.havePwData?View.VISIBLE:View.INVISIBLE}"
+                                app:layout_constraintTop_toBottomOf="@+id/healthIcon" />
+
+
+                            <ImageView
+                                android:id="@+id/iv_pw_no_data"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:layout_marginTop="8dp"
+                                android:contentDescription="no data"
+                                android:src="@drawable/fragment_home_no_data"
+                                android:visibility="@{!model.havePwData?View.VISIBLE:View.INVISIBLE}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/tv_pw_no_data"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="packed"
+                                app:layout_constraintStart_toEndOf="@+id/cv_bp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/healthIcon" />
+
+                            <TextView
+                                android:id="@+id/tv_pw_no_data"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/narrow_padding"
+                                android:text="@string/no_data"
+                                android:textColor="@color/empty_data_text_color"
+                                android:textSize="@dimen/body_1_material"
+                                android:visibility="@{!model.havePwData?View.VISIBLE:View.INVISIBLE}"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_pw_no_data"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/iv_pw_no_data" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_medical_reminder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/normal_padding"
+                        android:layout_marginTop="@dimen/narrow_padding"
+                        android:layout_marginRight="@dimen/normal_padding"
+                        android:padding="0dp"
+                        android:shadowColor="@color/white"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="1dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/normal_padding"
+                            android:paddingEnd="@dimen/normal_padding"
+                            android:paddingBottom="@dimen/normal_padding">
+
+                            <com.mgtech.maiganapp.widget.UnreadImageView
+                                android:id="@+id/medicalIcon"
+                                android:layout_width="@dimen/fragment_home_card_title_height_with_dot"
+                                android:layout_height="@dimen/fragment_home_card_title_height_with_dot"
+                                android:layout_marginTop="6dp"
+                                android:contentDescription="@string/app_name"
+                                android:elevation="2dp"
+                                android:padding="2dp"
+                                android:src="@drawable/fragment_home_icon_medication"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_medication_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/home_reminder"
+                                android:textColor="@color/black_text"
+                                android:textSize="@dimen/subhead_material"
+                                app:layout_constraintBottom_toBottomOf="@+id/medicalIcon"
+                                app:layout_constraintStart_toEndOf="@+id/medicalIcon"
+                                app:layout_constraintTop_toTopOf="@+id/medicalIcon" />
+
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layout_medication"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:minHeight="50dp"
+                                android:orientation="vertical"
+                                android:visibility="@{model.haveMedicationRemind?View.VISIBLE:View.INVISIBLE}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/medicalIcon">
+
+                                <View
+                                    android:id="@+id/divider_medication"
+                                    android:layout_width="1dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:background="@color/background_grey"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_medication_time_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:text="@{model.medicationTimeText}"
+                                    android:textColor="@color/black_text"
+                                    android:textSize="@dimen/subhead_material"
+                                    app:layout_constraintBottom_toTopOf="@+id/tv_medication_time_title"
+                                    app:layout_constraintEnd_toStartOf="@+id/divider_medication"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_chainStyle="packed" />
+
+                                <TextView
+                                    android:id="@+id/tv_medication_time_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/home_time"
+                                    android:textColor="@color/grey_text"
+                                    android:textSize="@dimen/caption_material"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="@+id/tv_medication_time_value"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="@+id/tv_medication_time_value"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_medication_time_value" />
+
+                                <TextView
+                                    android:id="@+id/tv_medication_count"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:text="@{model.medicationCountText}"
+                                    android:textColor="@color/black_text"
+                                    android:textSize="@dimen/subhead_material"
+                                    app:layout_constraintBottom_toTopOf="@+id/tv_medication_need_to_take"
+                                    app:layout_constraintEnd_toStartOf="@+id/tv_medication_unit"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintHorizontal_chainStyle="packed"
+                                    app:layout_constraintStart_toEndOf="@+id/divider_medication"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_chainStyle="packed" />
+
+                                <TextView
+                                    android:id="@+id/tv_medication_unit"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:text="@string/home_kind"
+                                    android:textColor="@color/black_text"
+                                    android:textSize="@dimen/caption_material"
+                                    app:layout_constraintBaseline_toBaselineOf="@+id/tv_medication_count"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toEndOf="@+id/tv_medication_count" />
+
+                                <TextView
+                                    android:id="@+id/tv_medication_need_to_take"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:text="@string/home_medicine_need_to_take"
+                                    android:textColor="@color/grey_text"
+                                    android:textSize="@dimen/caption_material"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toEndOf="@+id/divider_medication"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_medication_count" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            <ImageView
+                                android:id="@+id/iv_medication_no_data"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:contentDescription="no data"
+                                android:src="@drawable/fragment_home_no_medicine"
+                                android:visibility="@{!model.haveMedicationRemind?View.VISIBLE:View.GONE}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/tv_medication_no_data"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="packed"
+                                app:layout_constraintStart_toEndOf="@+id/medicalIcon"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/medicalIcon" />
+
+                            <TextView
+                                android:id="@+id/tv_medication_no_data"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/narrow_padding"
+                                android:text="@string/home_no_kind_of_medicine"
+                                android:textColor="@color/empty_data_text_color"
+                                android:visibility="@{!model.haveMedicationRemind?View.VISIBLE:View.GONE}"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_medication_no_data"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/iv_medication_no_data" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cd_ecg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/normal_padding"
+                        android:layout_marginTop="@dimen/narrow_padding"
+                        android:layout_marginRight="@dimen/normal_padding"
+                        android:layout_marginBottom="@dimen/large_padding"
+                        android:padding="0dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="1dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/normal_padding"
+                            android:paddingEnd="@dimen/normal_padding"
+                            android:paddingBottom="@dimen/normal_padding">
+
+                            <com.mgtech.maiganapp.widget.UnreadImageView
+                                android:id="@+id/ecgIcon"
+                                android:layout_width="@dimen/fragment_home_card_title_height_with_dot"
+                                android:layout_height="@dimen/fragment_home_card_title_height_with_dot"
+                                android:layout_marginTop="6dp"
+                                android:contentDescription="@string/app_name"
+                                android:padding="2dp"
+                                android:src="@drawable/fragment_home_icon_ecg"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvEcgTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:text="@string/ecg_graph"
+                                android:textColor="@color/black_text"
+                                android:textSize="@dimen/subhead_material"
+                                app:layout_constraintBottom_toBottomOf="@+id/ecgIcon"
+                                app:layout_constraintStart_toEndOf="@+id/ecgIcon"
+                                app:layout_constraintTop_toTopOf="@+id/ecgIcon" />
+
+                            <TextView
+                                android:id="@+id/tvEcgDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{model.ecgTime}"
+                                android:textColor="@color/light_grey_text"
+                                android:textSize="@dimen/caption_material"
+                                app:layout_constraintBottom_toBottomOf="@+id/ecgIcon"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/ecgIcon" />
+
+
+                            <com.mgtech.maiganapp.widget.EcgPartDataGraphView
+                                android:id="@+id/ecg_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/fragment_home_card_graph_height"
+                                android:layout_marginTop="8dp"
+                                android:layout_toEndOf="@id/ecgIcon"
+                                android:visibility="@{model.haveEcgData?View.VISIBLE:View.INVISIBLE}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/tvEcgDate"
+                                app:layout_constraintTop_toBottomOf="@+id/ecgIcon" />
+
+
+                            <ImageView
+                                android:id="@+id/iv_ecg_no_data"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:contentDescription="no data"
+                                android:src="@drawable/fragment_home_no_data"
+                                android:visibility="@{!model.haveEcgData?View.VISIBLE:View.INVISIBLE}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/tv_ecg_no_data"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="packed"
+                                app:layout_constraintStart_toEndOf="@+id/ecgIcon"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvEcgDate" />
+
+                            <TextView
+                                android:id="@+id/tv_ecg_no_data"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/narrow_padding"
+                                android:text="@string/no_data"
+                                android:textColor="@color/empty_data_text_color"
+                                android:textSize="@dimen/body_1_material"
+                                android:visibility="@{!model.haveEcgData?View.VISIBLE:View.INVISIBLE}"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_ecg_no_data"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/iv_ecg_no_data" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <com.mgtech.maiganapp.widget.EmergencyCallButton
+            android:id="@+id/btn_emergency"
+            android:visibility="@{model.emergencyButtonHide | !model.emergencyServiceBought ?View.GONE:View.VISIBLE}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_emergency_disable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:visibility="@{model.emergencyButtonHide | model.emergencyServiceBought?View.GONE:View.VISIBLE}"
+            android:background="@drawable/fragment_home_emergency_disable_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_emergency_disable"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/fragment_home_emergency_disable"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_emergency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/home_emergency"
+                android:textColor="@color/white"
+                android:textSize="@dimen/caption_material"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_emergency_disable"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_disable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="6dp"
+                android:text="@string/home_unavailable"
+                android:textColor="@color/white"
+                android:textSize="@dimen/caption_material"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_emergency_disable"
+                app:layout_constraintTop_toBottomOf="@+id/tv_emergency" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

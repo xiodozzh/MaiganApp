@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/narrow_height"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:background="@drawable/sport_taq"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/large_padding"
+            android:id="@+id/tv_date"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingEnd="@dimen/large_padding"
+        android:paddingStart="@dimen/normal_padding"
+        android:layout_height="@dimen/narrow_height"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/sport_walk_step"
+            android:textSize="@dimen/body_1_material"
+            android:minWidth="@dimen/large_height"
+            android:textColor="@color/primary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/tv_step"
+            android:layout_marginStart="@dimen/narrow_padding"
+            android:minHeight="@dimen/large_padding"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/narrow_height"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/body_1_material" />
+
+        <TextView
+            android:text="@string/sport_step"
+            android:textSize="@dimen/body_1_material"
+            android:textColor="@color/secondary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingEnd="@dimen/large_padding"
+        android:paddingStart="@dimen/normal_padding"
+        android:layout_height="@dimen/narrow_height"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/sport_sport_distance"
+            android:textSize="@dimen/body_1_material"
+            android:minWidth="@dimen/large_height"
+            android:textColor="@color/primary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/tv_distance"
+            android:layout_marginStart="@dimen/narrow_padding"
+            android:minHeight="@dimen/large_padding"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/narrow_height"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/body_1_material" />
+
+        <TextView
+            android:text="@string/sport_m"
+            android:textSize="@dimen/body_1_material"
+            android:textColor="@color/secondary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingEnd="@dimen/large_padding"
+        android:paddingStart="@dimen/normal_padding"
+        android:layout_height="@dimen/narrow_height"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/sport_consume_heat"
+            android:textSize="@dimen/body_1_material"
+            android:minWidth="@dimen/large_height"
+            android:textColor="@color/primary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/tv_heat"
+            android:layout_marginStart="@dimen/narrow_padding"
+            android:minHeight="@dimen/large_padding"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/narrow_height"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/body_1_material" />
+
+        <TextView
+            android:text="@string/sport_kilo_cal"
+            android:textSize="@dimen/body_1_material"
+            android:textColor="@color/secondary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <View
+        style="@style/style_divide_line_view"
+        android:layout_marginStart="@dimen/normal_padding"
+        android:layout_marginEnd="@dimen/normal_padding"/>
+
+</LinearLayout>

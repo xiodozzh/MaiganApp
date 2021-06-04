@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mask_color"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/large_padding"
+        android:layout_marginEnd="@dimen/large_padding"
+        android:paddingTop="@dimen/narrow_padding"
+        android:background="@drawable/bg_round_rect_radius_4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/normal_padding"
+            android:text="@string/measure_recognize_timeout_title"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/subhead_material"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:gravity="center"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding"
+            android:text="@string/measure_recognize_timeout_description"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/body_1_material"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <View
+            android:id="@+id/view0"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:background="@color/background_grey"
+            app:layout_constraintTop_toBottomOf="@+id/tv_desc" />
+
+        <TextView
+            android:id="@+id/tv_measure_again"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/normal_padding"
+            android:paddingBottom="@dimen/normal_padding"
+            android:text="@string/measure_recognize_timeout_measure_again"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/subhead_material"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view0" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/background_grey"
+            app:layout_constraintTop_toBottomOf="@+id/tv_measure_again" />
+
+        <TextView
+            android:id="@+id/tv_guide"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/normal_padding"
+            android:paddingBottom="@dimen/normal_padding"
+            android:text="@string/measure_recognize_timeout_wear_guide"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/subhead_material"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/background_grey"
+            app:layout_constraintTop_toBottomOf="@+id/tv_guide" />
+
+        <TextView
+            android:id="@+id/tv_never_mind"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/normal_padding"
+            android:paddingBottom="@dimen/normal_padding"
+            android:text="@string/measure_recognize_timeout_never_alert_again"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/subhead_material"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

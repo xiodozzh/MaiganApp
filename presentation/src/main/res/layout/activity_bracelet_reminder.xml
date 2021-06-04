@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.BraceletReminderViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="2dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include layout="@layout/layout_back_black"
+                android:id="@+id/btn_back"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/bracelet_reminder_auto_sample_reminder"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/top_bar_title" />
+
+            <!--<TextView-->
+                <!--android:id="@+id/btn_add"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_gravity="center_vertical|end"-->
+                <!--android:background="?attr/selectableItemBackground"-->
+                <!--android:gravity="center"-->
+                <!--android:paddingEnd="@dimen/narrow_padding"-->
+                <!--android:paddingStart="@dimen/narrow_padding"-->
+                <!--android:text="@string/bracelet_reminder_add_reminder"-->
+                <!--android:textColor="@color/black_text"-->
+                <!--android:textSize="@dimen/subhead_material"-->
+                <!--android:visibility="gone" />-->
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_below="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_grey">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+            <ImageView
+                android:id="@+id/btn_add"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/selector_btn_bracelet_reminder_add"
+                android:layout_width="54dp"
+                android:layout_height="54dp" />
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/recyclerView"-->
+                <!--android:layout_marginTop="@dimen/large_padding"-->
+                <!--android:orientation="vertical"-->
+                <!--android:visibility="@{model.isEmpty?View.VISIBLE:View.GONE}">-->
+
+                <!--<include layout="@layout/layout_empty_data" />-->
+            <!--</LinearLayout>-->
+
+            <FrameLayout
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    layout="@layout/layout_scan_or_disconnect"
+                    bind:model="@{model.stateViewModel}" />
+            </FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+</layout>

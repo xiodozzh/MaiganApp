@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <!--<import type="com.mgtech.maiganapp.utils.BindingUtil" />-->
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.MeasurePwViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/measure_pw_title"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout_to_wear_guide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background_grey"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/narrow_height"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/normal_padding"
+                android:paddingTop="@dimen/narrow_padding"
+                android:paddingEnd="@dimen/normal_padding"
+                android:paddingBottom="@dimen/narrow_padding"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/bracelet_wear_guide_icon" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/narrow_padding"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/activity_measure_pw_go_to_guide_page"
+                    android:textColor="@color/light_grey_text"
+                    android:textSize="@dimen/body_1_material" />
+
+                <ImageView
+                    android:layout_width="@dimen/normal_padding"
+                    android:layout_height="@dimen/normal_padding"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/narrow_padding"
+                    android:contentDescription="go to wear guide"
+                    android:src="@drawable/right_arrow" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="114dp"
+                android:layout_height="114dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_to_wear_guide">
+
+                <ImageView
+                    android:id="@+id/iv_circle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="circle"
+                    android:src="@drawable/activity_measure_pw_circle"
+                    android:visibility="@{model.isWorking || model.isPreparing?View.VISIBLE:View.GONE}" />
+
+                <com.hookedonplay.decoviewlib.DecoView
+                    android:id="@+id/dv_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="@{!model.isPreparing?View.VISIBLE:View.GONE}" />
+
+                <TextView
+                    android:id="@+id/btn_start_stop"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/blue_circle"
+                    android:gravity="center"
+                    android:text='@{model.isWorking?(String)@string/stop:(String)@string/start}'
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium_material" />
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_desc"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/large_height"
+                android:layout_marginStart="@dimen/large_padding"
+                android:layout_marginTop="@dimen/normal_padding"
+                android:layout_marginEnd="@dimen/large_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+                <TextView
+                    android:id="@+id/tv_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/large_height"
+                    android:gravity="center"
+                    android:text="@{model.normalStateText}"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/subhead_material"
+                    android:visibility="@{!model.showAccWarningText &amp;&amp; !model.stuck10 ?View.VISIBLE:View.GONE}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@{model.movementStateText}"
+                    android:textColor="@color/warningRed"
+                    android:textSize="@dimen/subhead_material"
+                    android:visibility="@{model.showAccWarningText?View.VISIBLE:View.GONE}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_progress_stuck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/measure_pw_stop_for_10_second"
+                    android:textColor="@color/warningRed"
+                    android:textSize="@dimen/subhead_material"
+                    android:visibility="@{!model.showAccWarningText &amp;&amp; model.stuck10 ?View.VISIBLE:View.GONE}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.mgtech.maiganapp.widget.PulseWaveGraphView
+                android:id="@+id/graph"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:paddingStart="1dp"
+                android:paddingEnd="1dp"
+                app:layout_constraintBottom_toTopOf="@+id/layout_guide"
+                app:layout_constraintTop_toBottomOf="@+id/layout_desc"
+                app:pulse_bg="@color/white"
+                app:pulse_line_color="@color/colorPrimary"
+                app:pulse_line_width="@dimen/line_width"
+                app:pulse_point_number="600"
+                app:pulse_scope="4095" />
+
+            <!--<com.mgtech.maiganapp.widget.PwDrawingGraphView-->
+                <!--android:id="@+id/graph"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:layout_marginBottom="8dp"-->
+                <!--android:paddingStart="1dp"-->
+                <!--android:paddingEnd="1dp"-->
+                <!--app:layout_constraintBottom_toTopOf="@+id/layout_guide"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/layout_desc" />-->
+
+
+            <!--<com.mgtech.maiganapp.widget.PulseWaveGraphSurfaceView-->
+            <!--android:id="@+id/graph"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:paddingStart="1dp"-->
+            <!--android:paddingEnd="1dp"-->
+            <!--app:layout_constraintBottom_toTopOf="@+id/layout_guide"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/tv_warning" />-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_guide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background_grey"
+                android:paddingTop="@dimen/normal_padding"
+                android:paddingBottom="@dimen/narrow_padding"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_correct_pw_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/activity_measure_pw_correct_pw"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/subhead_material"
+                    app:layout_constraintBottom_toTopOf="@+id/iv_correct_pw1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/iv_correct_pw1"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="correct pulse wave"
+                    android:src="@drawable/activity_measure_pw_example1"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_correct_pw1"
+                    app:layout_constraintEnd_toStartOf="@+id/divider"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <com.mgtech.maiganapp.widget.DotColorfulView
+                    android:id="@+id/dot1"
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginEnd="4dp"
+                    app:color="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_correct_pw1"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_correct_pw1"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_correct_pw1" />
+
+
+                <TextView
+                    android:id="@+id/tv_correct_pw1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/activity_measure_pw_regular"
+                    android:textColor="@color/light_grey_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/divider"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/dot1" />
+
+
+                <com.mgtech.maiganapp.widget.DotColorfulView
+                    android:id="@+id/dot2"
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="4dp"
+                    app:color="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_correct_pw2"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_correct_pw2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/divider"
+                    app:layout_constraintTop_toTopOf="@+id/tv_correct_pw2" />
+
+
+                <TextView
+                    android:id="@+id/tv_correct_pw2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/activity_measure_pw_have_peek_valley"
+                    android:textColor="@color/light_grey_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/dot2" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:background="#dddddd"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_correct_pw1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/iv_correct_pw1" />
+
+                <ImageView
+                    android:id="@+id/iv_correct_pw2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:contentDescription="correct pulse wave"
+                    android:src="@drawable/activity_measure_pw_example2"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_correct_pw1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/divider"
+                    app:layout_constraintTop_toTopOf="@+id/iv_correct_pw1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <include
+                layout="@layout/layout_scan_or_disconnect"
+                bind:model="@{model.stateViewModel}" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+</layout>

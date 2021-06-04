@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="100dp"
+    android:minWidth="100dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_height"
+        android:layout_marginTop="@dimen/narrow_padding"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/btn_cancel"
+            android:layout_width="@dimen/normal_height"
+            android:layout_height="@dimen/normal_height">
+
+            <ImageView
+                android:layout_width="@dimen/medium_padding"
+                android:layout_height="@dimen/medium_padding"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_close_black_24dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/title_material" />
+    </RelativeLayout>
+
+    <RadioGroup
+        android:padding="@dimen/normal_padding"
+        android:divider="@android:drawable/divider_horizontal_bright"
+        android:showDividers="beginning|middle|end"
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_commit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/narrow_height"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/normal_padding"
+        android:background="@drawable/activity_login_login_selector"
+        android:text="@string/submit"
+        android:textColor="@color/white"
+        android:textSize="@dimen/subhead_material" />
+
+</LinearLayout>

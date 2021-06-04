@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mgtech.maiganapp">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.bluetooth_le" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@style/AppTheme"
+        tools:replace="android:name">
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.mgtech.maiganapp.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <activity
+            android:name=".activity.LogoSplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.VIEW"/>-->
+            <!--<category android:name="android.intent.category.DEFAULT"/>-->
+            <!--<category android:name="android.intent.category.BROWSABLE"/>-->
+            <!--<data android:scheme="mystrace" android:host="www.mystrace.com"/>-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity
+            android:name=".activity.EnterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+<!--        android:windowSoftInputMode="adjustResize|stateHidden"-->
+        <activity
+            android:name=".activity.LoginActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark"
+             />
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.VIEW" /> -->
+
+
+            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+
+
+            <!-- <data -->
+            <!-- android:host="www.mystrace.com" -->
+            <!-- android:scheme="http" /> -->
+            <!-- </intent-filter> -->
+        </activity> <!-- QQ 登录 -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1106226172" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <!--        android:windowSoftInputMode="adjustResize|stateHidden" -->
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.ResetPasswordActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.PersonalInfoInitActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.MeasureEcgActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.BraceletReminderActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.AddBraceletReminderActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.SetAbnormalRangeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.SelectCountryCodeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeBlackAction" />
+        <activity
+            android:name=".activity.BraceletInfoActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.SettingPushActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.OtherActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.SettingFeedbackActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.ProtocolActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.SettingHelpActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.SettingAboutActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.EcgDataDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensor"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.FirmwareUpgradeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.SelectMedicineActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SetFontSizeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MeasurePwActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.WearGuideActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.WearGuideRecognizePwActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.WearGuideWearMethodActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.WearGuideWearExampleMovieActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HistoryHealthActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeTotalDark" />
+        <activity
+            android:name=".activity.MeasurePwResultActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HistoryEcgActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MedicationReminderActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ExceptionRecordActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MedicationPlanActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MedicationPlanEditActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MedicationPlanEditTimeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MedicationPlanEditDosageActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FriendAddListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FriendAddPageActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FriendDealRequestActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FriendInformationActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FriendRemindActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PersonalInfoActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PhoneUnBindActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PhoneBindActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PersonalInfoDiseaseUpdateActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SportActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MeasureEcgResultActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SetCountryActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HistoryWeeklyReportActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MedicationPlanHistoryActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.WeeklyReportActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HealthKnowledgeListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HealthKnowledgeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BraceletPairActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SelectMedicineSearchActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HistoryPwRecordActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BraceletFindActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.GuideShareWeekReportActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.CompanyServiceActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.OptionActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MeasurePwResultRemarkActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AccountSecurityActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PrivacyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingGeneralActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PrivacyFriendActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingHelpFeedBackActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingContactUsActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingSystemPermissionActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.PermissionPrivacyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.PermissionProtocolActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.CompanyServiceAuthActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.PermissionServiceAuthActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.SettingAuthManagementActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+
+        <service
+            android:name=".service.MyDaemonService"
+            android:process=":process1" />
+
+        <receiver
+            android:name=".receiver.Receiver1"
+            android:process=":process1" />
+
+        <service
+            android:name=".service.MyDaemonService2"
+            android:process=":process2" />
+        <service android:name=".service.NetService" />
+        <service
+            android:name=".service.NetJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".service.BluetoothService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver
+            android:name=".receiver.Receiver2"
+            android:process=":process2" />
+        <receiver
+            android:name=".receiver.MyJPushReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_CLICK_ACTION" />
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+
+                <category android:name="com.mgtech.maiganapp" />
+                <!-- <category android:name="com.mgtech.maigantest" /> -->
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.MyAlarmReceiver" />
+        <receiver android:name=".receiver.TimeZoneChangeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

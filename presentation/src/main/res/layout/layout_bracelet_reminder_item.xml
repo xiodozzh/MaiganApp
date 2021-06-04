@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_grey"
+    android:minHeight="@dimen/normal_height"
+    android:orientation="vertical">
+
+    <!--<android.support.v7.widget.CardView-->
+    <!--android:planId="@+planId/card"-->
+    <!--app:cardCornerRadius="0dp"-->
+    <!--android:background="?attr/selectableItemBackground"-->
+    <!--app:contentPadding="@dimen/normal_padding"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:layout_height="0dp">-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/normal_padding"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:text="time"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/subhead_material"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/xnarrow_padding"
+            android:layout_marginBottom="16dp"
+            android:text="cycle"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/body_1_material"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_remind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="16dp"
+            android:checked="true"
+            android:elevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:showText="false"
+            app:thumbTint="@color/switch_thumb_tint"
+            app:trackTint="@color/switch_track_tint" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/bracelet_remind_desc_text"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/caption_material"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sw_remind" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--</android.support.v7.widget.CardView>-->
+
+    <!--<View-->
+    <!--android:layout_marginStart="@dimen/normal_padding"-->
+    <!--android:layout_marginEnd="@dimen/normal_padding"-->
+    <!--android:background="@color/divider"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0.5dp"/>-->
+
+</LinearLayout>

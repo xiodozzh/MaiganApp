@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MaiganApp.iml" filepath="$PROJECT_DIR$/MaiganApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LibMarsdaemon/MaiganApp.LibMarsdaemons.iml" filepath="$PROJECT_DIR$/.idea/modules/LibMarsdaemon/MaiganApp.LibMarsdaemons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/blelib/MaiganApp.blelib.iml" filepath="$PROJECT_DIR$/.idea/modules/blelib/MaiganApp.blelib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/daogenerator/MaiganApp.daogenerator.iml" filepath="$PROJECT_DIR$/.idea/modules/daogenerator/MaiganApp.daogenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/MaiganApp.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/MaiganApp.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/MaiganApp.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/MaiganApp.domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/presentation/MaiganApp.presentation.iml" filepath="$PROJECT_DIR$/.idea/modules/presentation/MaiganApp.presentation.iml" />
+    </modules>
+  </component>
+</project>

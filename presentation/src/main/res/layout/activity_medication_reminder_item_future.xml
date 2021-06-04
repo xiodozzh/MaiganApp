@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_grey"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/normal_padding"
+        android:paddingTop="@dimen/narrow_padding"
+        android:paddingEnd="@dimen/normal_padding"
+        android:paddingBottom="@dimen/narrow_padding"
+        android:text="@string/medication_future"
+        android:textSize="@dimen/subhead_material" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_padding"
+        android:layout_marginBottom="@dimen/narrow_padding"
+        android:layout_marginEnd="@dimen/normal_padding"
+        app:cardElevation="1dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_remain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_remain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/medication_remain"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_time"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_remain_days"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/tv_remain_days"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/medium_material"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tv_remain"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_day_unit"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tv_remain" />
+
+                <TextView
+                    android:id="@+id/tv_day_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/medication_remain_days"
+                    android:textColor="@color/grey_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tv_remain"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tv_remain_days" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="10月11日 周四"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/body_1_material"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_remain" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="1dp"
+                android:layout_height="@dimen/normal_height"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_toStartOf="@id/layout_remain"
+                android:background="@color/background_grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/layout_remain"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@id/line"
+                android:text="药物名"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/subhead_material"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/line"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tv_dosage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:paddingStart="@dimen/narrow_padding"
+                android:paddingEnd="@dimen/narrow_padding"
+                android:paddingTop="@dimen/xnarrow_padding"
+                android:paddingBottom="@dimen/xnarrow_padding"
+                android:text="2片"
+                android:textColor="@color/grey_text"
+                android:background="@drawable/activity_medication_remind_item_dosage_bg"
+                android:textSize="@dimen/caption_material"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+            <TextView
+                android:id="@+id/tv_dosage_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="08:30"
+                android:background="@drawable/activity_medication_remind_item_dosage_bg"
+                android:paddingStart="@dimen/narrow_padding"
+                android:paddingEnd="@dimen/narrow_padding"
+                android:paddingTop="@dimen/xnarrow_padding"
+                android:paddingBottom="@dimen/xnarrow_padding"
+                android:textColor="@color/grey_text"
+                android:textSize="@dimen/caption_material"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_dosage"
+                app:layout_constraintStart_toEndOf="@+id/tv_dosage"
+                app:layout_constraintTop_toTopOf="@+id/tv_dosage" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

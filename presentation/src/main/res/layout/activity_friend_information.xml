@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.FriendInformationViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_grey"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/friend_info_title"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_padding"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/iv_avatar"
+                        android:layout_width="@dimen/normal_height"
+                        android:layout_height="@dimen/normal_height"
+                        android:layout_marginStart="@dimen/normal_padding"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="20dp"
+                        android:contentDescription="avatar"
+                        android:src="@drawable/avatar_default_round"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_note_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{model.haveNoteName?View.VISIBLE:View.GONE}"
+
+                        android:layout_marginStart="8dp"
+                        android:text="@{model.noteName}"
+                        android:textColor="@color/black_text"
+                        android:textSize="@dimen/subhead_material"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_name"
+                        app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:visibility="@{model.haveNoteName?View.VISIBLE:View.GONE}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@{model.name}"
+                        android:textColor="@color/grey_text"
+                        android:textSize="@dimen/caption_material"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tv_note_name"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_note_name" />
+
+
+                    <TextView
+                        android:id="@+id/tv_name_only"
+                        android:visibility="@{model.haveNoteName?View.GONE:View.VISIBLE}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@{model.name}"
+                        android:textColor="@color/black_text"
+                        android:textSize="@dimen/subhead_material"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+                        app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+                        app:layout_constraintTop_toTopOf="@+id/iv_avatar" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_set_note_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_padding"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/normal_padding"
+                    android:paddingTop="@dimen/normal_padding"
+                    android:paddingEnd="@dimen/normal_padding"
+                    android:paddingBottom="@dimen/normal_padding">
+
+                    <TextView
+                        android:id="@+id/tv_set_note"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:text="@string/friend_info_set_note_name"
+                        android:textColor="@color/black_text"
+                        android:textSize="@dimen/subhead_material" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:textSize="@dimen/subhead_material"
+                        android:text="@{model.noteName}"
+                        android:layout_marginStart="@dimen/normal_padding"
+                        android:layout_marginEnd="@dimen/normal_padding"
+                        android:textColor="@color/black_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:src="@drawable/right_arrow"
+                        android:layout_width="@dimen/normal_padding"
+                        android:layout_height="@dimen/normal_padding" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/normal_padding"
+                    android:paddingTop="@dimen/normal_padding"
+                    android:paddingEnd="@dimen/normal_padding"
+                    android:paddingBottom="@dimen/normal_padding">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/friend_info_phone_number"
+                        android:textColor="@color/black_text"
+                        android:textSize="@dimen/subhead_material" />
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/normal_padding"
+                        android:gravity="end"
+                        android:text="@{model.phone}"
+                        android:textColor="@color/grey_text"
+                        android:textSize="@dimen/body_1_material" />
+                </LinearLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_padding"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/normal_padding"
+                    android:paddingTop="@dimen/normal_padding"
+                    android:paddingEnd="@dimen/normal_padding"
+                    android:paddingBottom="@dimen/normal_padding">
+
+                    <TextView
+                        android:id="@+id/tv_read_his_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{model.tvReadHisData}"
+                        android:textColor="@color/black_text"
+                        android:textSize="@dimen/subhead_material"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Switch
+                        android:id="@+id/sw_read_his_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/normal_padding"
+                    android:paddingTop="@dimen/normal_padding"
+                    android:paddingEnd="@dimen/normal_padding"
+                    android:paddingBottom="@dimen/normal_padding">
+
+                    <TextView
+                        android:id="@+id/tv_get_his_push_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{model.tvGetHisPushData}"
+                        android:textColor="@color/black_text"
+                        android:textSize="@dimen/subhead_material"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <Switch
+                        android:id="@+id/sw_get_his_push_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_padding"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/normal_padding"
+                    android:paddingTop="@dimen/normal_padding"
+                    android:paddingEnd="@dimen/normal_padding"
+                    android:paddingBottom="@dimen/normal_padding">
+
+                    <TextView
+                        android:id="@+id/tv_allow_him_read"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{model.tvAllowHimRead}"
+                        android:textColor="@color/black_text"
+                        android:textSize="@dimen/subhead_material"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Switch
+                        android:id="@+id/sw_allow_him_read"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/normal_padding"
+                    android:paddingTop="@dimen/normal_padding"
+                    android:paddingEnd="@dimen/normal_padding"
+                    android:paddingBottom="@dimen/normal_padding">
+
+                    <TextView
+                        android:id="@+id/tv_allow_push_to_him"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{model.tvAllowPushToHim}"
+                        android:textColor="@color/black_text"
+                        android:textSize="@dimen/subhead_material"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <Switch
+                        android:id="@+id/sw_allow_push_to_him"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:background="@color/white"
+        android:text="@string/interval_time"
+        android:textSize="@dimen/subhead_material"
+        android:textColor="@color/grey1000"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_height" />
+
+    <View
+        style="@style/style_divide_line_view"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/narrow_padding"
+        android:paddingStart="@dimen/narrow_padding">
+
+        <biz.kasual.materialnumberpicker.MaterialNumberPicker
+            android:id="@+id/np_hour"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            app:npTextSize="@dimen/title_material"
+            android:layout_height="wrap_content"/>
+
+        <biz.kasual.materialnumberpicker.MaterialNumberPicker
+            android:id="@+id/np_minute"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            app:npTextSize="@dimen/title_material"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_height"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:background="@drawable/selector_set_bracelet_config_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/cancel"/>
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:background="@drawable/selector_set_bracelet_config_submit"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/submit"/>
+    </LinearLayout>
+</LinearLayout>

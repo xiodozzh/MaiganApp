@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sex">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="week">
+        <item>SUN</item>
+        <item>MON</item>
+        <item>TUE</item>
+        <item>WED</item>
+        <item>THU</item>
+        <item>FRI</item>
+        <item>SAT</item>
+    </string-array>
+
+    <string-array name="week_ch_long">
+        <item>SUN</item>
+        <item>MON</item>
+        <item>TUE</item>
+        <item>WED</item>
+        <item>THU</item>
+        <item>FRI</item>
+        <item>SAT</item>
+    </string-array>
+
+    <string-array name="enter_title">
+        <item>24-hours Blood Pressure Monitoring.</item>
+        <item>ECG Measurement</item>
+        <item>Cardiovascular Health</item>
+        <item>Health Management</item>
+        <item>Medication Schedule</item>
+        <item>Family and friends</item>
+    </string-array>
+
+    <string-array name="enter_content">
+        <item>24-hours automatic blood pressure monitoring. You can get medical grade blood pressure parameters at home.</item>
+        <item>You can take an ECG at anytime, and share it with your doctor instantly.</item>
+        <item>You can grasp the changes and trends of your hemodynamic parameters in real time.</item>
+        <item>Track and monitor your exercise and blood pressure to help you understand your health</item>
+        <item>Manage your medicine and create healthy habits</item>
+        <item>You can get real-time blood pressure data of your relatives and friends to know their health status.</item>
+    </string-array>
+
+    <string-array name="medicine_dosage_unit">
+        <item>Pill</item>
+        <item>g</item>
+        <item>mg</item>
+        <item>ml</item>
+        <item>IU</item>
+        <item>Cup</item>
+    </string-array>
+
+    <string-array name="font_size_scale">
+        <item>a</item>
+        <item>Standard</item>
+        <item> </item>
+        <item> </item>
+        <item>A</item>
+    </string-array>
+
+</resources>

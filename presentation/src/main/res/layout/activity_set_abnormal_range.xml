@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.SetAbnormalRangeViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_grey"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include layout="@layout/layout_back_black"
+                android:id="@+id/btn_back"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@{model.title}"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+            <RelativeLayout
+                android:id="@+id/btn_save"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/bracelet_reminder_save"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/subhead_material" />
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:divider="@android:drawable/divider_horizontal_bright"
+                android:orientation="vertical"
+                android:showDividers="middle|end">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/normal_height"
+                    android:background="@color/background_grey"
+                    android:gravity="center"
+                    android:text="@{model.desc}"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/body_1_material" />
+
+                <LinearLayout
+                    android:id="@+id/layout_upper"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/normal_height"
+                    android:background="?attr/selectableItemBackground"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingEnd="@dimen/normal_padding"
+                        android:paddingStart="@dimen/normal_padding"
+                        android:text="@string/notification_reminder_upper_limit"
+                        android:textColor="@color/primary_text"
+                        android:textSize="@dimen/subhead_material" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|end"
+                        android:paddingEnd="@dimen/normal_padding"
+                        android:paddingStart="@dimen/normal_padding"
+                        android:text="@{model.upperLimit}"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/body_1_material" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_lower"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/normal_height"
+                    android:background="?attr/selectableItemBackground"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingEnd="@dimen/normal_padding"
+                        android:paddingStart="@dimen/normal_padding"
+                        android:text="@string/notification_reminder_lower_limit"
+                        android:textColor="@color/primary_text"
+                        android:textSize="@dimen/subhead_material" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|end"
+                        android:paddingEnd="@dimen/normal_padding"
+                        android:paddingStart="@dimen/normal_padding"
+                        android:text="@{model.lowerLimit}"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/body_1_material" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="model"
+            type="com.mgtech.maiganapp.viewmodel.SportViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_step"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp">
+
+            <include
+                android:id="@+id/btn_back"
+                layout="@layout/layout_back_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/sport_title"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/top_bar_title" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/narrow_padding"
+            android:paddingBottom="@dimen/narrow_padding"
+            android:paddingEnd="@dimen/normal_padding"
+            android:paddingStart="@dimen/normal_padding">
+
+            <TextView
+                android:id="@+id/btn_day"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="@dimen/xnarrow_padding"
+                android:paddingBottom="@dimen/xnarrow_padding"
+                android:paddingStart="@dimen/medium_padding"
+                android:paddingEnd="@dimen/medium_padding"
+                android:layout_weight="1"
+                android:background="@drawable/selector_sport_btn"
+                android:gravity="center"
+                android:text="@string/day"
+                android:textColor="@color/sport_section_select_text"
+                android:textSize="@dimen/subhead_material" />
+
+            <TextView
+                android:id="@+id/btn_week"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="@dimen/xnarrow_padding"
+                android:paddingBottom="@dimen/xnarrow_padding"
+                android:paddingStart="@dimen/medium_padding"
+                android:paddingEnd="@dimen/medium_padding"
+                android:layout_weight="1"
+                android:background="@drawable/selector_sport_btn"
+                android:gravity="center"
+                android:text="@string/localWeek"
+                android:textColor="@color/sport_section_select_text"
+                android:textSize="@dimen/subhead_material" />
+
+            <TextView
+                android:id="@+id/btn_month"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="@dimen/xnarrow_padding"
+                android:paddingBottom="@dimen/xnarrow_padding"
+                android:paddingStart="@dimen/medium_padding"
+                android:paddingEnd="@dimen/medium_padding"
+                android:layout_weight="1"
+                android:background="@drawable/selector_sport_btn"
+                android:gravity="center"
+                android:text="@string/month"
+                android:textColor="@color/sport_section_select_text"
+                android:textSize="@dimen/subhead_material" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/toolbar_shadow" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layout_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</layout>

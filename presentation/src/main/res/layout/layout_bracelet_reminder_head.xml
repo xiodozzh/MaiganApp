@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_grey"
+    android:orientation="vertical"
+    android:paddingBottom="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@color/white">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/layout_dots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.mgtech.maiganapp.widget.GuideDotView
+                android:id="@+id/dot0"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_margin="@dimen/xnarrow_padding" />
+
+            <com.mgtech.maiganapp.widget.GuideDotView
+                android:id="@+id/dot1"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_margin="@dimen/xnarrow_padding" />
+
+            <com.mgtech.maiganapp.widget.GuideDotView
+                android:id="@+id/dot2"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_margin="@dimen/xnarrow_padding" />
+
+            <com.mgtech.maiganapp.widget.GuideDotView
+                android:id="@+id/dot3"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_margin="@dimen/xnarrow_padding" />
+
+            <com.mgtech.maiganapp.widget.GuideDotView
+                android:id="@+id/dot4"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_margin="@dimen/xnarrow_padding" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--android:id="@+id/layout_style"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/narrow_padding"-->
+        <!--android:background="@color/white">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_measure_type"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/narrow_padding"-->
+            <!--android:text="@string/bracelet_reminder_measure_type"-->
+            <!--android:textColor="@color/black_text"-->
+            <!--android:textSize="@dimen/subhead_material"-->
+            <!--app:layout_constraintStart_toStartOf="@+id/divider0"-->
+            <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--<View-->
+            <!--android:id="@+id/divider0"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:layout_marginStart="@dimen/normal_padding"-->
+            <!--android:layout_marginTop="@dimen/narrow_padding"-->
+            <!--android:layout_marginEnd="@dimen/normal_padding"-->
+            <!--android:background="@color/background_grey"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/tv_measure_type" />-->
+
+        <!--<androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--android:id="@+id/layout_continuous"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/divider0">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_title_continuous"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="@dimen/normal_padding"-->
+                <!--android:layout_marginTop="@dimen/normal_padding"-->
+                <!--android:text="@string/bracelet_reminder_continuous"-->
+                <!--android:textColor="@color/black_text"-->
+                <!--android:textSize="@dimen/subhead_material"-->
+                <!--app:layout_constraintStart_toStartOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/rb_continuous"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginEnd="@dimen/normal_padding"-->
+                <!--app:layout_constraintBottom_toBottomOf="@+id/tv_title_continuous"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="@+id/tv_title_continuous" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_content_continuous"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/narrow_padding"-->
+                <!--android:layout_marginBottom="@dimen/normal_padding"-->
+                <!--android:text="@string/bracelet_reminder_continuous_detail"-->
+                <!--android:textColor="@color/light_grey_text"-->
+                <!--android:textSize="@dimen/body_1_material"-->
+                <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--app:layout_constraintEnd_toStartOf="@+id/rb_continuous"-->
+                <!--app:layout_constraintStart_toStartOf="@+id/tv_title_continuous"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/tv_title_continuous" />-->
+        <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <!--<View-->
+            <!--android:id="@+id/divider1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:layout_marginStart="@dimen/normal_padding"-->
+            <!--android:layout_marginEnd="@dimen/normal_padding"-->
+            <!--android:background="@color/background_grey"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/layout_continuous" />-->
+
+
+        <!--<androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--android:id="@+id/layout_daily"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/divider1">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_title_daily"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="@dimen/normal_padding"-->
+                <!--android:layout_marginTop="@dimen/normal_padding"-->
+                <!--android:text="@string/bracelet_reminder_daily"-->
+                <!--android:textColor="@color/black_text"-->
+                <!--android:textSize="@dimen/subhead_material"-->
+                <!--app:layout_constraintStart_toStartOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/rb_daily"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginEnd="@dimen/normal_padding"-->
+                <!--app:layout_constraintBottom_toBottomOf="@+id/tv_title_daily"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="@+id/tv_title_daily" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_content_daily"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/narrow_padding"-->
+                <!--android:layout_marginBottom="@dimen/normal_padding"-->
+                <!--android:text="@string/bracelet_reminder_daily_detail"-->
+                <!--android:textColor="@color/light_grey_text"-->
+                <!--android:textSize="@dimen/body_1_material"-->
+                <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--app:layout_constraintEnd_toStartOf="@+id/rb_daily"-->
+                <!--app:layout_constraintStart_toStartOf="@+id/tv_title_daily"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/tv_title_daily" />-->
+        <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/narrow_padding"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_height">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/normal_padding"
+            android:text="@string/bracelet_reminder_measure_alarm"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/subhead_material"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_add"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="@string/bracelet_reminder_add_reminder"-->
+            <!--android:textColor="@color/black_text"-->
+            <!--android:textSize="@dimen/subhead_material"-->
+            <!--android:paddingStart="@dimen/normal_padding"-->
+            <!--android:paddingEnd="@dimen/normal_padding"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

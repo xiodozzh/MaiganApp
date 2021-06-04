@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DynamicGraphView" >
+        <attr name="line_color" format="color"/>
+        <attr name="line_width" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="FixLayout">
+        <attr name="ratio" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="PwGraphView">
+        <!--线颜色-->
+        <attr name="pw_line_color" format="color"/>
+        <!--线宽-->
+        <attr name="pw_line_width" format="dimension"/>
+        <!--背景色-->
+        <attr name="backgroundColor" format="color"/>
+        <!--数组的最大值-->
+        <attr name="pw_scope" format="integer"/>
+        <!--一屏中点的个数-->
+        <attr name="pw_point_number" format="integer"/>
+
+    </declare-styleable>
+
+    <!--<declare-styleable name="BottomNavigator">-->
+        <!--<attr name="item_src_0" format="reference"/>-->
+        <!--<attr name="item_src_1" format="reference"/>-->
+        <!--<attr name="item_src_2" format="reference"/>-->
+        <!--<attr name="item_src_3" format="reference"/>-->
+
+        <!--<attr name="item_title_0" format="string"/>-->
+        <!--<attr name="item_title_1" format="string"/>-->
+        <!--<attr name="item_title_2" format="string"/>-->
+        <!--<attr name="item_title_3" format="string"/>-->
+
+        <!--<attr name="selectedColor" format="color"/>-->
+        <!--<attr name="unSelectedColor" format="color"/>-->
+
+        <!--<attr name="center_popup_text_left" format="string"/>-->
+        <!--<attr name="center_popup_text_right" format="string"/>-->
+        <!--<attr name="center_popup_text_color" format="color"/>-->
+
+    <!--</declare-styleable>-->
+
+</resources>
